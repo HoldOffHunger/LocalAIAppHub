@@ -67,6 +67,14 @@
     "note": "JellyShim runs as the Windows service \"Jellyfin Server\". Press Start, or in an Administrator PowerShell run: Start-Service JellyfinServer. If it still won't start, its web files may be missing; ask Claudia."
   },
   {
+    "id": "models",
+    "title": "Models",
+    "icon": "🧠",
+    "port": 8800,
+    "folder": "E:\\AppHub\\Models",
+    "start": "start.bat"
+  },
+  {
     "id": "claudia",
     "title": "Minis",
     "icon": "🐾",

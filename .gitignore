@@ -33,3 +33,6 @@ venv/
 ClaudiaMini/build/
 ClaudiaMini/ClaudiaMini.exe
 *.obj
+
+# Models: the last drive sweep, a list of file paths on this machine
+Models/data/

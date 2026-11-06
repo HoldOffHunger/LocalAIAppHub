@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Models</title>
+<style>
+  :root { --bg: #f6f3ee; --card: #fffdf9; --ink: #2d2a26; --soft: #77706a; --line: #e2dcd3; --accent: #6b5aa8; --good: #4f8a4b; --warm: #b8862e; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #23262f; --card: #2c303a; --ink: #ece8e1; --soft: #a39d95; --line: #3b404c; --accent: #a594e0; --good: #8cc487; --warm: #e0b45c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--soft); margin: 24px 0 8px; display: flex; gap: 10px; align-items: baseline; }
+  h2 .total { text-transform: none; letter-spacing: 0; font-weight: 400; }
+  h2.kind { cursor: pointer; user-select: none; }
+  h2.kind:hover { color: var(--accent); }
+  h2.kind .caret { display: inline-block; width: 1em; transition: transform .12s; }
+  h2.kind.shut .caret { transform: rotate(-90deg); }
+  .lead { color: var(--soft); font-size: 13px; margin: 0 0 14px; }
+  button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.small { font-size: 12px; padding: 2px 8px; }
+  input, select { font: inherit; font-size: 14px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; }
+  .stat b { font-size: 18px; display: block; }
+  .stat span { font-size: 12px; color: var(--soft); }
+  .stat.warn b { color: var(--warm); }
+  .note { font-size: 13px; color: var(--soft); margin: 4px 0; }
+
+  table { border-collapse: collapse; width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  th, td { border-bottom: 1px solid var(--line); padding: 7px 10px; text-align: left; font-size: 13px; vertical-align: top; }
+  th { color: var(--soft); font-weight: 500; cursor: pointer; user-select: none; white-space: nowrap; }
+  th.num, td.num { text-align: right; white-space: nowrap; }
+  tr.model { cursor: pointer; }
+  tr.model:hover td { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+  tr.open td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  td.name { font-weight: 600; word-break: break-word; }
+  td.name .sub { font-weight: 400; color: var(--soft); font-size: 12px; }
+  .chip { display: inline-block; font-size: 11px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--soft); margin: 1px 2px 1px 0; white-space: nowrap; }
+  .chip.out { color: var(--warm); border-color: var(--warm); }
+  .chip.share { color: var(--good); border-color: var(--good); }
+  .chip.mine { color: var(--accent); border-color: var(--accent); }
+  .soft { color: var(--soft); }
+  tr.detail td { background: var(--bg); padding: 10px 14px 14px; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 3px 14px; font-size: 13px; }
+  .facts dt { color: var(--soft); }
+  .facts dd { margin: 0; word-break: break-all; }
+  .files { margin-top: 8px; font-size: 12px; font-family: ui-monospace, Consolas, monospace; }
+  .files div { display: flex; gap: 10px; }
+  .files .size { color: var(--soft); min-width: 70px; text-align: right; }
+  .empty { color: var(--soft); padding: 20px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🧠 Models</h1>
+  <p class="lead">Every AI model on this machine, by kind: who made it, how big it is, and where it lives. Click a model for its details and files, or a section heading to hide it.</p>
+  <div class="stats" id="stats"></div>
+  <div class="row">
+    <input id="filter" type="search" placeholder="Filter by name, maker, folder…" style="flex: 1; min-width: 220px">
+    <select id="source"><option value="">Every source</option></select>
+    <button id="outside" title="Only the models outside the models folder">Stragglers only</button>
+    <button id="rescan" title="Read the model folders again">↻ Rescan</button>
+    <button id="folding" title="Hide or show every section">Hide all</button>
+    <button id="sweep" title="Look on every drive for model files outside the models folder (takes a few minutes)">🔍 Sweep the drives</button>
+  </div>
+  <p class="note" id="sweepnote"></p>
+  <div id="view"></div>
+</main>
+<script>
+  const $ = id => document.getElementById(id);
+  const escape = text => String(text ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const size = bytes => bytes >= 1e9 ? (bytes / 1e9).toFixed(bytes >= 1e10 ? 1 : 2) + " GB" : bytes >= 1e6 ? Math.round(bytes / 1e6) + " MB" : Math.round(bytes / 1e3) + " KB";
+  const hidden = new Set(JSON.parse(localStorage.getItem("models.hidden") || "[]"));
+  const saveHidden = () => localStorage.setItem("models.hidden", JSON.stringify([...hidden]));
+  let data = null, opened = null, onlyOutside = false, sortKey = "size", sortDown = true, polling = null;
+
+  async function load() {
+    data = await (await fetch("/api/models")).json();
+    const sources = [...new Set(data.models.map(m => m.source))].sort();
+    const chosen = $("source").value;
+    $("source").innerHTML = '<option value="">Every source</option>' + sources.map(s => `<option${s === chosen ? " selected" : ""}>${escape(s)}</option>`).join("");
+    render();
+    const busy = data.scanning || data.sweep.running;
+    clearTimeout(polling);
+    if (busy) polling = setTimeout(load, 1500);
+  }
+
+  function matches(model, words) {
+    const text = [model.name, model.title, model.creator, model.base, model.path, model.source, model.about, model.packaged_by, model.quant, model.params].join(" ").toLowerCase();
+    return words.every(word => text.includes(word));
+  }
+
+  function render() {
+    const s = data.summary;
+    $("stats").innerHTML = `
+      <div class="stat"><b>${s.count}</b><span>models</span></div>
+      <div class="stat"><b>${size(s.disk)}</b><span>on disk (shared files counted once)</span></div>
+      <div class="stat${s.outside ? " warn" : ""}"><b>${s.outside}</b><span>outside ${escape(data.root)}${s.outside ? " · " + size(s.outside_size) : ""}</span></div>`;
+    const sweep = data.sweep;
+    $("sweepnote").textContent = sweep.running
+      ? `Sweeping ${sweep.drives.join(" ")}: ${sweep.folders.toLocaleString()} folders, ${sweep.found} model files so far… ${sweep.folder}`
+      : data.last_sweep ? `Drives last swept ${data.last_sweep}. The usual hiding places (Hugging Face and torch caches) are checked on every scan.`
+      : "The drives haven't been swept yet, so only the usual hiding places outside the models folder were checked. Sweep the drives to find every straggler.";
+    $("sweep").disabled = sweep.running;
+    $("sweep").textContent = sweep.running ? "Sweeping…" : "🔍 Sweep the drives";
+    $("rescan").textContent = data.scanning ? "Scanning…" : "↻ Rescan";
+    $("outside").classList.toggle("on", onlyOutside);
+    $("folding").textContent = data.kinds.every(k => hidden.has(k.id)) ? "Show all" : "Hide all";
+
+    const words = $("filter").value.toLowerCase().split(/\s+/).filter(Boolean);
+    const source = $("source").value;
+    const shown = data.models.filter(m => matches(m, words) && (!source || m.source === source) && (!onlyOutside || m.straggler));
+    const direction = sortDown ? -1 : 1;
+    shown.sort((a, b) => {
+      const key = sortKey === "params" ? "params_value" : sortKey;
+      const x = a[key], y = b[key];
+      return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true })) * direction;
+    });
+    if (!shown.length) { $("view").innerHTML = `<p class="empty">${data.models.length ? "Nothing matches." : "Scanning…"}</p>`; return; }
+    const arrow = key => key === sortKey ? (sortDown ? " ▾" : " ▴") : "";
+    $("view").innerHTML = data.kinds.map(kind => {
+      const group = shown.filter(m => m.kind === kind.id);
+      if (!group.length) return "";
+      const total = group.reduce((sum, m) => sum + m.size, 0);
+      const shut = hidden.has(kind.id);
+      const heading = `<h2 class="kind${shut ? " shut" : ""}" data-kind="${escape(kind.id)}" title="${shut ? "Show" : "Hide"} this section"><span class="caret">▾</span>${kind.icon} ${escape(kind.title)} <span class="total">${group.length} · ${size(total)}</span></h2>`;
+      if (shut) return heading;
+      return `${heading}
+        <table><thead><tr>
+          <th data-sort="name">Model${arrow("name")}</th><th data-sort="creator">Made by${arrow("creator")}</th>
+          <th data-sort="params">Size class${arrow("params")}</th><th data-sort="quant">Precision${arrow("quant")}</th>
+          <th data-sort="source">Where${arrow("source")}</th><th class="num" data-sort="size">On disk${arrow("size")}</th>
+        </tr></thead><tbody>${group.map(row).join("")}</tbody></table>`;
+    }).join("");
+  }
+
+  function row(m) {
+    const id = m.path;
+    const chips = [m.straggler ? '<span class="chip out">outside the models folder</span>' : "",
+                   m.creator === "Ben" ? '<span class="chip mine">yours</span>' : "",
+                   m.twin.length ? `<span class="chip share" title="The same file, byte for byte, as the copy Ollama keeps for ${escape(m.twin.join(", "))}">also in Ollama</span>` : "",
+                   m.shared.length ? `<span class="chip share" title="Shares weights with ${escape(m.shared.flatMap(s => s.with).join(", "))}">shares ${size(m.shared.reduce((t, s) => t + s.size, 0))}</span>` : ""].join("");
+    const main = `<tr class="model${opened === id ? " open" : ""}" data-path="${escape(id)}">
+      <td class="name">${escape(m.name)} ${chips}${m.about ? `<div class="sub">${escape(m.about)}</div>` : ""}</td>
+      <td>${escape(m.creator) || '<span class="soft">unknown</span>'}${m.base ? `<div class="soft" style="font-size:12px">on ${escape(m.base)}</div>` : ""}</td>
+      <td>${escape(m.params)}</td><td>${escape(m.quant)}</td>
+      <td>${escape(m.source)}<div class="soft" style="font-size:12px">${escape(m.drive)}</div></td>
+      <td class="num">${size(m.size)}</td></tr>`;
+    return main + (opened === id ? detail(m) : "");
+  }
+
+  function detail(m) {
+    const facts = [["Name in its file", m.title], ["Architecture", m.arch], ["Packaged by", m.packaged_by], ["Licence", m.license],
+                   ["Context", m.context ? m.context.toLocaleString() + " tokens" : ""], ["Format", m.format],
+                   ["Abilities", (m.capabilities || []).join(", ")], ["ComfyUI folder", m.comfy_folder],
+                   ["Shares", m.shared.map(s => `${size(s.size)} with ${s.with.join(", ")}`).join("; ")],
+                   ["Also in Ollama", m.twin.length ? `The same file, byte for byte (same SHA-256), as the copy Ollama keeps for ${m.twin.join(", ")}` : ""],
+                   ["Notes", m.notes], ["Location", m.path]].filter(f => f[1]);
+    const files = m.files.length ? `<div class="files">${m.files.map(f => `<div><span class="size">${size(f.size)}</span><span>${escape(f.path)}${f.role && f.role !== "weights" ? ` <span class="soft">(${escape(f.role)}${f.from ? ": " + escape(f.from) : ""})</span>` : ""}</span></div>`).join("")}</div>` : "";
+    return `<tr class="detail"><td colspan="6"><dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${escape(v)}</dd>`).join("")}</dl>${files}
+      <div class="row" style="margin-top:10px"><button class="small" data-reveal="${escape(m.files[0]?.path || m.path)}">Show in Explorer</button></div></td></tr>`;
+  }
+
+  $("view").addEventListener("click", async event => {
+    const reveal = event.target.closest("[data-reveal]");
+    if (reveal) {
+      await fetch("/api/reveal", { method: "POST", body: JSON.stringify({ path: reveal.dataset.reveal }) });
+      return;
+    }
+    const kind = event.target.closest("h2[data-kind]");
+    if (kind) {
+      const id = kind.dataset.kind;
+      hidden.has(id) ? hidden.delete(id) : hidden.add(id);
+      saveHidden(); render();
+      return;
+    }
+    const header = event.target.closest("th[data-sort]");
+    if (header) {
+      const key = header.dataset.sort;
+      sortDown = key === sortKey ? !sortDown : key === "size";
+      sortKey = key;
+      render();
+      return;
+    }
+    const model = event.target.closest("tr.model");
+    if (model) { opened = opened === model.dataset.path ? null : model.dataset.path; render(); }
+  });
+  $("filter").addEventListener("input", render);
+  $("source").addEventListener("change", render);
+  $("outside").addEventListener("click", () => { onlyOutside = !onlyOutside; render(); });
+  $("folding").addEventListener("click", () => {
+    const allShut = data.kinds.every(k => hidden.has(k.id));
+    data.kinds.forEach(k => allShut ? hidden.delete(k.id) : hidden.add(k.id));
+    saveHidden(); render();
+  });
+  $("rescan").addEventListener("click", async () => { await fetch("/api/rescan", { method: "POST" }); setTimeout(load, 300); });
+  $("sweep").addEventListener("click", async () => { await fetch("/api/sweep", { method: "POST" }); setTimeout(load, 300); });
+  load();
+</script>
+</body>
+</html>

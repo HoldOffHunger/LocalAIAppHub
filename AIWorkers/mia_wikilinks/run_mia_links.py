@@ -40,7 +40,7 @@ KINDS = ("link", "work", "author")
 
 def options() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Find dead and missing Wikipedia links to one MIA author; results are for a person to confirm.")
-    parser.add_argument("--target", required=True, help="marxists.org/archive/<author>, or just the author's folder name")
+    parser.add_argument("--target", required=True, help="marxists.org/archive/<author> (or just the author's folder name), or a history/ or subject/ folder")
     parser.add_argument("--queue", required=True, help="this task's SQLite pile")
     parser.add_argument("--results", required=True, help="where the proposed edits are written")
     parser.add_argument("--limit", type=int, default=500, help="items to look at this run")
@@ -51,7 +51,13 @@ def options() -> argparse.Namespace:
 
 def folder_of(target: str) -> str:
     folder = re.sub(r"^(?:https?://)?(?:www\.)?marxists\.org/", "", target.strip()).strip("/")
-    return folder if "/" in folder else f"archive/{folder}"
+    return folder if "/" in folder or folder in ("history", "subject") else f"archive/{folder}"
+
+
+def is_collection(folder: str) -> bool:
+    # 4 Nov 2026: a startswith("history/") check sent the whole-section target "history" down the author path, which read
+    # MIA's history as one writer's 1,171 "works" and proposed dead-link swaps by title alone (Chicanismo got the wrong text)
+    return (folder.rstrip("/") + "/").startswith(("history/", "subject/"))
 
 
 def keys_of(title: str) -> set[str]:
@@ -338,6 +344,10 @@ def write_results(queue: TaskQueue, path: Path, author: Author) -> int:
 
 def main() -> None:
     args = options()
+    if is_collection(folder_of(args.target)):
+        from run_mia_subjects import run  # a collection of documents, not an author: its own pile, the same index and judge
+        run(folder_of(args.target), Path(args.queue), Path(args.results), args.limit, args.judge, args.until)
+        return
     ends = deadline(args.until)
     author = read_author(folder_of(args.target))
     if not author.works:

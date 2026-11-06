@@ -79,7 +79,8 @@
   const BUTTONS = { "fixed": "Fixed it", "not a typo": "Not a typo", "updated": "Updated it", "asked on talk page": "Asked on talk page", "not worth it": "Not worth it",
                     "added to the list": "Added it to the list", "not a misspelling": "Not a misspelling" };
   const LINK_PARTS = [["link", "Dead links Wikipedia has marked", f => f.marked], ["link", "Dead links nobody has marked", f => !f.marked],
-                      ["work", "Our works' articles with no link to us"], ["author", "Our authors' articles with no link to us"]];
+                      ["work", "Our works' articles with no link to us"], ["author", "Our authors' articles with no link to us"],
+                      ["subject", "Subjects' articles with no link to the collection"]];
   let state = { jobs: [] }, openRaw = new Set();
   let open = "", tab = "";  // which job's panel is open ("" is the front), and its tab ("" is To do)
   try { open = localStorage.getItem("social-open") || ""; tab = localStorage.getItem("social-tab") || ""; } catch {}

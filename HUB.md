@@ -1,13 +1,13 @@
 # App Hub
 
-One page with a side panel for every app we built: Chat, Voice (Chat, spoken: talk aloud with a character and hear her answer), Images, Autonoma, AI Workers, Site Stats, Movies, JellyShim (our folder-first Jellyfin), Minis (two desktop companions: Claudia, showing what Claude Code is doing, and Bit, showing what the AI Workers are doing) and Chron Jobs (the jobs that run on their own each night, starting with the 3 AM memory backup; the AI Workers wait for them).
+One page with a side panel for every app we built: Chat, Voice (Chat, spoken: talk aloud with a character and hear her answer), Images, Autonoma, AI Workers, Site Stats, Movies, JellyShim (our folder-first Jellyfin), Models (every AI model on the machine, by kind, with its maker, size and folder), Minis (two desktop companions: Claudia, showing what Claude Code is doing, and Bit, showing what the AI Workers are doing) and Chron Jobs (the jobs that run on their own each night, starting with the 3 AM memory backup; the AI Workers wait for them).
 
 ## Starting it
 
 Run `E:\AppHub\start.bat`. It:
 
 1. Starts the hub's own server on http://127.0.0.1:8700.
-2. Starts every app that isn't already running, each in its own window, as before (Local Chat, Voice, Images, Autonoma, the Foreman, Site Stats, the Minis, Chron Jobs). They start without opening their own browser tabs.
+2. Starts every app that isn't already running, each in its own window, as before (Local Chat, Voice, Images, Autonoma, the Foreman, Site Stats, Models, the Minis, Chron Jobs). They start without opening their own browser tabs.
 3. Opens the hub in your browser.
 
 JellyShim is served by the Jellyfin Windows service, so the hub only shows it; it doesn't start it.

@@ -4,6 +4,8 @@ A private AI platform that runs entirely on one home PC. Chat, voice, image and 
 
 Built by Ben Tepolt, working daily with Claude Code.
 
+![The App Hub's Models page: 83 models, 342.6 GB](docs/screenshots/models.png)
+
 ## What's in it
 
 | App | What it does |
@@ -15,6 +17,7 @@ Built by Ben Tepolt, working daily with Claude Code.
 | **AI Workers** | Small local models doing narrow, well-defined jobs overnight, one item at a time, managed by the Foreman. |
 | **Chron Jobs** | Jobs that run on their own each night, such as a 3 AM snapshot backup of Claude Code's memory files and a nightly painting job. |
 | **Social** | Findings from the workers (Wikipedia typos, dead links, OCR misreadings) ready to review and act on. |
+| **Models** | Every AI model on the machine, grouped by kind (chat, code, vision, embedding, image, video, speech, translation): maker, base model, size class, precision and disk use. Reads GGUF headers directly, counts Ollama's shared weights once, and sweeps the drives for stray copies. |
 | **Corpus** | A research library: every copy of every book, what's been read, and a tagging framework. |
 | **Minis** | Two desktop companions: Claudia, who shows what Claude Code is doing (via a Claude Code plugin), and Bit, who shows what the AI Workers are doing. |
 
