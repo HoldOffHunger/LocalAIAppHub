@@ -1,57 +1,46 @@
-# App Hub
+# Local AI App Hub
 
-One page with a side panel for every app we built: Chat, Voice (Chat, spoken: talk aloud with a character and hear her answer), Images, Autonoma, AI Workers, Site Stats, Movies, JellyShim (our folder-first Jellyfin), Minis (two desktop companions: Claudia, showing what Claude Code is doing, and Bit, showing what the AI Workers are doing) and Chron Jobs (the jobs that run on their own each night, starting with the 3 AM memory backup; the AI Workers wait for them).
+A private AI platform that runs entirely on one home PC. Chat, voice, image and video generation, image description, scheduled jobs, and a crew of overnight AI workers, all served from local models on a single 8 GB GPU. Nothing is sent to a cloud service, and personal data never enters this repository.
 
-## Starting it
+Built by Ben Tepolt, working daily with Claude Code.
 
-Run `E:\AppHub\start.bat`. It:
+## What's in it
 
-1. Starts the hub's own server on http://127.0.0.1:8700.
-2. Starts every app that isn't already running, each in its own window, as before (Local Chat, Voice, Images, Autonoma, the Foreman, Site Stats, the Minis, Chron Jobs). They start without opening their own browser tabs.
-3. Opens the hub in your browser.
-
-JellyShim is served by the Jellyfin Windows service, so the hub only shows it; it doesn't start it.
-
-Closing the hub's window stops only the hub page. The apps keep running in their own windows.
-
-## Using it
-
-- Click an app in the panel. Each app stays loaded while you switch, so you come back to it as you left it.
-- Green dot: running. Grey dot: off; its pane has a **Start it** button.
-- Hover an app for ↻ (reload, with a fresh sign-in) and ↗ (open in its own tab).
-- `http://127.0.0.1:8700/#movies` opens straight to an app.
-- Open the hub as `127.0.0.1`, not `localhost`, so Autonoma's and the Foreman's sign-in cookies match.
-
-## Files
-
-| File | What it does |
+| App | What it does |
 |---|---|
-| `start.bat` | The one start button. |
-| `hub_server.py` | The hub's web server: the panel, the movie page, and starting apps. |
-| `app_registry.py` | Checking whether an app is up, and starting it. |
-| `movie_list.py` | Reads the movie data for the Movies page. |
-| `data\app_list.json` | **The** app list: where each app lives, its port, and how it starts. It's the only copy, and the hub never writes to it. Edit it to add, remove or move an app; apps are picked by `id`. Set `"autostart": false` on an app to leave it off at start-up. A typo while editing doesn't lose anything: the hub keeps showing the last good list and says what's wrong in its window. |
-| `static\` | The panel page. |
-| `movies\` | The Movies page. |
+| **Hub** | One page with a side panel for every app. Starts them, shows which are running, and keeps each loaded while you switch. |
+| **Chat** | A private ChatGPT-style chat over Ollama: streaming replies, saved conversations, per-chat system prompts, reasoning blocks, and a character trainer built from chat logs. |
+| **Voice** | Spoken conversation with a character: talk aloud and hear the answer. |
+| **Images** | Image and video generation through ComfyUI, with a gallery. |
+| **AI Workers** | Small local models doing narrow, well-defined jobs overnight, one item at a time, managed by the Foreman. |
+| **Chron Jobs** | Jobs that run on their own each night, such as a 3 AM snapshot backup of Claude Code's memory files and a nightly painting job. |
+| **Social** | Findings from the workers (Wikipedia typos, dead links, OCR misreadings) ready to review and act on. |
+| **Corpus** | A research library: every copy of every book, what's been read, and a tagging framework. |
+| **Minis** | Two desktop companions: Claudia, who shows what Claude Code is doing (via a Claude Code plugin), and Bit, who shows what the AI Workers are doing. |
 
-## Movies
+## How it fits together
 
-The Movies page reads `E:\MovieTheaterWithClaudia\data\movies.json`, the recommender's export: your tiers and comments, Claudia's script reads (click a "script n/10" badge), and her picks. Without that file it falls back to `E:\MovieTheaterWithClaudia\start.txt`. The export is a snapshot; ask the recommender session to copy its data folder again when it has new picks.
+- **Local-only by design.** Every app is a small Python server bound to `127.0.0.1`, with plain HTML/CSS/JS front ends. Models run through Ollama and ComfyUI. State lives in SQLite and JSON outside the repo, and `.gitignore` blocks conversations, personas, training material and login tokens by name.
+- **The GPU desk.** One 8 GB card, many apps that want it. The hub keeps a single lease record (`gpu_desk.py`) with a small API (`claim`, `renew`, `release`, `kick`). Whatever you're using now gets the card; a picture already drawing finishes; background workers always yield and come back when things go quiet; leases expire on their own so a crashed app can't hold the card. When the card changes hands, the desk unloads models the new holder doesn't need.
+- **The Foreman and the night shift.** Each worker is a folder with a `worker.json` (command, targets, stop flag, progress stats). The Foreman runs active tasks in a schedule window, gives each a fair share of the time, waits for Chron Jobs and for anyone using the GPU, and has an "until I'm back at the PC" mode that watches Windows idle time. Every job is resumable and stops cleanly at its deadline.
+- **Nothing reaches production unreviewed.** Workers find and report. Writing jobs stage their changes as records for the site's own save path, and a person, working with Claude, confirms them before anything ships.
+- **Offloading from Claude Code.** Routine, high-volume checking goes to local models, so cloud tokens are spent on the work that needs a frontier model.
 
-## The GPU desk: who has the card
+## The AI Workers, and how their models were chosen
 
-One 8 GB card, several apps that want it. The hub keeps one record of who has it (`gpu_desk.py`), and the panel's bottom line shows it: **GPU: Chat, 4 min**, or **free**. Hover it for every lease.
+The workers run over a family of real websites with tens of thousands of texts: spellchecking 15,000+ texts, pulling word-for-word quotes, tagging, reviewing machine translations for a language-learning site, harvesting new misspellings, finding dead or missing Wikipedia links in billion-row Wikipedia dumps, and mining OCR errors from the Internet Archive.
 
-- **What you're using now gets the card.** Chat asks before each reply, Images before each picture or clip, Autonoma before each reply when you're talking with her. The newest one takes it from the last.
-- **A picture or clip already drawing finishes.** If you chat during one, Chat goes ahead, slower, beside it; ComfyUI lets go the moment it's done.
-- **The AI Workers always yield.** The Foreman asks before each turn and only gets the card while nobody else holds a lease. When someone takes the card, the running worker steps aside and comes back once things go quiet.
-- **Autonoma's free time comes before the workers.** A worker running when her free time starts steps aside, and the workers wait until she's done, whatever model she runs on.
-- **Autonoma's free time yields to you.** Before each step of her free time she asks politely; while you're using the card she waits (her status line says "Waiting for the GPU: Chat has the GPU"). Waiting isn't a nap she chose, so it doesn't go into her memory, and her free time still ends on time.
+Models weren't picked on vibes. For translation review, they were scored against hand-checked answer keys:
 
-- **The yellow "Kick Chat off GPU" button** shows under the GPU line while Chat holds the card. It drops Chat's lease and model now, and unless someone else you're using still holds the card, the Foreman stops waiting out the quiet time and its stepped-aside worker comes straight back.
+- On 113 hand-checked Italian words, three local models voting caught 7 of 7 wrong translations, against 2 of 7 for a machine-translation "expert" pipeline.
+- On a 12-language test (113 words, 45 wrong), `mistral:7b` alone caught 34 with 7 false alarms, the best balance of any single small model. A `mistral` OR `llama3.1` screen caught all 45, at about 3× the review work.
+- `gemma4:12b` with thinking turned off was the best single senior judge (36 caught, 8 false alarms). With thinking on, it spent its budget musing and returned empty answers.
+- Two-stage screen-then-judge setups (a fast screen, a stronger model rechecking) became the standard pattern across the workers.
 
-When the card changes hands the desk makes room: Ollama drops the models the new holder doesn't need, ImageGen's ComfyUI lets go (or finishes first), and the Foreman holds its worker. A lease runs out on its own a few minutes after its app last asked, so a crashed app can't keep the card.
+The full record is in [`AIWorkers/README.md`](AIWorkers/README.md), including the mistakes found along the way and the rules added to fix them.
 
-The API, for any app that wants to join in: `POST /api/gpu/claim` `{"app": "chat", "minutes": 5, "keep_models": ["qwen3:14b"]}` (add `"background": true` to ask politely), `POST /api/gpu/renew` `{"app": ..., "minutes": 2}` to keep a lease without taking the card back, `POST /api/gpu/release` `{"app": ...}`, `POST /api/gpu/kick` `{"app": ...}` (the yellow button), and `GET /api/gpu`. Every app falls back to its old ways if the hub isn't running.
+## Running it
 
-How long the workers wait after your last chat message is `pause_workers_minutes` in `E:\local-chat\data\settings.json` (5; 0 turns Chat's asking off), and after your last picture the same setting in `E:\ImageGen\data\settings.json`. A worker stepped aside starts again with its original stop time, unless that time has already passed.
+This is a working personal setup, not a packaged product: paths point at the author's drives, and the workers expect his sites' database dumps. The apps themselves are small and readable. See [`HUB.md`](HUB.md) for how the hub starts and manages them, and each app's own README for details.
+
+Requirements: Windows, Python 3, [Ollama](https://ollama.com), and [ComfyUI](https://github.com/comfyanonymous/ComfyUI) for images.
