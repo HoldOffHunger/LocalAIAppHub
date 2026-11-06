@@ -1,0 +1,102 @@
+[
+  {
+    "id": "chat",
+    "title": "Chat",
+    "icon": "💬",
+    "port": 8790,
+    "folder": "E:\\local-chat",
+    "start": "start.bat"
+  },
+  {
+    "id": "voice",
+    "title": "Voice",
+    "icon": "🎙️",
+    "port": 8795,
+    "folder": "E:\\Voice",
+    "start": "start.bat",
+    "allow": "microphone; autoplay"
+  },
+  {
+    "id": "images",
+    "title": "Images",
+    "icon": "🎨",
+    "port": 8730,
+    "folder": "E:\\ImageGen",
+    "start": "start.bat"
+  },
+  {
+    "id": "autonoma",
+    "title": "Autonoma",
+    "icon": "✦",
+    "port": 8710,
+    "folder": "E:\\Autonoma",
+    "start": "start.bat",
+    "login": "data\\warden_login.txt"
+  },
+  {
+    "id": "workers",
+    "title": "AI Workers",
+    "icon": "⚒",
+    "port": 8720,
+    "folder": "E:\\AIWorkers",
+    "start": "start_foreman.bat",
+    "login": "data\\foreman_login.txt"
+  },
+  {
+    "id": "stats",
+    "title": "Site Stats",
+    "icon": "📈",
+    "port": 8770,
+    "folder": "E:\\GGCMS_Stats",
+    "start": "start.bat"
+  },
+  {
+    "id": "movies",
+    "title": "Movies",
+    "icon": "🎬",
+    "url": "/movies/",
+    "folder": "E:\\MovieTheaterWithClaudia"
+  },
+  {
+    "id": "jellyfin",
+    "title": "JellyShim",
+    "icon": "📺",
+    "port": 8096,
+    "folder": "E:\\MovieTheaterWithClaudia",
+    "start": "start-jellyfin.bat",
+    "note": "JellyShim runs as the Windows service \"Jellyfin Server\". Press Start, or in an Administrator PowerShell run: Start-Service JellyfinServer. If it still won't start, its web files may be missing; ask Claudia."
+  },
+  {
+    "id": "claudia",
+    "title": "Minis",
+    "icon": "🐾",
+    "port": 8780,
+    "folder": "E:\\AppHub\\ClaudiaMini",
+    "start": "start.bat"
+  },
+  {
+    "id": "social",
+    "title": "Social",
+    "icon": "🤝",
+    "port": 8750,
+    "folder": "E:\\AppHub\\Social",
+    "start": "start.bat",
+    "allow": "clipboard-write"
+  },
+  {
+    "id": "corpus",
+    "title": "Corpus",
+    "icon": "🦉",
+    "port": 8760,
+    "folder": "E:\\AppHub\\Corpus",
+    "start": "start.bat"
+  },
+  {
+    "id": "chron",
+    "title": "Chron Jobs",
+    "icon": "⏰",
+    "port": 8740,
+    "folder": "E:\\AppHub\\ChronJobs",
+    "start": "start.bat"
+  }
+]

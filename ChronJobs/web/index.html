@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chron Jobs</title>
+<style>
+  :root { --bg: #f6f3ee; --card: #fffdf9; --ink: #2d2a26; --soft: #77706a; --line: #e2dcd3; --accent: #a8673a; --urgent: #c4473a; --good: #4f8a4b; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #23262f; --card: #2c303a; --ink: #ece8e1; --soft: #a39d95; --line: #3b404c; --accent: #d79a64; --urgent: #ef7a6c; --good: #8cc487; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .lead { color: var(--soft); font-size: 13px; margin: 0 0 16px; }
+  .job { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+  .top { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; justify-content: space-between; }
+  .title { font-size: 17px; font-weight: 600; }
+  .at { color: var(--accent); font-weight: 600; }
+  .what { color: var(--soft); font-size: 13px; margin: 4px 0 10px; }
+  .last { font-size: 14px; }
+  .last.ok { color: var(--good); }
+  .last.failed { color: var(--urgent); }
+  .when { color: var(--soft); font-size: 13px; }
+  button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: var(--soft); font-size: 13px; }
+  pre { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; word-break: break-word; max-height: 360px; overflow-y: auto; }
+  .problem { color: var(--urgent); font-size: 13px; margin-bottom: 12px; }
+  .busy { color: var(--accent); font-size: 13px; margin-bottom: 12px; }
+  .bar { position: relative; height: 10px; border-radius: 5px; background: var(--line); overflow: hidden; margin: 6px 0 2px; }
+  .bar > span { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 5px; transition: width .6s ease; }
+  .bar.unknown > span { width: 30%; animation: sweep 1.6s ease-in-out infinite; }
+  @keyframes sweep { from { left: -30%; } to { left: 100%; } }
+  .barnote { color: var(--soft); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Chron Jobs</h1>
+  <p class="lead">Jobs that run on their own each night. While one is due or running, the AI Workers wait.</p>
+  <div id="problem" class="problem"></div>
+  <div id="busy" class="busy"></div>
+  <div id="jobs"></div>
+</main>
+<script>
+  const clock = iso => new Date(iso).toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" });
+  const escape = text => String(text).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let open = new Set();
+
+  function lastLine(job) {
+    const last = job.last || {};
+    if (job.running) {
+      // A job that prints PROGRESS lines fills the bar; one that doesn't gets a sweep, so it still looks alive
+      const p = job.progress;
+      if (!p) return '<div class="last">Running now…</div><div class="bar unknown"><span></span></div>';
+      return `<div class="last">Running now… ${p.percent}%</div>` +
+             `<div class="bar"><span style="width:${p.percent}%"></span></div>` +
+             (p.note ? `<div class="barnote">${escape(p.note)}</div>` : "");
+    }
+    if (!last.started) return '<div class="last when">Not run yet.</div>';
+    const cls = last.ok ? "ok" : "failed";
+    return `<div class="last ${cls}">${last.ok ? "✓" : "✗"} ${escape(last.summary || "")}</div>` +
+           `<div class="when">${clock(last.started)}</div>`;
+  }
+
+  async function refresh() {
+    let state;
+    try { state = await (await fetch("/api/state")).json(); } catch { return; }
+    document.getElementById("problem").textContent = state.problem || "";
+    document.getElementById("busy").textContent = state.busy ? `Busy: ${state.busy}. The AI Workers are waiting.` : "";
+    document.querySelectorAll("details[open]").forEach(d => open.add(d.dataset.id));
+    document.querySelectorAll("details:not([open])").forEach(d => open.delete(d.dataset.id));
+    document.getElementById("jobs").innerHTML = state.jobs.map(job => `
+      <div class="job">
+        <div class="top">
+          <span class="title">${escape(job.title)}</span>
+          <span>Every night at <span class="at">${escape(job.at)}</span> · next ${clock(job.next)}</span>
+        </div>
+        <div class="what">${escape(job.description)}</div>
+        ${lastLine(job)}
+        <p><button data-run="${escape(job.id)}" ${job.running ? "disabled" : ""}>Run now</button></p>
+        <details data-id="${escape(job.id)}" ${open.has(job.id) ? "open" : ""}><summary>Log</summary><pre>${escape(job.log || "Nothing yet.")}</pre></details>
+      </div>`).join("");
+  }
+
+  document.addEventListener("click", async event => {
+    const id = event.target.dataset && event.target.dataset.run;
+    if (!id) return;
+    event.target.disabled = true;
+    const reply = await (await fetch("/api/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) })).json();
+    if (reply.problem) alert(reply.problem);
+    refresh();
+  });
+
+  refresh();
+  setInterval(refresh, 3000);
+</script>
+</body>
+</html>

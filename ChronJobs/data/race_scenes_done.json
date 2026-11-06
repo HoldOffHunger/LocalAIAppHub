@@ -1,0 +1,42 @@
+{
+  "western:army": {
+    "painted": "2026-11-01T17:14:16-05:00",
+    "pictures": [
+      "5f279f8d2a85",
+      "7099d13702ea",
+      "e1fd6f1c336b",
+      "88c2b3524cca",
+      "f6e56ff38dcf"
+    ]
+  },
+  "eastern:village": {
+    "painted": "2026-11-02T03:11:14-05:00",
+    "pictures": [
+      "869b9bf0d51d",
+      "344615e3b4c1",
+      "0e538c99ea70",
+      "6768c489e78d",
+      "cd99ab6a6981"
+    ]
+  },
+  "southern:mage-tower": {
+    "painted": "2026-11-03T03:11:33-05:00",
+    "pictures": [
+      "43e48d98ecc6",
+      "0e8fb99e4d66",
+      "ec5b5f940612",
+      "bd5d513c39e8",
+      "9dc2dabedce8"
+    ]
+  },
+  "northern:archers": {
+    "painted": "2026-11-04T03:11:25-05:00",
+    "pictures": [
+      "a09729f258cc",
+      "c0c7f2d94f9d",
+      "be26ee513160",
+      "18940c2e7cf1",
+      "d8df1bfdcfe9"
+    ]
+  }
+}

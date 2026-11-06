@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: fill tags",
+  "description": "For every text with no tags, ListKeywords (the site's own keyword finder, with its ignore list) proposes the text's most common phrases and words, and a local model strikes the ones off its theme, keeping about 100. The model can only remove keywords, never invent one. Results are for a person to confirm; it never edits the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_tags.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

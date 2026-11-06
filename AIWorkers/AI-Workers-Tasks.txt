@@ -1,0 +1,11 @@
+﻿what if we offer mini-ai (localized ai by us) to sciennium clients?
+
+-------------
+
+-spellchecking websites (revoltlib, revoltsource) for spelling or typos
+-(once we have a writing skill): write descriptions/summaries for revoltlib/revoltsource text entries, or get inspiring quotes from the texts and fill them in
+-generate/submit pdfs to scribd and/or other formats to other sites specializing in certain formats
+-make tiktoks/maintain social media accounts?
+-do the descriptions/summaries/tags, etc., for all of the sites (earthfluenet, wordweight, etc.)
+-generate our own images for words?  to host on our site?  maybe just icons?  we'll have to high-tune it to low error rate?  to use in tiktok videos?  videos?  videos for tiktok?  for revoltsource, and revoltlib, and earthfluent?  probably just earthfluent and the commercial, non-revolutionary sites.
+-fill in image descriptions for ggcms-hosted sites?

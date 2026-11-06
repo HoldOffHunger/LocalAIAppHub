@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie Theater</title>
+<link rel="stylesheet" href="/movies/movies.css">
+</head>
+<body>
+<header>
+  <h1>Movie Theater <span>with Claudia</span></h1>
+  <p id="counts"></p>
+  <input id="search" type="search" placeholder="Find a movie…" autocomplete="off">
+</header>
+<p id="error" hidden></p>
+<section id="picks" class="block">
+  <h2>Claudia's picks</h2>
+  <div id="picks-list"></div>
+  <div id="picks-body" class="prose"></div>
+</section>
+<section id="to-watch" class="block">
+  <h2>To watch</h2>
+  <p class="description" id="to-watch-description"></p>
+  <ul id="to-watch-list" class="movies"></ul>
+</section>
+<section id="taste" class="block" hidden>
+  <details>
+    <summary>What I know about your taste</summary>
+    <div id="taste-body" class="prose"></div>
+  </details>
+</section>
+<section id="seen" class="block">
+  <h2>Seen</h2>
+  <div id="tiers"></div>
+</section>
+<script src="/static/markdown.js"></script>
+<script src="/movies/movies.js"></script>
+</body>
+</html>

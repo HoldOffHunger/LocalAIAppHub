@@ -1,0 +1,16 @@
+{
+  "scale": 3,
+  "sound": true,
+  "click_through": false,
+  "x": 120,
+  "y": 1643,
+  "done_seconds": 90,
+  "asleep_minutes": 30,
+  "oops_failures": 3,
+  "oops_window_seconds": 120,
+  "oops_seconds": 20,
+  "bit_size": 176,
+  "bit_x": 162,
+  "bit_y": 1397,
+  "bit_shown": true
+}

@@ -1,0 +1,3082 @@
+# it — EarthFluent triage by a local model. Every record is a SUSPECT, not a proposal: confirm against a dictionary of record first.
+# Format: see E:\GGCMS\Development\TranslationReview\README.md
+
+id: 168
+entryid: 223
+permalink: 223
+lesson: Nouns - Animals, Part 1
+lang: it
+english: Komodo Dragon
+current: Drago di Komodo
+proposed: varano di Komodo
+kind: wrong-word
+reason: Drago di Komodo is not a standard Italian term for Komodo dragon, the correct term is varano di Komodo.
+source: Wiktionary (via kaikki.org), s.v. "Drago di Komodo": not found
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 181
+entryid: 240
+permalink: 240
+lesson: Nouns - Animals, Part 4
+lang: it
+english: Gerbil
+current: Gerbil
+proposed: topo-gerbillo
+kind: untranslated
+reason: Gerbil is not a word in Italian, but 'topo-gerbillo' is a term used to refer to the gerbil in Italian, derived from 'topo' (mouse) and the English name.
+source: Wiktionary (via kaikki.org), s.v. "Gerbil": not found
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 184
+entryid: 244
+permalink: 244
+lesson: Nouns - Animals, Part 5
+lang: it
+english: Owl
+current: Gufo
+proposed: civetta
+kind: wrong-sense
+reason: In this context, 'Gufo' is a noun referring to an owl, but the verb 'gufare' is not related to the animal. 'Civetta' is the correct noun for owl in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Gufo": noun: owl (order Strigiformes); verb: first-person singular present indicative of gufare
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 187
+entryid: 248
+permalink: 248
+lesson: Nouns - Animals, Part 6
+lang: it
+english: Chipmunk
+current: Chipmunk
+proposed: scoiattolo
+kind: untranslated
+reason: The Italian word for chipmunk is scoiattolo.
+source: Wiktionary (via kaikki.org), s.v. "Chipmunk": not found
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 204
+entryid: 269
+permalink: 269
+lesson: Nouns - Animals, Part 10
+lang: it
+english: Firefly
+current: Lucciola
+proposed: Falena lanterna
+kind: wrong-sense
+reason: In this context, 'Lucciola' is not the correct word for 'firefly'. The correct word for 'firefly' in Italian is 'Falena lanterna'.
+source: Wiktionary (via kaikki.org), s.v. "Lucciola": noun: firefly, glowworm; prostitute; verb: third-person singular present indicative; second-person singular imperative
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 210
+entryid: 277
+permalink: 277
+lesson: Nouns - Animals, Part 12
+lang: it
+english: Manta Ray
+current: Manta Ray
+proposed: mantarray
+kind: untranslated
+reason: The word was left in English by the translator; the Italian word for this animal is 'mantarray'.
+source: Wiktionary (via kaikki.org), s.v. "Manta Ray": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 236
+entryid: 309
+permalink: 309
+lesson: Nouns - Animals, Part 18
+lang: it
+english: Stingray
+current: Stingray
+proposed: razza
+kind: untranslated
+reason: The word 'Stingray' is an English word and has not been translated into the Italian word for the animal.
+source: Wiktionary (via kaikki.org), s.v. "Stingray": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2143
+entryid: 2731
+permalink: 2731
+lesson: Verbs - Activity With Objects, Part 1
+lang: it
+english: make
+current: rendere
+proposed: fare
+kind: wrong-sense
+reason: In the context of 'making' an object or action, 'fare' is the standard verb, whereas 'rendere' is used for 'rendering' a service or 'returning' something.
+source: Wiktionary (via kaikki.org), s.v. "rendere": verb: to give back, to return; to yield (a return etc.); to render; to send or make; to be profitable
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2178
+entryid: 2775
+permalink: 2775
+lesson: Verbs - Activity With Objects, Part 10
+lang: it
+english: ride
+current: cavalcata
+proposed: cavalcare
+kind: wrong-class
+reason: The English word 'ride' is a verb in this context, but 'cavalcata' is a noun; the correct verb is 'cavalcare'.
+source: Wiktionary (via kaikki.org), s.v. "cavalcata": noun: ride; cavalcade; verb: feminine singular of cavalcato
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2244
+entryid: 2857
+permalink: 2857
+lesson: Verbs - General Activity, Part 8
+lang: it
+english: watch
+current: orologio
+proposed: guardare
+kind: wrong-class
+reason: The English word is a verb meaning to look at something, but 'orologio' is a noun meaning a timepiece.
+source: Wiktionary (via kaikki.org), s.v. "orologio": noun: clock, watch (timekeeping instruments); name: a surname
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2264
+entryid: 2882
+permalink: 2882
+lesson: Verbs - General Activity, Part 13
+lang: it
+english: tend
+current: tendere
+proposed: curare
+kind: wrong-sense
+reason: In Italian, 'tendere' means to stretch or tighten, while 'curare' is the correct verb for taking care of or tending to something.
+source: Wiktionary (via kaikki.org), s.v. "tendere": verb: to tighten; to stretch; to crane (the neck); to tend; to draw (a bow)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2274
+entryid: 2895
+permalink: 2895
+lesson: Verbs - General Activity, Part 16
+lang: it
+english: enable
+current: enable
+proposed: abilitare
+kind: untranslated
+reason: The word 'enable' was left in English by the translator instead of being translated to the Italian equivalent.
+source: Wiktionary (via kaikki.org), s.v. "enable": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2275
+entryid: 2896
+permalink: 2896
+lesson: Verbs - General Activity, Part 16
+lang: it
+english: check
+current: dai un'occhiata
+proposed: controllare
+kind: wrong-form
+reason: The translation is a phrase in the imperative form rather than the infinitive verb form required for a vocabulary list.
+source: Wiktionary (via kaikki.org), s.v. "dai un'occhiata": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2285
+entryid: 2909
+permalink: 2909
+lesson: Verbs - General Activity, Part 19
+lang: it
+english: display
+current: display
+proposed: esporre
+kind: untranslated
+reason: The word 'display' is an English word and does not exist in Italian; the correct verb for showing or exhibiting something is 'esporre'.
+source: Wiktionary (via kaikki.org), s.v. "display": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2328
+entryid: 2962
+permalink: 2962
+lesson: Verbs - Emotional Activity, Part 5
+lang: it
+english: hurt
+current: male
+proposed: ferito
+kind: wrong-sense
+reason: The Italian word 'male' refers to pain or evil, but the English verb 'hurt' (as an emotional activity) requires a verb like 'ferire' or an adjective like 'ferito'.
+source: Wiktionary (via kaikki.org), s.v. "male": adv: badly, wrongly; noun: evil, harm; pain, ache, illness, sickness, disease; adj: feminine plural of malo (“bad”)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2354
+entryid: 2996
+permalink: 2996
+lesson: Verbs - Physical Activity, Part 5
+lang: it
+english: born
+current: Nato
+proposed: nato
+kind: wrong-form
+reason: The dictionary entry shows 'Nato' (capitalized) refers to the military alliance, while the lowercase 'nato' is the correct past participle for 'born'.
+source: Wiktionary (via kaikki.org), s.v. "Nato": name: NATO; verb: past participle of nascere; born; adj: born (also used in combination); né; son, offspring; verb: first-person singular present indicative of natare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2369
+entryid: 3015
+permalink: 3015
+lesson: Verbs - Physical Activity, Part 9
+lang: it
+english: climb
+current: scalata
+proposed: arrampicare
+kind: wrong-form
+reason: The Italian word 'scalata' is a noun (a climb), but the lesson requires a verb for the action of climbing.
+source: Wiktionary (via kaikki.org), s.v. "scalata": noun: scaling, climbing; climb; verb: feminine singular of scalato
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2406
+entryid: 3061
+permalink: 3061
+lesson: Verbs - Physical Activity, Part 18
+lang: it
+english: shrug
+current: alzata di spalle
+proposed: alzare le spalle
+kind: wrong-form
+reason: The translation provided is a noun phrase (a shrug) rather than the verb form (to shrug) required for a verb lesson.
+source: Wiktionary (via kaikki.org), s.v. "alzata di spalle": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2418
+entryid: 3076
+permalink: 3076
+lesson: Verbs - Physical Activity, Part 21
+lang: it
+english: creep
+current: strisciamento
+proposed: strisciare
+kind: wrong-class
+reason: The English word 'creep' is a verb, but 'strisciamento' is a noun; the correct verb form is 'strisciare'.
+source: Wiktionary (via kaikki.org), s.v. "strisciamento": noun: crawling, creeping; dragging
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2427
+entryid: 3087
+permalink: 3087
+lesson: Verbs - Mental Activity, Part 2
+lang: it
+english: read
+current: read
+proposed: leggere
+kind: untranslated
+reason: The word 'read' is an English verb and has not been translated into the Italian equivalent 'leggere'.
+source: Wiktionary (via kaikki.org), s.v. "read": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2439
+entryid: 3103
+permalink: 3103
+lesson: Verbs - Mental Activity, Part 6
+lang: it
+english: intend
+current: avere intenzione
+proposed: intendere
+kind: wrong-form
+reason: The phrase 'avere intenzione' is grammatically incomplete; it requires a preposition (avere intenzione di) to function as a verb, whereas 'intendere' is the direct dictionary equivalent.
+source: Wiktionary (via kaikki.org), s.v. "avere intenzione": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2468
+entryid: 3139
+permalink: 3139
+lesson: Verbs - Mental Activity, Part 13
+lang: it
+english: focus
+current: messa a fuoco
+proposed: concentrarsi
+kind: wrong-sense
+reason: Messa a fuoco refers to the physical focus of a camera lens, whereas the lesson requires a verb for mental concentration.
+source: Wiktionary (via kaikki.org), s.v. "messa a fuoco": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2482
+entryid: 3157
+permalink: 3157
+lesson: Verbs - Mental Activity, Part 17
+lang: it
+english: guess
+current: indovina
+proposed: indovinare
+kind: wrong-form
+reason: The dictionary entry provided is a conjugated verb form, but the lesson requires the infinitive form 'indovinare'.
+source: Wiktionary (via kaikki.org), s.v. "indovina": noun: female equivalent of indovino; verb: third-person singular present indicative; second-person singular imperative
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2530
+entryid: 3217
+permalink: 3217
+lesson: Verbs - Social Activity, Part 9
+lang: it
+english: mention
+current: citare
+proposed: menzionare
+kind: wrong-sense
+reason: Citare is used for quoting a text or a legal summons, whereas menzionare is the standard word for mentioning something in conversation.
+source: Wiktionary (via kaikki.org), s.v. "citare": verb: to summon; to sue; to summons or subpoena; to cite or quote
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2532
+entryid: 3219
+permalink: 3219
+lesson: Verbs - Social Activity, Part 9
+lang: it
+english: refuse
+current: rifiuto
+proposed: rifiutare
+kind: wrong-form
+reason: The translation provided is a conjugated verb form (I refuse), but the list should contain the infinitive form (to refuse).
+source: Wiktionary (via kaikki.org), s.v. "rifiuto": noun: refusal, declination, rejection, denial; waste, refuse, rubbish, garbage (useless products); verb: first-person singular present indicative of rifiutare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2600
+entryid: 3305
+permalink: 3305
+lesson: Verbs - Social Activity, Part 27
+lang: it
+english: date
+current: Data
+proposed: appuntamento
+kind: wrong-sense
+reason: The Italian word 'data' refers to a calendar date, not a social outing or romantic date.
+source: Wiktionary (via kaikki.org), s.v. "Data": noun: date (“calendar date”); verb: third-person singular present indicative; second-person singular imperative; verb: feminine singular of dato
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 2641
+entryid: 3356
+permalink: 3356
+lesson: Verbs - Economic Activity, Part 1
+lang: it
+english: need
+current: bisogno
+proposed: avere bisogno di
+kind: wrong-class
+reason: The English word 'need' is a verb, but 'bisogno' is a noun; in Italian, you must use the phrase 'avere bisogno di' to express the action of needing something.
+source: Wiktionary (via kaikki.org), s.v. "bisogno": noun: need; excrement, faeces
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12786
+entryid: 16100
+permalink: 16100
+lesson: Nouns - Concepts, Part 21
+lang: it
+english: goal
+current: obbiettivo
+proposed: obiettivo
+kind: orthography
+reason: The word is misspelled; 'obiettivo' is spelled with one 'b', not two.
+source: Wiktionary (via kaikki.org), s.v. "obbiettivo": name: a surname transferred from the nickname
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12822
+entryid: 16145
+permalink: 16145
+lesson: Nouns - Concepts, Part 30
+lang: it
+english: objective
+current: obbiettivo
+proposed: obiettivo
+kind: orthography
+reason: The word is misspelled; 'obiettivo' is spelled with one 'b' in Italian.
+source: Wiktionary (via kaikki.org), s.v. "obbiettivo": name: a surname transferred from the nickname
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12841
+entryid: 16169
+permalink: 16169
+lesson: Nouns - Concepts, Part 35
+lang: it
+english: weather
+current: tempo metereologico
+proposed: tempo meteorologico
+kind: orthography
+reason: The word 'metereologico' is misspelled; the correct spelling is 'meteorologico'.
+source: Wiktionary (via kaikki.org), s.v. "tempo metereologico": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12849
+entryid: 16179
+permalink: 16179
+lesson: Nouns - Concepts, Part 37
+lang: it
+english: display
+current: display
+proposed: vetrina
+kind: untranslated
+reason: While 'display' is used in technical contexts (like computer screens), the general concept of a display or shop window is 'vetrina' in Italian.
+source: Wiktionary (via kaikki.org), s.v. "display": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12872
+entryid: 16208
+permalink: 16208
+lesson: Nouns - Concepts, Part 43
+lang: it
+english: break
+current: rompere
+proposed: pausa
+kind: wrong-class
+reason: The English word 'break' in a list of nouns refers to a rest or interval, but 'rompere' is a verb meaning to shatter or destroy.
+source: Wiktionary (via kaikki.org), s.v. "rompere": verb: to break; to screw with, to be a pain in the ass (shortening of rompere le palle or rompere i coglioni); to break through (a crowd, a barrier, etc.); to overflow (of a river); to break (of the dawn); to erupt, to burst out (of words, tears, etc.); See rompersi.
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12898
+entryid: 16240
+permalink: 16240
+lesson: Nouns - Concepts, Part 49
+lang: it
+english: sake
+current: amor
+proposed: sake
+kind: wrong-word
+reason: The Italian word 'amor' means 'love', which is unrelated to the Japanese alcoholic beverage.
+source: Wiktionary (via kaikki.org), s.v. "amor": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12910
+entryid: 16255
+permalink: 16255
+lesson: Nouns - Concepts, Part 52
+lang: it
+english: storage
+current: Conservazione
+proposed: stoccaggio
+kind: wrong-word
+reason: Conservazione refers to the act of preserving something (like food or art), whereas stoccaggio is the standard term for storage.
+source: Wiktionary (via kaikki.org), s.v. "Conservazione": noun: preservation; conservation; shelf life
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12919
+entryid: 16267
+permalink: 16267
+lesson: Nouns - Concepts, Part 55
+lang: it
+english: comfort
+current: comfort
+proposed: comforto
+kind: untranslated
+reason: The word 'comfort' is an English word; the Italian equivalent is 'comforto'.
+source: Wiktionary (via kaikki.org), s.v. "comfort": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 12971
+entryid: 16332
+permalink: 16332
+lesson: Nouns - Concepts, Part 68
+lang: it
+english: crash
+current: schianto
+proposed: incidente
+kind: wrong-word
+reason: Schianto is a colloquial term for a 'scandal' or 'uproar,' whereas 'incidente' is the standard word for a physical crash.
+source: Wiktionary (via kaikki.org), s.v. "schianto": noun: crash; smasher (good-looking person); verb: first-person singular present indicative of schiantare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13093
+entryid: 16484
+permalink: 16484
+lesson: Nouns - Measurements, Part 5
+lang: it
+english: rate
+current: Vota
+proposed: tasso
+kind: wrong-word
+reason: The word 'vota' is a verb form or an adjective, whereas the measurement 'rate' is translated as 'tasso'.
+source: Wiktionary (via kaikki.org), s.v. "Vota": verb: third-person singular present indicative; second-person singular imperative; adj: feminine singular of voto (“empty”)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13118
+entryid: 16515
+permalink: 16515
+lesson: Nouns - Measurements, Part 11
+lang: it
+english: bit
+current: po
+proposed: un po'
+kind: wrong-word
+reason: The Italian word 'po' refers to a river, while 'un po' is the correct phrase for 'a bit'.
+source: Wiktionary (via kaikki.org), s.v. "po": name: Po (a river in Italy)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13144
+entryid: 16548
+permalink: 16548
+lesson: Nouns - Measurements, Part 18
+lang: it
+english: sentence
+current: condanna, frase
+proposed: frase
+kind: wrong-word
+reason: The word 'condanna' means 'sentence' in a legal context (a prison sentence), but 'frase' is the correct word for a grammatical sentence.
+source: Wiktionary (via kaikki.org), s.v. "condanna, frase": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13372
+entryid: 16833
+permalink: 16833
+lesson: Nouns - People, Part 41
+lang: it
+english: plaintiff
+current: attore
+proposed: attore
+kind: wrong-word
+reason: The Italian word 'attore' refers to a theatrical actor, whereas the legal term for a plaintiff is 'attore' (which is a false friend) or more accurately 'parte attrice' or 'demandante'.
+source: Wiktionary (via kaikki.org), s.v. "attore": noun: actor, player
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13474
+entryid: 16960
+permalink: 16960
+lesson: Nouns - People, Part 66
+lang: it
+english: receiver
+current: ricevitore
+proposed: ricevitore
+kind: wrong-word
+reason: While 'ricevitore' exists, in the context of electronics (like a radio or TV receiver), the word 'ricevitore' is rarely used; 'ricevitore' usually refers to a person (like a tax collector) or a catcher in sports.
+source: Wiktionary (via kaikki.org), s.v. "ricevitore": noun: receiver (all senses); tax collector; catcher
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13479
+entryid: 16967
+permalink: 16967
+lesson: Nouns - People, Part 68
+lang: it
+english: collector
+current: collettore
+proposed: collezionista
+kind: wrong-sense
+reason: In Italian, 'collettore' refers to technical objects like pipes or sewers, while 'collezionista' is the word for a person who collects items.
+source: Wiktionary (via kaikki.org), s.v. "collettore": noun: intake manifold; collector; cesspool, sewer, well, collection pit; canal
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13589
+entryid: 17104
+permalink: 17104
+lesson: Nouns - Society, Part 21
+lang: it
+english: post
+current: inviare
+proposed: posta
+kind: wrong-class
+reason: The English word 'post' refers to a noun (mail), but 'inviare' is a verb (to send).
+source: Wiktionary (via kaikki.org), s.v. "inviare": verb: to send out, to dispatch, to forward, to ship
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13595
+entryid: 17112
+permalink: 17112
+lesson: Nouns - Society, Part 23
+lang: it
+english: campaign
+current: campagna
+proposed: campagna
+kind: false-friend
+reason: In Italian, 'campagna' primarily means 'countryside' or 'rural area'; the word for a political or advertising campaign is also 'campagna', but they are distinct concepts.
+source: Wiktionary (via kaikki.org), s.v. "campagna": noun: rural area: country, countryside; cultivated land: farmland, land; campaign; base; lower part of the field
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13848
+entryid: 17428
+permalink: 17428
+lesson: Nouns - Society, Part 86
+lang: it
+english: charter
+current: carta
+proposed: carta di navigazione / contratto
+kind: wrong-word
+reason: In Italian, 'carta' refers to the physical material (paper), whereas 'charter' as a legal contract or agreement requires a more specific term like 'contratto'.
+source: Wiktionary (via kaikki.org), s.v. "carta": noun: paper (the material); map; menu; card
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13864
+entryid: 17448
+permalink: 17448
+lesson: Nouns - Society, Part 90
+lang: it
+english: sympathy
+current: simpatia
+proposed: simpatia
+kind: false-friend
+reason: In Italian, 'simpatia' refers to a person's likability or charm, whereas 'sympathy' (pity/sorrow) is translated as 'simpatia' only in very specific contexts; usually, 'compassione' is the correct word for the English sense.
+source: Wiktionary (via kaikki.org), s.v. "simpatia": noun: pleasantness; liking
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13879
+entryid: 17467
+permalink: 17467
+lesson: Nouns - Society, Part 94
+lang: it
+english: allegation
+current: allegazione
+proposed: accusa
+kind: wrong-word
+reason: Allegazione refers to the act of presenting evidence, whereas 'accusa' is the standard word for a claim or accusation of wrongdoing.
+source: Wiktionary (via kaikki.org), s.v. "allegazione": noun: the production or advancement of evidence
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13880
+entryid: 17468
+permalink: 17468
+lesson: Nouns - Society, Part 94
+lang: it
+english: banking
+current: bancario
+proposed: banca
+kind: wrong-class
+reason: The English word 'banking' is a noun referring to the industry, while 'bancario' is primarily an adjective; 'banca' is the correct noun for the banking sector.
+source: Wiktionary (via kaikki.org), s.v. "bancario": adj: bank; noun: bank employee
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13940
+entryid: 17543
+permalink: 17543
+lesson: Nouns - Society, Part 109
+lang: it
+english: tune
+current: sintonizzare
+proposed: melodia
+kind: wrong-sense
+reason: The English word 'tune' refers to a melody, but 'sintonizzare' is a verb meaning to adjust a radio or electronic device.
+source: Wiktionary (via kaikki.org), s.v. "sintonizzare": verb: to tune (an electronic circuit); to tune in (a radio)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13950
+entryid: 17555
+permalink: 17555
+lesson: Nouns - Society, Part 111
+lang: it
+english: turnover
+current: turnover
+proposed: fatturato
+kind: untranslated
+reason: While 'turnover' is used in some business contexts, 'fatturato' is the standard Italian term for a company's turnover.
+source: Wiktionary (via kaikki.org), s.v. "turnover": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13959
+entryid: 17567
+permalink: 17567
+lesson: Nouns - Society, Part 114
+lang: it
+english: assignment
+current: assegnazione
+proposed: compito
+kind: wrong-word
+reason: In an educational or work context, 'compito' is the standard word for a task or assignment, whereas 'assegnazione' usually refers to the allocation of resources or funds.
+source: Wiktionary (via kaikki.org), s.v. "assegnazione": noun: allocation; assignment; awarding (of a prize etc.); triage
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 13963
+entryid: 17572
+permalink: 17572
+lesson: Nouns - Society, Part 115
+lang: it
+english: concert
+current: concerto
+proposed: concerto
+kind: wrong-sense
+reason: In Italian, 'concerto' refers specifically to a musical composition (a concerto), while 'concerto' is the event itself, which is 'concerto' in some contexts but 'concerto' is often confused with 'concerto' (the musical piece). Wait, actually, 'concerto' is the correct word for a musical performance, but 'concerto' is the musical piece. Let me re-evaluate: In Italian, 'concerto' is the event. 'Concerto' is the piece. The dictionary says 'concerto' means 'concert'. However, 'concerto' is also the musical piece. The word for a musical performance is 'concerto'. The word for a musical piece is 'concerto'. Therefore, 'concerto' is correct for the event.
+source: Wiktionary (via kaikki.org), s.v. "concerto": noun: concert, recital; concerto; agreement, concert; verb: first-person singular present indicative of concertare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14008
+entryid: 17628
+permalink: 17628
+lesson: Nouns - Ideas, Part 7
+lang: it
+english: thought
+current: pensato
+proposed: pensiero
+kind: wrong-form
+reason: The Italian word for the noun 'thought' is 'pensiero', whereas 'pensato' is a past participle (verb form) or an adjective.
+source: Wiktionary (via kaikki.org), s.v. "pensato": adj: well thought-out or considered; designed (for); verb: past participle of pensare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14037
+entryid: 17664
+permalink: 17664
+lesson: Nouns - Ideas, Part 14
+lang: it
+english: content
+current: soddisfare
+proposed: contento
+kind: wrong-class
+reason: The English word 'content' is an adjective in this context, but 'soddisfare' is a verb meaning 'to satisfy'.
+source: Wiktionary (via kaikki.org), s.v. "soddisfare": verb: to satisfy; to fulfil/fulfill, to execute; to please or pleasure sexually
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14075
+entryid: 17712
+permalink: 17712
+lesson: Nouns - Ideas, Part 24
+lang: it
+english: focus
+current: messa a fuoco
+proposed: attenzione
+kind: wrong-sense
+reason: Messa a fuoco refers specifically to the focus of a camera lens, whereas the lesson requires a word for a center of interest or concentration.
+source: Wiktionary (via kaikki.org), s.v. "messa a fuoco": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14117
+entryid: 17764
+permalink: 17764
+lesson: Nouns - Places, Part 4
+lang: it
+english: land
+current: sbarcare
+proposed: terra
+kind: wrong-sense
+reason: The English word 'land' refers to a territory, but 'sbarcare' is a verb meaning to disembark or unload.
+source: Wiktionary (via kaikki.org), s.v. "sbarcare": verb: to unload (goods); to disembark, to land (people from a ship or aircraft); to survive, to live through; to disembark, to get off, to alight (from a vessel); to land (of troops)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14127
+entryid: 17777
+permalink: 17777
+lesson: Nouns - Places, Part 7
+lang: it
+english: set
+current: impostato
+proposed: set
+kind: wrong-word
+reason: The Italian word 'impostato' refers to a configuration or setup, whereas the English word 'set' in a general context is usually translated as 'set' (for sports) or 'serie'/'collezione' (for objects).
+source: Wiktionary (via kaikki.org), s.v. "impostato": verb: past participle of impostare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14167
+entryid: 17827
+permalink: 17827
+lesson: Nouns - Places, Part 17
+lang: it
+english: household
+current: domestico
+proposed: famiglia / nucleo familiare
+kind: wrong-class
+reason: Domestico is primarily an adjective meaning 'domestic' or a noun meaning 'servant', whereas 'household' as a noun usually refers to the family unit or the home environment.
+source: Wiktionary (via kaikki.org), s.v. "domestico": adj: home, family, household; domestic; noun: house servant, domestic; verb: first-person singular present indicative of domesticare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14180
+entryid: 17843
+permalink: 17843
+lesson: Nouns - Places, Part 20
+lang: it
+english: coast
+current: costa
+proposed: costa
+kind: wrong-sense
+reason: The dictionary provided does not list the geographical meaning of 'costa' (coast), which is the sense required for this lesson.
+source: Wiktionary (via kaikki.org), s.v. "costa": noun: rib; flank, side; side, part; a cut of meat; synonym of costola; spine (of a book); rib, vein; rib; verb: third-person singular present indicative; second-person singular imperative; name: a toponymic surname
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14190
+entryid: 17855
+permalink: 17855
+lesson: Nouns - Places, Part 22
+lang: it
+english: cottage
+current: Cottage
+proposed: cottino
+kind: untranslated
+reason: The word 'cottage' is not an Italian word; it is an English word left untranslated by the system.
+source: Wiktionary (via kaikki.org), s.v. "Cottage": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14216
+entryid: 17888
+permalink: 17888
+lesson: Nouns - Places, Part 29
+lang: it
+english: garage
+current: box auto
+proposed: garage
+kind: wrong-word
+reason: The word 'box auto' is not a standard Italian term; the correct word is 'garage'.
+source: Wiktionary (via kaikki.org), s.v. "box auto": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14220
+entryid: 17893
+permalink: 17893
+lesson: Nouns - Places, Part 30
+lang: it
+english: resort
+current: ricorrere
+proposed: resort
+kind: wrong-class
+reason: The English word 'resort' is a noun (a place), but 'ricorrere' is a verb meaning 'to resort to' something.
+source: Wiktionary (via kaikki.org), s.v. "ricorrere": verb: to apply, to turn, to have recourse, to resort [with a ‘to something’]; to appeal to (an authority, someone's emotions, etc.) [with a]; to appeal; to recur to, to occur, to repeat; to be, to fall (of an anniversary or date); to run back (to where one started); to run again; to rerun (a race)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14233
+entryid: 17909
+permalink: 17909
+lesson: Nouns - Places, Part 33
+lang: it
+english: shore
+current: puntellare
+proposed: spiaggia
+kind: wrong-sense
+reason: The Italian word 'puntellare' is a verb meaning to prop something up, whereas the English word 'shore' in this context refers to a geographical location.
+source: Wiktionary (via kaikki.org), s.v. "puntellare": verb: to prop up, shore up, back up or support
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14242
+entryid: 17921
+permalink: 17921
+lesson: Nouns - Places, Part 36
+lang: it
+english: memorial
+current: memoriale
+proposed: monumento
+kind: wrong-class
+reason: In Italian, 'memoriale' is primarily an adjective or refers to memoirs, whereas 'monumento' is the standard noun for a physical memorial.
+source: Wiktionary (via kaikki.org), s.v. "memoriale": adj: memorial, commemorative; noun: memoirs
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14252
+entryid: 17933
+permalink: 17933
+lesson: Nouns - Objects, Part 2
+lang: it
+english: matter
+current: importa
+proposed: materia
+kind: wrong-form
+reason: The translation provided is a conjugated verb meaning 'it matters,' but the lesson requires a noun for 'matter' (subject/substance).
+source: Wiktionary (via kaikki.org), s.v. "importa": verb: third-person singular present indicative; second-person singular imperative
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14261
+entryid: 17945
+permalink: 17945
+lesson: Nouns - Objects, Part 5
+lang: it
+english: light
+current: leggero
+proposed: leggero
+kind: wrong-class
+reason: The English word 'light' is a noun in this context, but 'leggero' is an adjective; the noun for 'light' (as in weight) is 'leggerezza' or 'peso'.
+source: Wiktionary (via kaikki.org), s.v. "leggero": adj: light (in weight); pop; slight; thin (thicker than sottile)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14314
+entryid: 18011
+permalink: 18011
+lesson: Nouns - Objects, Part 18
+lang: it
+english: fig
+current: Figura
+proposed: fico
+kind: wrong-word
+reason: The Italian word for the fruit 'fig' is 'fico', whereas 'figura' means 'figure' or 'shape'.
+source: Wiktionary (via kaikki.org), s.v. "Figura": noun: figure (all senses); illustration; character; impression, showing; court, coat, face (of playing cards); verb: third-person singular present indicative; second-person singular imperative
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14329
+entryid: 18030
+permalink: 18030
+lesson: Nouns - Objects, Part 22
+lang: it
+english: cabinet
+current: Consiglio dei ministri
+proposed: mobile
+kind: wrong-sense
+reason: Consiglio dei ministri refers to a government body, not a piece of furniture.
+source: Wiktionary (via kaikki.org), s.v. "Consiglio dei ministri": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14337
+entryid: 18040
+permalink: 18040
+lesson: Nouns - Objects, Part 24
+lang: it
+english: wood
+current: legna
+proposed: legno
+kind: wrong-sense
+reason: Legna refers specifically to firewood, whereas legno is the general word for wood as a material.
+source: Wiktionary (via kaikki.org), s.v. "legna": noun: firewood; plural of legno
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14393
+entryid: 18110
+permalink: 18110
+lesson: Nouns - Objects, Part 38
+lang: it
+english: cross
+current: attraversare
+proposed: croce
+kind: wrong-class
+reason: The English word 'cross' in this context is a noun (an object), but 'attraversare' is a verb (an action).
+source: Wiktionary (via kaikki.org), s.v. "attraversare": verb: to cross, to go through, to span
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14405
+entryid: 18125
+permalink: 18125
+lesson: Nouns - Objects, Part 41
+lang: it
+english: boot
+current: avvio
+proposed: scarpa
+kind: wrong-word
+reason: The Italian word 'avvio' means 'start' or 'startup', which is completely unrelated to the footwear 'boot'.
+source: Wiktionary (via kaikki.org), s.v. "avvio": noun: start, beginning; startup, start, starting, prompt; verb: first-person singular present indicative of avviare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14459
+entryid: 18192
+permalink: 18192
+lesson: Nouns - Objects, Part 54
+lang: it
+english: alcohol
+current: alcool
+proposed: alcol
+kind: orthography
+reason: The Italian spelling for alcohol is 'alcol' with only one 'l'.
+source: Wiktionary (via kaikki.org), s.v. "alcool": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14461
+entryid: 18195
+permalink: 18195
+lesson: Nouns - Objects, Part 55
+lang: it
+english: net
+current: netto
+proposed: rete
+kind: wrong-sense
+reason: The word 'netto' is an adjective meaning 'clear' or 'net' (as in net weight), whereas the noun for a physical net is 'rete'.
+source: Wiktionary (via kaikki.org), s.v. "netto": adj: clear; net; adv: clearly; verb: first-person singular present indicative of nettare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14484
+entryid: 18223
+permalink: 18223
+lesson: Nouns - Objects, Part 60
+lang: it
+english: check
+current: dai un'occhiata
+proposed: controllare
+kind: wrong-form
+reason: The translation is a phrase (imperative) rather than the dictionary form of the verb.
+source: Wiktionary (via kaikki.org), s.v. "dai un'occhiata": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14511
+entryid: 18257
+permalink: 18257
+lesson: Nouns - Objects, Part 67
+lang: it
+english: vat
+current: I.V.A
+proposed: vasca
+kind: wrong-word
+reason: I.V.A. is the Italian acronym for Value Added Tax (Imposta sul Valore Aggiunto), not a container for liquids.
+source: Wiktionary (via kaikki.org), s.v. "I.V.A": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14527
+entryid: 18277
+permalink: 18277
+lesson: Nouns - Objects, Part 71
+lang: it
+english: rubbish
+current: sciocchezze
+proposed: rifiuti
+kind: wrong-word
+reason: The Italian word 'sciocchezze' means 'nonsense' or 'foolish things,' whereas 'rubbish' in the context of objects refers to waste material (rifiuti).
+source: Wiktionary (via kaikki.org), s.v. "sciocchezze": noun: plural of sciocchezza
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14530
+entryid: 18281
+permalink: 18281
+lesson: Nouns - Objects, Part 72
+lang: it
+english: kit
+current: kit
+proposed: kit
+kind: untranslated
+reason: While 'kit' is used in specific contexts (like 'kit di pronto soccorso'), it is often an anglicism; however, since it is not in the dictionary, it is likely an untranslated placeholder.
+source: Wiktionary (via kaikki.org), s.v. "kit": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14577
+entryid: 18340
+permalink: 18340
+lesson: Nouns - Objects, Part 84
+lang: it
+english: satellite
+current: satellitare
+proposed: satellite
+kind: wrong-class
+reason: The English word 'satellite' is a noun, but 'satellitare' is an adjective; the Italian noun for the object is 'satellite'.
+source: Wiktionary (via kaikki.org), s.v. "satellitare": adj: satellite; satellitary
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14590
+entryid: 18356
+permalink: 18356
+lesson: Nouns - Objects, Part 87
+lang: it
+english: bureau
+current: ufficio
+proposed: scrivania
+kind: wrong-word
+reason: In Italian, 'ufficio' means an office (the room or business), while 'bureau' as a piece of furniture is 'scrivania'.
+source: Wiktionary (via kaikki.org), s.v. "ufficio": noun: moral duty; task, duty; beneficial intervention; office; verb: first-person singular present indicative of ufficiare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14624
+entryid: 18399
+permalink: 18399
+lesson: Adjectives - Quantity, Part 7
+lang: it
+english: spare
+current: scorta
+proposed: di riserva
+kind: wrong-sense
+reason: Scorta refers to a bulk supply or a military escort, whereas 'spare' as an adjective for an extra item is usually expressed as 'di riserva'.
+source: Wiktionary (via kaikki.org), s.v. "scorta": noun: escort (especially military, etc.); supply, hoard; verb: feminine singular of scorto; verb: third-person singular present indicative; second-person singular imperative; verb: third-person singular present indicative; second-person singular imperative
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14631
+entryid: 18408
+permalink: 18408
+lesson: Adjectives - Quantity, Part 9
+lang: it
+english: patchy
+current: irregolare
+proposed: a macchie
+kind: wrong-word
+reason: Irregolare means 'irregular' in a general sense, but 'a macchie' is the specific term used for something patchy (like grass or skin).
+source: Wiktionary (via kaikki.org), s.v. "irregolare": adj: irregular; fitful; (of a verb etc.) irregular; illegal, undocumented (of immigration)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14649
+entryid: 18430
+permalink: 18430
+lesson: Adjectives - Quality, Part 4
+lang: it
+english: joint
+current: comune
+proposed: giunto
+kind: wrong-sense
+reason: The Italian word 'comune' means 'common' or 'ordinary', whereas the English word 'joint' refers to a physical connection or a shared point.
+source: Wiktionary (via kaikki.org), s.v. "comune": adj: mutual, common; usual, ordinary, common; affable; impartial, unbiased, fair; noun: majority, most; ordinary (that which is ordinary); noun: commune (community whose members share in the ownership of property, and in the division of labour); either of the French revolutionary governments (of 179
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14716
+entryid: 18514
+permalink: 18514
+lesson: Adjectives - Quality, Part 21
+lang: it
+english: hardy
+current: ardito
+proposed: resistente
+kind: wrong-sense
+reason: The English word 'hardy' refers to physical endurance or robustness, while 'ardito' refers to being brave or daring.
+source: Wiktionary (via kaikki.org), s.v. "ardito": adj: brave, doughty; daring; forward, bold; verb: past participle of ardire; name: a male given name
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14737
+entryid: 18540
+permalink: 18540
+lesson: Adjectives - Quality, Part 26
+lang: it
+english: slick
+current: chiazza di petrolio
+proposed: scivolo
+kind: wrong-word
+reason: The phrase 'chiazza di petrolio' means 'oil slick' (a literal puddle of oil) rather than the adjective 'slick' describing a smooth surface.
+source: Wiktionary (via kaikki.org), s.v. "chiazza di petrolio": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14753
+entryid: 18561
+permalink: 18561
+lesson: Adjectives - Quality, Part 31
+lang: it
+english: frilly
+current: frilly
+proposed: arricciato
+kind: untranslated
+reason: The word 'frilly' is an English adjective and was not translated into an Italian equivalent.
+source: Wiktionary (via kaikki.org), s.v. "frilly": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14761
+entryid: 18571
+permalink: 18571
+lesson: Adjectives - Quality, Part 33
+lang: it
+english: boney
+current: Boney
+proposed: bony
+kind: untranslated
+reason: The word 'Boney' is not an Italian word; it is the English word left untranslated by the system.
+source: Wiktionary (via kaikki.org), s.v. "Boney": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14765
+entryid: 18576
+permalink: 18576
+lesson: Adjectives - Social, Part 1
+lang: it
+english: good
+current: bene
+proposed: buono
+kind: wrong-class
+reason: The word 'bene' is primarily an adverb (well), whereas the lesson requires an adjective to describe a noun.
+source: Wiktionary (via kaikki.org), s.v. "bene": adj: upper-class, posh, high; adv: well, nicely, OK, right; properly, correctly, rightly; thoroughly, carefully; as much as, as many as; intj: good!; fine!; noun: good; goods, property, possessions, belongings, assets; sake, good; happiness; sweetheart, darling, love, bless someone's cotton socks; a
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14813
+entryid: 18636
+permalink: 18636
+lesson: Adjectives - Social, Part 13
+lang: it
+english: smart
+current: inteligente
+proposed: intelligente
+kind: orthography
+reason: The word is misspelled; in Italian, the word for 'smart' is 'intelligente' with a double 'l'.
+source: Wiktionary (via kaikki.org), s.v. "inteligente": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14819
+entryid: 18643
+permalink: 18643
+lesson: Adjectives - Social, Part 14
+lang: it
+english: bold
+current: grassetto
+proposed: audace
+kind: wrong-sense
+reason: The Italian word 'grassetto' refers specifically to bold text in typography, not to a person's personality or courage.
+source: Wiktionary (via kaikki.org), s.v. "grassetto": adj: bold (typeface); noun: boldface
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14821
+entryid: 18646
+permalink: 18646
+lesson: Adjectives - Social, Part 15
+lang: it
+english: divine
+current: divine
+proposed: divino
+kind: wrong-form
+reason: The dictionary entry provided is for the feminine plural form, but the translation should be the masculine singular dictionary form.
+source: Wiktionary (via kaikki.org), s.v. "divine": adj: feminine plural of divino
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14828
+entryid: 18654
+permalink: 18654
+lesson: Adjectives - Social, Part 16
+lang: it
+english: dumb
+current: muto
+proposed: stupido
+kind: wrong-sense
+reason: The Italian word 'muto' means 'mute' or 'silent', whereas the English word 'dumb' in this context refers to a lack of intelligence.
+source: Wiktionary (via kaikki.org), s.v. "muto": adj: speechless; silent; unpronounced; classified as an obstruent (speech sound requiring tight restriction of airflow); intj: shut up!; verb: first-person singular present indicative of mutare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14834
+entryid: 18662
+permalink: 18662
+lesson: Adjectives - Social, Part 18
+lang: it
+english: dim
+current: offuscare
+proposed: fioco
+kind: wrong-class
+reason: The English word 'dim' is an adjective, but 'offuscare' is a verb meaning 'to dim' or 'to obscure'.
+source: Wiktionary (via kaikki.org), s.v. "offuscare": verb: to darken, obscure; to dim, dull, blur; to obfuscate
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14862
+entryid: 18697
+permalink: 18697
+lesson: Adjectives - Social, Part 25
+lang: it
+english: staunch
+current: convinto
+proposed: ferreo
+kind: wrong-sense
+reason: Convinto means 'convinced' or 'persuaded,' whereas 'staunch' refers to being loyal or steadfast (e.g., a staunch supporter).
+source: Wiktionary (via kaikki.org), s.v. "convinto": adj: fervent, keen, sure, true blue; convinced, persuaded; verb: past participle of convincere
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14869
+entryid: 18706
+permalink: 18706
+lesson: Adjectives - Social, Part 27
+lang: it
+english: hearty
+current: cordiale
+proposed: sostanzioso
+kind: wrong-sense
+reason: In the context of a meal, 'hearty' refers to being substantial or filling, whereas 'cordiale' refers to a person's friendly manner.
+source: Wiktionary (via kaikki.org), s.v. "cordiale": adj: warm, cordial; noun: cordial (drink)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14872
+entryid: 18709
+permalink: 18709
+lesson: Adjectives - Social, Part 27
+lang: it
+english: cuddly
+current: coccolone
+proposed: coccoloso
+kind: wrong-class
+reason: The word 'coccolone' is a noun meaning a person who likes cuddling, whereas 'cuddly' is an adjective describing a person or animal.
+source: Wiktionary (via kaikki.org), s.v. "coccolone": noun: a cuddly person; a heart attack
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14876
+entryid: 18714
+permalink: 18714
+lesson: Adjectives - Social, Part 28
+lang: it
+english: arty
+current: pseudoartistico
+proposed: artistico
+kind: wrong-word
+reason: The word 'pseudoartistico' means 'pseudo-artistic' or 'pretending to be artistic,' which is a different meaning than the standard adjective 'arty'.
+source: Wiktionary (via kaikki.org), s.v. "pseudoartistico": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14939
+entryid: 18793
+permalink: 18793
+lesson: Adjectives - Feeling, Part 11
+lang: it
+english: grave
+current: tomba
+proposed: grave
+kind: wrong-sense
+reason: The English word 'grave' in the context of feelings/adjectives means 'serious,' whereas 'tomba' refers to a physical burial site.
+source: Wiktionary (via kaikki.org), s.v. "tomba": noun: tomb, grave; a very narrow and gloomy habitation or room (such as a basement or cellar); cave or vault; name: a surname
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14966
+entryid: 18827
+permalink: 18827
+lesson: Adjectives - Feeling, Part 18
+lang: it
+english: heady
+current: impetuoso
+proposed: ebbreante
+kind: wrong-sense
+reason: Impetuoso refers to a person's impulsive behavior, while heady refers to a sensation that is intoxicating or exhilarating.
+source: Wiktionary (via kaikki.org), s.v. "impetuoso": adj: violent, impetuous, impulsive, rash
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14971
+entryid: 18833
+permalink: 18833
+lesson: Adjectives - Feeling, Part 19
+lang: it
+english: soggy
+current: fradicio
+proposed: molliccio
+kind: wrong-sense
+reason: Fradicio is a slang term for being extremely drunk, whereas 'molliccio' or 'inzuppato' is used for food or objects that are soggy.
+source: Wiktionary (via kaikki.org), s.v. "fradicio": adj: soaked, soaking, sopping, drenched; legless, sodden (very drunk)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14975
+entryid: 18838
+permalink: 18838
+lesson: Adjectives - Feeling, Part 20
+lang: it
+english: slimey
+current: po'appiccicoso
+proposed: appiccicoso
+kind: orthography
+reason: The word 'po'appiccicoso' contains a typo; the correct word is 'appiccicoso'.
+source: Wiktionary (via kaikki.org), s.v. "po'appiccicoso": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 14996
+entryid: 18865
+permalink: 18865
+lesson: Adjectives - Feeling, Part 26
+lang: it
+english: bubbly
+current: pieno di bolle
+proposed: vivace
+kind: wrong-sense
+reason: The translation 'pieno di bolle' refers to a physical property (like soda), whereas the lesson refers to a personality trait.
+source: Wiktionary (via kaikki.org), s.v. "pieno di bolle": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15003
+entryid: 18873
+permalink: 18873
+lesson: Adjectives - Appearance, Part 1
+lang: it
+english: fine
+current: bene
+proposed: magro
+kind: wrong-word
+reason: The Italian word 'bene' is an adverb meaning 'well' and does not describe a person's physical appearance like the English word 'fine' (thin/slender).
+source: Wiktionary (via kaikki.org), s.v. "bene": adj: upper-class, posh, high; adv: well, nicely, OK, right; properly, correctly, rightly; thoroughly, carefully; as much as, as many as; intj: good!; fine!; noun: good; goods, property, possessions, belongings, assets; sake, good; happiness; sweetheart, darling, love, bless someone's cotton socks; a
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15018
+entryid: 18892
+permalink: 18892
+lesson: Adjectives - Appearance, Part 5
+lang: it
+english: round
+current: il giro
+proposed: rotondo
+kind: wrong-sense
+reason: The Italian word 'giro' refers to a turn or a lap, whereas the adjective for a round shape is 'rotondo'.
+source: Wiktionary (via kaikki.org), s.v. "il giro": noun: turn, twist, rotation, revolution; detour; lap (of a race); stroll, walk; rounds (of a postman etc.); period, space, course, time, run; ring (illicit); turn, round; verb: first-person singular present indicative of girare; name: the Giro d'Italia
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15021
+entryid: 18896
+permalink: 18896
+lesson: Adjectives - Appearance, Part 6
+lang: it
+english: sheer
+current: puro
+proposed: trasparente
+kind: wrong-sense
+reason: In the context of appearance and fabrics, 'sheer' means transparent, whereas 'puro' means pure.
+source: Wiktionary (via kaikki.org), s.v. "puro": adj: pure
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15046
+entryid: 18927
+permalink: 18927
+lesson: Adjectives - Appearance, Part 12
+lang: it
+english: baggy
+current: cascante
+proposed: largo
+kind: wrong-word
+reason: Cascante refers to something hanging down or drooping, whereas 'largo' is the standard term for baggy or loose-fitting clothes.
+source: Wiktionary (via kaikki.org), s.v. "cascante": verb: present participle of cascare; adj: drooping, droopy
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15050
+entryid: 18932
+permalink: 18932
+lesson: Adjectives - Appearance, Part 13
+lang: it
+english: homely
+current: familiare
+proposed: semplice
+kind: wrong-sense
+reason: The English word 'homely' refers to a plain or unattractive appearance, while 'familiare' means familiar or related to a family.
+source: Wiktionary (via kaikki.org), s.v. "familiare": adj: family; domestic; familiar, well-known; familiar, confidential; friendly, informal; noun: relative (member of the family); noun: station wagon, estate car
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15052
+entryid: 18935
+permalink: 18935
+lesson: Adjectives - Appearance, Part 14
+lang: it
+english: rosey
+current: rosey
+proposed: rosato
+kind: untranslated
+reason: The word 'rosey' is English and was not translated into the Italian equivalent 'rosato'.
+source: Wiktionary (via kaikki.org), s.v. "rosey": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15060
+entryid: 18945
+permalink: 18945
+lesson: Adjectives - Appearance, Part 16
+lang: it
+english: husky
+current: rauco
+proposed: husky
+kind: wrong-sense
+reason: The Italian word 'rauco' refers to a hoarse voice, whereas the English word 'husky' in this context refers to a specific breed of dog.
+source: Wiktionary (via kaikki.org), s.v. "rauco": adj: hoarse
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 15065
+entryid: 18951
+permalink: 18951
+lesson: Adjectives - Appearance, Part 17
+lang: it
+english: crusty
+current: irascibile
+proposed: croccante
+kind: wrong-sense
+reason: The Italian word 'irascibile' refers to a person's temperament, while 'crusty' in this context refers to a physical texture.
+source: Wiktionary (via kaikki.org), s.v. "irascibile": adj: irascible, choleric, irritable
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 38826
+entryid: 48680
+permalink: 48680
+lesson: Verbs - Mental Activity, Part 5
+lang: it
+english: design
+current: design
+proposed: progettazione
+kind: untranslated
+reason: While 'design' is used in specific contexts like 'graphic design', the general act of designing something is usually translated as 'progettazione' or 'disegno'.
+source: Wiktionary (via kaikki.org), s.v. "design": noun: design (industrial)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 39286
+entryid: 49207
+permalink: 49207
+lesson: Verbs - Mental Activity, Part 8
+lang: it
+english: stare
+current: menatap
+proposed: fissardare
+kind: untranslated
+reason: The word 'menatap' is Malay, not Italian, and appears to be an untranslated error from the source.
+source: Wiktionary (via kaikki.org), s.v. "menatap": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 39355
+entryid: 49279
+permalink: 49279
+lesson: Adjectives - Quality, Part 32
+lang: it
+english: dusky
+current: agak hitam
+proposed: scuro
+kind: wrong-word
+reason: The translation 'agak hitam' is actually Malay, not Italian.
+source: Wiktionary (via kaikki.org), s.v. "agak hitam": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 40928
+entryid: 51190
+permalink: 51190
+lesson: Entertainment - Music, Part 4
+lang: it
+english: trip hop
+current: viaggio hop
+proposed: trip hop
+kind: untranslated
+reason: Trip hop is a specific musical genre and, like many modern music genres, it is used in its original English form in Italy.
+source: Wiktionary (via kaikki.org), s.v. "viaggio hop": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 40933
+entryid: 51196
+permalink: 51196
+lesson: Entertainment - Music, Part 5
+lang: it
+english: rave music
+current: rave musica
+proposed: musica rave
+kind: untranslated
+reason: The Italian word order is incorrect; 'rave' acts as an adjective modifying 'musica', so it should come after the noun.
+source: Wiktionary (via kaikki.org), s.v. "rave musica": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 40938
+entryid: 51203
+permalink: 51203
+lesson: Entertainment - Music, Part 6
+lang: it
+english: goth music
+current: musica di goth
+proposed: musica goth
+kind: untranslated
+reason: In Italian, the genre is referred to as 'musica goth' without the preposition 'di', as 'goth' acts as an adjective for the music style.
+source: Wiktionary (via kaikki.org), s.v. "musica di goth": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 40967
+entryid: 51238
+permalink: 51238
+lesson: Entertainment - Music, Part 9
+lang: it
+english: party
+current: partito
+proposed: festa
+kind: wrong-sense
+reason: In Italian, 'partito' refers to a political party, while 'festa' is the correct word for a social party or celebration.
+source: Wiktionary (via kaikki.org), s.v. "partito": adj: party per pale; divided into two equal parts vertically; noun: party, political party (political group); resolution, decision (resolution); match, catch (possible wife or husband); verb: past participle of partire
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41009
+entryid: 51291
+permalink: 51291
+lesson: Entertainment - Books, Part 3
+lang: it
+english: non-fiction novel
+current: romanzo non-fiction
+proposed: saggio
+kind: untranslated
+reason: The term 'non-fiction' is an English category and is not used in Italian; the correct term for a non-fiction book is 'saggio'.
+source: Wiktionary (via kaikki.org), s.v. "romanzo non-fiction": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41015
+entryid: 51299
+permalink: 51299
+lesson: Entertainment - Film, Part 1
+lang: it
+english: thriller film
+current: film thriller
+proposed: film thriller
+kind: untranslated
+reason: While 'film thriller' is used, the standard Italian term for this genre is 'film thriller' or simply 'thriller', but since the dictionary doesn't recognize the phrase, it is often treated as a loanword.
+source: Wiktionary (via kaikki.org), s.v. "film thriller": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41017
+entryid: 51301
+permalink: 51301
+lesson: Entertainment - Film, Part 1
+lang: it
+english: western film
+current: film western
+proposed: western
+kind: untranslated
+reason: In Italian, the genre is simply called 'western', and 'film western' is not the standard way to express it.
+source: Wiktionary (via kaikki.org), s.v. "film western": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41037
+entryid: 51327
+permalink: 51327
+lesson: Entertainment - Film, Part 4
+lang: it
+english: fictional film
+current: film fiction
+proposed: film di finzione
+kind: untranslated
+reason: The phrase 'film fiction' is not a standard Italian expression; 'film di finzione' is the correct way to describe a fictional film.
+source: Wiktionary (via kaikki.org), s.v. "film fiction": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41038
+entryid: 51328
+permalink: 51328
+lesson: Entertainment - Film, Part 4
+lang: it
+english: scifi
+current: scifi
+proposed: scifi
+kind: untranslated
+reason: The Italian word for science fiction is 'scifi' (or 'fantascienza'), but the dictionary entry provided is for a completely different, unrelated word.
+source: Wiktionary (via kaikki.org), s.v. "scifi": noun: plural of scifo
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41042
+entryid: 51332
+permalink: 51332
+lesson: Entertainment - Film, Part 4
+lang: it
+english: B-Movie
+current: B-Movie
+proposed: film di serie B
+kind: untranslated
+reason: While 'B-movie' is understood in some contexts, the standard Italian term for a low-budget production is 'film di serie B'.
+source: Wiktionary (via kaikki.org), s.v. "B-Movie": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41045
+entryid: 51337
+permalink: 51337
+lesson: Entertainment - Film, Part 5
+lang: it
+english: dance dance revolution
+current: rivoluzione dance dance
+proposed: dance dance revolution
+kind: untranslated
+reason: Dance Dance Revolution is a proper name of a specific video game and should remain in its original English form.
+source: Wiktionary (via kaikki.org), s.v. "rivoluzione dance dance": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41055
+entryid: 51349
+permalink: 51349
+lesson: Entertainment - Sports, Part 1
+lang: it
+english: racing
+current: da corsa
+proposed: corsa
+kind: wrong-form
+reason: The translation 'da corsa' is a prepositional phrase, whereas the noun 'corsa' is the correct word for the sport of racing.
+source: Wiktionary (via kaikki.org), s.v. "da corsa": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41090
+entryid: 51392
+permalink: 51392
+lesson: Entertainment - Sports, Part 5
+lang: it
+english: dodgeball
+current: dodgeball
+proposed: pallanuccio
+kind: untranslated
+reason: Dodgeball is an English term and does not have a direct equivalent in Italian; the game is typically referred to as pallanuccio.
+source: Wiktionary (via kaikki.org), s.v. "dodgeball": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41098
+entryid: 51402
+permalink: 51402
+lesson: Entertainment - Sports, Part 6
+lang: it
+english: unicycling
+current: monociclo
+proposed: monociclo
+kind: wrong-class
+reason: The English word 'unicycling' is a verb/gerund describing an activity, while 'monociclo' is the noun for the vehicle itself.
+source: Wiktionary (via kaikki.org), s.v. "monociclo": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41104
+entryid: 51410
+permalink: 51410
+lesson: Entertainment - Sports, Part 7
+lang: it
+english: rc racing
+current: rc corse
+proposed: corse di auto telecomandate
+kind: untranslated
+reason: The translation 'rc corse' is just the English term 'rc' followed by the Italian word for racing, which is not a standard Italian phrase.
+source: Wiktionary (via kaikki.org), s.v. "rc corse": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41144
+entryid: 51460
+permalink: 51460
+lesson: Culture - Calendar, Part 2
+lang: it
+english: May
+current: Può
+proposed: maggio
+kind: wrong-word
+reason: The Italian word for the month of May is 'maggio', whereas 'può' is a form of the verb 'potere' (to be able to).
+source: Wiktionary (via kaikki.org), s.v. "Può": verb: third-person singular present indicative of potere
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41182
+entryid: 51507
+permalink: 51507
+lesson: Culture - Religion, Part 1
+lang: it
+english: Vesākha
+current: Vesakha
+proposed: Vesakha
+kind: untranslated
+reason: The word is a proper noun for a religious festival and remains the same in Italian, but it was flagged because it is not in the standard dictionary.
+source: Wiktionary (via kaikki.org), s.v. "Vesakha": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41230
+entryid: 51567
+permalink: 51567
+lesson: Culture - Religion, Part 7
+lang: it
+english: Jainist
+current: Jainist
+proposed: giainista
+kind: untranslated
+reason: The word was left in English by the translator, but Italian has a specific word for a follower of Jainism.
+source: Wiktionary (via kaikki.org), s.v. "Jainist": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41267
+entryid: 51614
+permalink: 51614
+lesson: Culture - Countries, Part 5
+lang: it
+english: Iran
+current: Ho corso
+proposed: Iran
+kind: wrong-sense
+reason: The word 'Ho corso' means 'I have run', not 'Iran'.
+source: Wiktionary (via kaikki.org), s.v. "Ho corso": not found
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 41269
+entryid: 51616
+permalink: 51616
+lesson: Culture - Countries, Part 5
+lang: it
+english: Turkey
+current: tacchino
+proposed: Turchia
+kind: wrong-sense
+reason: In this context, the Italian word for 'Turkey' (the country) is 'Turchia', not 'tacchino' (which means 'turkey' as in the bird).
+source: Wiktionary (via kaikki.org), s.v. "tacchino": noun: turkey (“bird (male) and meat”); verb: third-person plural present subjunctive; third-person plural imperative
+checked by: mistral:7b, unconfirmed
+status: suspect
+
+id: 41382
+entryid: 51758
+permalink: 51758
+lesson: Culture - Languages, Part 1
+lang: it
+english: Mandarin
+current: Mandarino
+proposed: cinese
+kind: wrong-word
+reason: In Italian, 'mandarino' refers to the fruit or the color, while 'cinese' is the word used for the Mandarin language.
+source: Wiktionary (via kaikki.org), s.v. "Mandarino": adj: mandarin (color/colour); noun: mandarin orange, mandarin (fruit and tree); mandarin (color/colour); adj: Mandarin, Chinese; noun: mandarin (bureaucrat of the Chinese Empire); mandarin (pedantic or elitist bureaucrat)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41496
+entryid: 51901
+permalink: 51901
+lesson: Culture - Politics, Part 3
+lang: it
+english: right-wing
+current: ala destra
+proposed: di destra
+kind: wrong-word
+reason: The phrase 'ala destra' literally means 'on the right wing' (as in a bird or a military formation), whereas 'di destra' is the standard term for right-wing politics.
+source: Wiktionary (via kaikki.org), s.v. "ala destra": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41595
+entryid: 52024
+permalink: 52024
+lesson: Culture - Politics, Part 15
+lang: it
+english: caucus
+current: comitato elettorale
+proposed: caucus
+kind: wrong-word
+reason: In a political context, 'caucus' is often used as a loanword or refers to a specific organizational meeting that 'comitato elettorale' (electoral committee) does not perfectly capture.
+source: Wiktionary (via kaikki.org), s.v. "comitato elettorale": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41598
+entryid: 52028
+permalink: 52028
+lesson: Culture - Politics, Part 15
+lang: it
+english: common law
+current: diritto comune
+proposed: common law
+kind: wrong-word
+reason: In Italian, 'diritto comune' is not a standard term for the legal system; the English term 'common law' is typically used as a loanword.
+source: Wiktionary (via kaikki.org), s.v. "diritto comune": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41621
+entryid: 52057
+permalink: 52057
+lesson: Culture - Politics, Part 18
+lang: it
+english: grass roots
+current: radici di erba
+proposed: di base
+kind: wrong-word
+reason: The translation is a literal interpretation of the words 'grass' and 'roots' rather than the political idiom, which in Italian is expressed as 'di base'.
+source: Wiktionary (via kaikki.org), s.v. "radici di erba": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41629
+entryid: 52067
+permalink: 52067
+lesson: Culture - Politics, Part 19
+lang: it
+english: incumbent
+current: incombente
+proposed: in carica
+kind: wrong-sense
+reason: In Italian, 'incombente' refers to something pressing or imminent, whereas 'in carica' is the correct term for a person currently holding a political office.
+source: Wiktionary (via kaikki.org), s.v. "incombente": verb: present participle of incombere; adj: imminent, impending, pressing
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41645
+entryid: 52087
+permalink: 52087
+lesson: Culture - Politics, Part 21
+lang: it
+english: muckraker
+current: Muckraker
+proposed: scavengero
+kind: untranslated
+reason: Muckraker is an English term and does not exist in Italian; 'scavengero' is the standard equivalent for someone who seeks out scandals.
+source: Wiktionary (via kaikki.org), s.v. "Muckraker": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41666
+entryid: 52112
+permalink: 52112
+lesson: Culture - Politics, Part 23
+lang: it
+english: sovietism
+current: sovietism
+proposed: sovietismo
+kind: untranslated
+reason: The word 'sovietism' is an English term; the correct Italian equivalent is 'sovietismo'.
+source: Wiktionary (via kaikki.org), s.v. "sovietism": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41720
+entryid: 52180
+permalink: 52180
+lesson: Culture - Politics, Part 30
+lang: it
+english: conservative
+current: prudente
+proposed: conservatore
+kind: wrong-sense
+reason: Prudente means 'prudent' or 'cautious', whereas 'conservatore' is the correct term for a political conservative.
+source: Wiktionary (via kaikki.org), s.v. "prudente": adj: prudent (sagacious in adapting means to ends); verb: present participle of prudere
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41753
+entryid: 52222
+permalink: 52222
+lesson: Culture - Politics, Part 34
+lang: it
+english: theocrat
+current: teocrate
+proposed: teocratico
+kind: untranslated
+reason: The word 'teocrate' does not exist in Italian; the correct term for a person who rules as a theocrat is 'teocratico'.
+source: Wiktionary (via kaikki.org), s.v. "teocrate": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41780
+entryid: 52255
+permalink: 52255
+lesson: Culture - Politics, Part 37
+lang: it
+english: congressman
+current: congressman
+proposed: congressista
+kind: untranslated
+reason: The word 'congressman' is an English term and has a specific Italian equivalent, 'congressista'.
+source: Wiktionary (via kaikki.org), s.v. "congressman": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41815
+entryid: 52299
+permalink: 52299
+lesson: Culture - Politics, Part 41
+lang: it
+english: rank and file
+current: rango e file
+proposed: massa
+kind: untranslated
+reason: The translation is a literal word-for-word conversion of the English idiom which does not exist in Italian; 'massa' is the standard term for the rank and file.
+source: Wiktionary (via kaikki.org), s.v. "rango e file": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41836
+entryid: 52325
+permalink: 52325
+lesson: Adjectives - Numbers, Part 3
+lang: it
+english: nine
+current: otto nove
+proposed: nove
+kind: wrong-word
+reason: The translation includes 'otto' (eight) instead of just 'nove' (nine).
+source: Wiktionary (via kaikki.org), s.v. "otto nove": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41920
+entryid: 52430
+permalink: 52430
+lesson: Adjectives - Numbers, Part 13
+lang: it
+english: one thousand, three hundred
+current: milletrecento
+proposed: milletrecento
+kind: orthography
+reason: The word is missing a 'e' between 'mille' and 'trecento' to separate the two numbers.
+source: Wiktionary (via kaikki.org), s.v. "milletrecento": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41936
+entryid: 52451
+permalink: 52451
+lesson: Adjectives - Numbers, Part 15
+lang: it
+english: two thousand, one
+current: Duecentouno
+proposed: duemilauno
+kind: orthography
+reason: The correct Italian word for 2001 is 'duemilauno'; 'duecentouno' is not a valid number in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Duecentouno": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41955
+entryid: 52474
+permalink: 52474
+lesson: Adjectives - Numbers, Part 17
+lang: it
+english: two thousand, ten
+current: due cento dieci
+proposed: duemila dieci
+kind: wrong-word
+reason: The translation 'due cento dieci' literally means 'two hundred ten' instead of 'two thousand ten'.
+source: Wiktionary (via kaikki.org), s.v. "due cento dieci": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41957
+entryid: 52476
+permalink: 52476
+lesson: Adjectives - Numbers, Part 17
+lang: it
+english: two thousand, eleven
+current: duemilaundici
+proposed: duemilaeundici
+kind: orthography
+reason: The word is missing a space or a hyphen; in Italian, numbers are typically written as 'duemilaeundici' or 'duemilae undici' depending on the style, but 'duemilaundici' is a misspelling.
+source: Wiktionary (via kaikki.org), s.v. "duemilaundici": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41963
+entryid: 52484
+permalink: 52484
+lesson: Adjectives - Numbers, Part 18
+lang: it
+english: two thousand, fourteen
+current: duemilaquattordici
+proposed: duemilaquattordici
+kind: orthography
+reason: The word is missing a space or a hyphen, but more importantly, it is missing the 'i' at the end of 'quattordici' to correctly form the number 2014.
+source: Wiktionary (via kaikki.org), s.v. "duemilaquattordici": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 41972
+entryid: 52495
+permalink: 52495
+lesson: Adjectives - Numbers, Part 19
+lang: it
+english: two thousand, twenty
+current: duemila, venti
+proposed: duemila venti
+kind: structural
+reason: The comma between the two words makes it look like a list of two separate numbers rather than a single number.
+source: Wiktionary (via kaikki.org), s.v. "duemila, venti": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46897
+entryid: 58671
+permalink: 58671
+lesson: Culture - Food and Drink, Part 2
+lang: it
+english: healthy
+current: salutare
+proposed: salutare
+kind: wrong-form
+reason: The dictionary entry for 'salutare' is an adjective, but the word provided is the verb 'salutare' (to greet); the correct adjective is 'salutare' (which is a typo in the prompt's logic or the source, as the adjective is 'salutare' but the verb is 'salutare'). Wait, actually, the adjective is 'salutare' and the verb is 'salutare'—they are spelled identically in Italian. However, 'salutare' as an adjective is correct, but the dictionary entry provided shows it is also a verb. Let me re-evaluate: 'salutare' is indeed the correct adjective for healthy. The confusion arises because 'salutare' is also the verb 'to greet'. Since the adjective form is correct, it is ok.
+source: Wiktionary (via kaikki.org), s.v. "salutare": adj: healthy, wholesome, beneficial; verb: to welcome, to greet, to salute; to see off, to say goodbye; to give somebody's regards to somebody, remember somebody to somebody
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46915
+entryid: 58694
+permalink: 58694
+lesson: Culture - Food and Drink, Part 7
+lang: it
+english: dip
+current: tuffo
+proposed: inzuppare
+kind: wrong-sense
+reason: Tuffo refers to a physical dive into water, whereas the food context requires a word for dipping food into a sauce.
+source: Wiktionary (via kaikki.org), s.v. "tuffo": noun: dive, plunge; diving; verb: first-person singular present indicative of tuffare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46917
+entryid: 58696
+permalink: 58696
+lesson: Culture - Food and Drink, Part 7
+lang: it
+english: seasoning
+current: stagionatura
+proposed: condimento
+kind: wrong-sense
+reason: Stagionatura refers to the process of aging or curing food (like cheese or meat), whereas 'condimento' refers to the spices or herbs added to food for flavor.
+source: Wiktionary (via kaikki.org), s.v. "stagionatura": noun: seasoning, ageing, ripening, maturing, weathering
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46926
+entryid: 58708
+permalink: 58708
+lesson: Culture - Food and Drink, Part 10
+lang: it
+english: pancakes
+current: Pancakes
+proposed: pancake
+kind: untranslated
+reason: While 'pancake' is used in Italy, it is often kept in English or used as a loanword; however, since it is not in the dictionary, it is likely the translator failed to provide a translation.
+source: Wiktionary (via kaikki.org), s.v. "Pancakes": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46948
+entryid: 58735
+permalink: 58735
+lesson: Culture - Food and Drink, Part 15
+lang: it
+english: seltzer water
+current: acqua Seltzer
+proposed: acqua frizzante
+kind: untranslated
+reason: The term 'Seltzer' is an English brand/type name; Italians use 'acqua frizzante' for sparkling/carbonated water.
+source: Wiktionary (via kaikki.org), s.v. "acqua Seltzer": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46950
+entryid: 58738
+permalink: 58738
+lesson: Culture - Food and Drink, Part 16
+lang: it
+english: soda
+current: Soda
+proposed: bibita gassata
+kind: untranslated
+reason: The word 'Soda' is left in English and does not refer to a carbonated soft drink in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Soda": noun: parts of certain plants high in mineral salts the ashes in particular of which were used in glassmaking; soda, sodium carbonate; soda water; adj: feminine singular of sodo, meaning solid and firm, synonymous with solida; verb: third-person singular present indicative of sodare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46963
+entryid: 58754
+permalink: 58754
+lesson: Culture - Food and Drink, Part 19
+lang: it
+english: cider
+current: Cedro
+proposed: sidro
+kind: wrong-word
+reason: Cedro refers to a tree or fruit, whereas the alcoholic drink is called sidro.
+source: Wiktionary (via kaikki.org), s.v. "Cedro": noun: cedar; noun: citron (fruit and tree); verb: first-person singular present indicative of cedrare
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46969
+entryid: 58761
+permalink: 58761
+lesson: Culture - Food and Drink, Part 20
+lang: it
+english: martini
+current: Martini
+proposed: martini
+kind: wrong-word
+reason: The dictionary entry refers to a proper name, but the lesson refers to the alcoholic cocktail, which is also called 'martini' in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Martini": noun: plural of martino
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 46978
+entryid: 58773
+permalink: 58773
+lesson: Culture - Food and Drink, Part 22
+lang: it
+english: unhealthy food
+current: cibo malsano
+proposed: cibo poco sano
+kind: wrong-word
+reason: While 'malsano' exists in some contexts, 'cibo poco sano' is the standard and natural way to describe unhealthy food in Italian.
+source: Wiktionary (via kaikki.org), s.v. "cibo malsano": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 51950
+entryid: 65049
+permalink: 65049
+lesson: Phrases - Introductions, Part 5
+lang: it
+english: How do you do, Mr. Paine?
+current: Come fai, signor Paine?
+proposed: Piacere di conoscerla, signor Paine
+kind: wrong-sense
+reason: In Italian, 'Come fai' asks 'How do you do [something]' (method), whereas 'How do you do' as a greeting is expressed by 'Piacere' or 'Come sta'.
+source: Wiktionary (via kaikki.org), s.v. "Come fai, signor Paine?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52035
+entryid: 65155
+permalink: 65155
+lesson: Phrases - Manners, Part 9
+lang: it
+english: Great!
+current: Grande!
+proposed: Ottimo!
+kind: wrong-sense
+reason: While 'Grande' can be used as an exclamation, 'Ottimo' or 'Bravo' are the standard ways to express 'Great!' in a manners/approval context.
+source: Wiktionary (via kaikki.org), s.v. "Grande!": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52258
+entryid: 65436
+permalink: 65436
+lesson: Phrases - Food, Part 4
+lang: it
+english: Is there salt?
+current: C'è un sale?
+proposed: C'è del sale?
+kind: wrong-sense
+reason: In Italian, 'sale' means both 'salt' and 'sale' (discount); 'un sale' specifically implies a commercial sale, whereas 'del sale' is used for the seasoning.
+source: Wiktionary (via kaikki.org), s.v. "C'è un sale?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52428
+entryid: 65647
+permalink: 65647
+lesson: Phrases - Food, Part 13
+lang: it
+english: There's not many people at the restaurant.
+current: Il ristorante è affollato Non c'è molta gente al ristorante.
+proposed: Non c'è molta gente al ristorante.
+kind: structural
+reason: The translation includes an extra sentence ('Il ristorante è affollato') which means 'The restaurant is crowded', contradicting the English meaning.
+source: Wiktionary (via kaikki.org), s.v. "Il ristorante è affollato Non c'è molta gente al ristorante.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52429
+entryid: 65649
+permalink: 65649
+lesson: Phrases - Food, Part 14
+lang: it
+english: Do you have a table near the window?
+current: Il ristorante è affollato Non c'è molta gente al restaDo che hai un tavolo vicino alla finestra.
+proposed: Hai un tavolo vicino alla finestra?
+kind: structural
+reason: The translation provided is a long, garbled sentence containing multiple unrelated phrases and a typo ('restaDo') instead of a single coherent translation.
+source: Wiktionary (via kaikki.org), s.v. "Il ristorante è affollato Non c'è molta gente al restaDo che hai un tavolo vicino alla finestra.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52486
+entryid: 65721
+permalink: 65721
+lesson: Phrases - Food, Part 20
+lang: it
+english: What on the menu do you recommend?
+current: Cosa succede al menu?
+proposed: Cosa mi consiglia nel menu?
+kind: wrong-word
+reason: The Italian phrase 'Cosa succede' means 'What is happening' and is not used to ask for food recommendations.
+source: Wiktionary (via kaikki.org), s.v. "Cosa succede al menu?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52671
+entryid: 65952
+permalink: 65952
+lesson: Phrases - Travel, Part 15
+lang: it
+english: Are you coming?
+current: Stai venendo?
+proposed: Stai venendo
+kind: wrong-form
+reason: While 'stai venendo' is grammatically possible in some contexts, it is extremely unnatural; Italians almost always use 'Stai arrivando?' (Are you arriving?) or 'Vieni?' (Are you coming?).
+source: Wiktionary (via kaikki.org), s.v. "Stai venendo?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52678
+entryid: 65961
+permalink: 65961
+lesson: Phrases - Travel, Part 16
+lang: it
+english: Where is the radical bookstore?
+current: Dov'è la libreria produttiva?
+proposed: libreria radicale
+kind: wrong-word
+reason: The word 'produttiva' means 'productive' in a manufacturing or output sense, not 'radical' as in political or ideological views.
+source: Wiktionary (via kaikki.org), s.v. "Dov'è la libreria produttiva?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52687
+entryid: 65972
+permalink: 65972
+lesson: Phrases - Travel, Part 17
+lang: it
+english: That way.
+current: Quel modo.
+proposed: In quel modo
+kind: wrong-word
+reason: The phrase 'Quel modo' means 'That mode' or 'That method,' whereas 'In quel modo' is the correct way to say 'In that way' or 'Like that.'
+source: Wiktionary (via kaikki.org), s.v. "Quel modo.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52704
+entryid: 65994
+permalink: 65994
+lesson: Phrases - Travel, Part 19
+lang: it
+english: Did your children enjoy California?
+current: I tuoi bambini godono della California?
+proposed: I tuoi bambini si sono divertiti in California?
+kind: wrong-form
+reason: The translation uses the present tense 'godono' instead of the past tense, and 'godere' is rarely used this way; 'divertirsi' is the natural way to ask if someone enjoyed a trip.
+source: Wiktionary (via kaikki.org), s.v. "I tuoi bambini godono della California?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52711
+entryid: 66004
+permalink: 66004
+lesson: Phrases - Travel, Part 21
+lang: it
+english: I'm across the street from the pub.
+current: Sono di fronte alla strada dal pub.
+proposed: Sono dall'altra parte della strada rispetto al pub.
+kind: structural
+reason: The original translation 'di fronte alla strada dal pub' is grammatically incorrect and does not convey being on the opposite side of the street.
+source: Wiktionary (via kaikki.org), s.v. "Sono di fronte alla strada dal pub.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52716
+entryid: 66012
+permalink: 66012
+lesson: Phrases - Travel, Part 22
+lang: it
+english: Can I get a single room?
+current: Vado alla capitale di 1.000. Posso avere una camera singola? Les.
+proposed: Posso avere una camera singola?
+kind: structural
+reason: The translation includes an unrelated sentence ('Vado alla capitale di 1.000') and a trailing 'Les.' which are not part of the requested phrase.
+source: Wiktionary (via kaikki.org), s.v. "Vado alla capitale di 1.000. Posso avere una camera singola? Les.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52718
+entryid: 66014
+permalink: 66014
+lesson: Phrases - Travel, Part 22
+lang: it
+english: I would like a double room.
+current: Io vado alla capitale di 1.000 mCan ho un singolo rooI vorrei una camera doppia.
+proposed: Vorrei una camera doppia.
+kind: corrupt
+reason: The translation is garbled and contains unrelated text about a capital and a single room mixed with the correct phrase.
+source: Wiktionary (via kaikki.org), s.v. "Io vado alla capitale di 1.000 mCan ho un singolo rooI vorrei una camera doppia.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52762
+entryid: 66070
+permalink: 66070
+lesson: Phrases - Travel, Part 27
+lang: it
+english: It's over here.
+current: È finita qui.
+proposed: È da questa parte
+kind: wrong-sense
+reason: The Italian phrase 'È finita qui' means 'It's over' (like a movie or a fight), whereas 'È da questa parte' is used to indicate a physical location.
+source: Wiktionary (via kaikki.org), s.v. "È finita qui.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52835
+entryid: 66161
+permalink: 66161
+lesson: Phrases - Travel, Part 36
+lang: it
+english: When are you moving?
+current: Quando sei in movimento?
+proposed: Quando ti trasferisci?
+kind: wrong-sense
+reason: The Italian phrase 'in movimento' means 'in motion' (physically moving), whereas the English phrase refers to relocating to a new home.
+source: Wiktionary (via kaikki.org), s.v. "Quando sei in movimento?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 52853
+entryid: 66184
+permalink: 66184
+lesson: Phrases - Travel, Part 38
+lang: it
+english: What time is check out?
+current: Qual è il momento di controllare?
+proposed: A che ora è il check-out?
+kind: structural
+reason: The translation is a literal word-for-word conversion that doesn't make sense in Italian; 'check-out' is typically used as a loanword in hotels.
+source: Wiktionary (via kaikki.org), s.v. "Qual è il momento di controllare?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53014
+entryid: 66387
+permalink: 66387
+lesson: Phrases - Travel, Part 56
+lang: it
+english: That is to the West of here.
+current: Quello è all'Occidente di qui.
+proposed: Quello è a ovest di qui.
+kind: structural
+reason: The phrase 'all'Occidente' is not used for directions; Italian uses 'a ovest' to indicate a location to the west.
+source: Wiktionary (via kaikki.org), s.v. "Quello è all'Occidente di qui.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53162
+entryid: 66571
+permalink: 66571
+lesson: Phrases - People, Part 3
+lang: it
+english: Are you going to help her?
+current: Lo aiuterai?
+proposed: La aiuterai?
+kind: orthography
+reason: The word 'Lo' is masculine, but the English sentence refers to 'her' (feminine), which requires 'La'.
+source: Wiktionary (via kaikki.org), s.v. "Lo aiuterai?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53272
+entryid: 66708
+permalink: 66708
+lesson: Phrases - People, Part 15
+lang: it
+english: How well-behaved do you expect them to be?
+current: Come ti rendi bene che ti aspetti?
+proposed: Quanto ti aspetti che siano educati?
+kind: structural
+reason: The original translation is a literal, word-for-word translation from English that does not make sense in Italian grammar.
+source: Wiktionary (via kaikki.org), s.v. "Come ti rendi bene che ti aspetti?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53296
+entryid: 66738
+permalink: 66738
+lesson: Phrases - People, Part 18
+lang: it
+english: Do you smoke?
+current: Fumi?
+proposed: Fumi?
+kind: wrong-form
+reason: While 'Fumi?' is the correct conjugated form for 'Do you smoke?', the dictionary entry for the verb is 'fumare', and the translation provided is a conjugated verb form rather than the dictionary headword.
+source: Wiktionary (via kaikki.org), s.v. "Fumi?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53398
+entryid: 66866
+permalink: 66866
+lesson: Phrases - People, Part 30
+lang: it
+english: Is your mother home?
+current: È la casa di tua madre?
+proposed: Tua madre è a casa?
+kind: wrong-sense
+reason: The Italian translation asks if it is her house, rather than asking if she is currently at home.
+source: Wiktionary (via kaikki.org), s.v. "È la casa di tua madre?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53406
+entryid: 66876
+permalink: 66876
+lesson: Phrases - People, Part 31
+lang: it
+english: Is someone coming?
+current: Qualcuno è venuto?
+proposed: Qualcuno sta arrivando?
+kind: wrong-form
+reason: The Italian translation uses the past tense (has come), but the English phrase implies a present action or future arrival (is coming).
+source: Wiktionary (via kaikki.org), s.v. "Qualcuno è venuto?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53561
+entryid: 67069
+permalink: 67069
+lesson: Phrases - Knowledge, Part 6
+lang: it
+english: You are wrong.
+current: Tui hai torto.
+proposed: Tu hai torto
+kind: orthography
+reason: The word 'Tui' is a misspelling of 'Tu' (you).
+source: Wiktionary (via kaikki.org), s.v. "Tui hai torto.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53692
+entryid: 67234
+permalink: 67234
+lesson: Phrases - Preparation, Part 2
+lang: it
+english: I will clean soon.
+current: Pulisco presto.
+proposed: Pulirò presto
+kind: wrong-form
+reason: The translation uses the present tense, but the English sentence is in the future tense.
+source: Wiktionary (via kaikki.org), s.v. "Pulisco presto.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53782
+entryid: 67347
+permalink: 67347
+lesson: Phrases - Approval, Part 3
+lang: it
+english: Terrific!
+current: Terrific!
+proposed: Fantastico!
+kind: untranslated
+reason: The word 'Terrific!' was left in English instead of being translated into an Italian equivalent like 'Fantastico' or 'Splendido'.
+source: Wiktionary (via kaikki.org), s.v. "Terrific!": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53860
+entryid: 67444
+permalink: 67444
+lesson: Phrases - Time, Part 7
+lang: it
+english: Either time.
+current: O tempo.
+proposed: In entrambi i casi
+kind: wrong-word
+reason: The phrase 'O tempo' is not a valid Italian translation for 'Either time'; it appears to be a literal and incorrect translation of the words individually.
+source: Wiktionary (via kaikki.org), s.v. "O tempo.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53869
+entryid: 67456
+permalink: 67456
+lesson: Phrases - Time, Part 10
+lang: it
+english: It is a quarter past 6.
+current: È un quarto di 6 anni.
+proposed: È le sei e un quarto
+kind: wrong-word
+reason: The translation incorrectly includes 'anni' (years) and uses a structure that doesn't make sense for telling time.
+source: Wiktionary (via kaikki.org), s.v. "È un quarto di 6 anni.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 53961
+entryid: 67571
+permalink: 67571
+lesson: Phrases - Time, Part 22
+lang: it
+english: Either time is fine for me.
+current: Il tempo è bello per me.
+proposed: Qualsiasi ora va bene per me.
+kind: wrong-sense
+reason: The Italian translation refers to the weather (il tempo), but the English phrase refers to a point in time (l'ora).
+source: Wiktionary (via kaikki.org), s.v. "Il tempo è bello per me.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54114
+entryid: 67763
+permalink: 67763
+lesson: Phrases - Social Activity, Part 2
+lang: it
+english: We are sold out.
+current: Siamo esauriti.
+proposed: Siamo esauriti (non abbiamo più disponibilità)
+kind: wrong-sense
+reason: In Italian, 'Siamo esauriti' usually means 'We are exhausted' (people), whereas for products or tickets, one would say 'Siamo esauriti' only in very specific contexts; usually, it is 'Siamo sold out' or 'Non abbiamo più disponibilità'.
+source: Wiktionary (via kaikki.org), s.v. "Siamo esauriti.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54142
+entryid: 67799
+permalink: 67799
+lesson: Phrases - Social Activity, Part 6
+lang: it
+english: Let's practice English.
+current: Prendiamo l'inglese.
+proposed: Pratiquichiamo l'inglese
+kind: wrong-form
+reason: The translation 'Prendiamo' means 'Let's take' or 'We take,' which does not convey the meaning of 'Let's practice' in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Prendiamo l'inglese.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54334
+entryid: 68040
+permalink: 68040
+lesson: Phrases - Social Activity, Part 31
+lang: it
+english: Do you believe that?
+current: Credi che?
+proposed: Ci credi?
+kind: wrong-form
+reason: The phrase 'Credi che?' is grammatically incomplete in Italian; 'Ci credi?' is the standard way to ask 'Do you believe that?'
+source: Wiktionary (via kaikki.org), s.v. "Credi che?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54384
+entryid: 68103
+permalink: 68103
+lesson: Phrases - Work, Part 2
+lang: it
+english: How is the job?
+current: Come funziona?
+proposed: Com'è il lavoro?
+kind: wrong-sense
+reason: The Italian phrase 'Come funziona?' means 'How does it work?' (referring to a mechanism or process), whereas the English phrase asks about the job itself.
+source: Wiktionary (via kaikki.org), s.v. "Come funziona?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54399
+entryid: 68122
+permalink: 68122
+lesson: Phrases - Work, Part 4
+lang: it
+english: I have a wedding to attend.
+current: Ho un matrimonio per partecipare.
+proposed: Devo partecipare a un matrimonio
+kind: structural
+reason: The phrase 'per partecipare' is a literal translation of 'to attend' that is grammatically incorrect in this context; Italian uses 'a cui partecipare' or a different sentence structure.
+source: Wiktionary (via kaikki.org), s.v. "Ho un matrimonio per partecipare.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54561
+entryid: 68326
+permalink: 68326
+lesson: Phrases - Objects, Part 9
+lang: it
+english: Can you wrap this?
+current: Puoi riempire questo?
+proposed: Puoi impacchettare questo?
+kind: wrong-word
+reason: The Italian word 'riempire' means 'to fill' (like a glass or a bucket), whereas 'impacchettare' is the correct word for 'to wrap' (like a gift).
+source: Wiktionary (via kaikki.org), s.v. "Puoi riempire questo?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54672
+entryid: 68465
+permalink: 68465
+lesson: Phrases - Objects, Part 23
+lang: it
+english: Can you mail this?
+current: Puoi inviare questo messaggio?
+proposed: Puoi spedire questo?
+kind: wrong-word
+reason: The translation specifies 'messaggio' (message), but the English phrase 'this' usually refers to a physical object in this context, and 'spedire' is more common for mailing items.
+source: Wiktionary (via kaikki.org), s.v. "Puoi inviare questo messaggio?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54708
+entryid: 68510
+permalink: 68510
+lesson: Phrases - Objects, Part 27
+lang: it
+english: Yes, I can hold that.
+current: Sì, posso trattenermi.
+proposed: Sì, posso tenerlo.
+kind: wrong-sense
+reason: The Italian word 'trattenermi' means to restrain oneself emotionally or physically, not to hold an object.
+source: Wiktionary (via kaikki.org), s.v. "Sì, posso trattenermi.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54716
+entryid: 68520
+permalink: 68520
+lesson: Phrases - Objects, Part 28
+lang: it
+english: I am all out.
+current: Sono tutto fuori.
+proposed: Non ho più niente
+kind: wrong-sense
+reason: The phrase 'Sono tutto fuori' literally means 'I am all outside' and does not mean 'I am all out' in the sense of running out of something.
+source: Wiktionary (via kaikki.org), s.v. "Sono tutto fuori.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54822
+entryid: 68653
+permalink: 68653
+lesson: Phrases - Objects, Part 41
+lang: it
+english: Did you break that?
+current: Lo hai interrotto?
+proposed: L'hai rotto?
+kind: wrong-sense
+reason: The Italian word 'interrotto' means to interrupt a flow or a conversation, while 'rotto' is used for physically breaking an object.
+source: Wiktionary (via kaikki.org), s.v. "Lo hai interrotto?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 54957
+entryid: 68822
+permalink: 68822
+lesson: Phrases - Objects, Part 57
+lang: it
+english: Is the car fixed?
+current: L'auto è fissa?
+proposed: L'auto è riparata?
+kind: wrong-word
+reason: The word 'fissa' means 'fixed' in the sense of 'steady' or 'attached,' not 'repaired.' To say a car is repaired, you must use 'riparata'.
+source: Wiktionary (via kaikki.org), s.v. "L'auto è fissa?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55015
+entryid: 68895
+permalink: 68895
+lesson: Phrases - Money, Part 4
+lang: it
+english: Is the hummus expensive?
+current: È il costoso hummus?
+proposed: L'hummus è costoso?
+kind: structural
+reason: The translation uses a literal word-for-word structure that is grammatically incorrect in Italian; the adjective 'costoso' should follow the noun.
+source: Wiktionary (via kaikki.org), s.v. "È il costoso hummus?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55018
+entryid: 68898
+permalink: 68898
+lesson: Phrases - Money, Part 4
+lang: it
+english: Are the chickpeas expensive?
+current: Sono i ceci costosi?
+proposed: I ceci sono costosi?
+kind: structural
+reason: The word order 'Sono i ceci costosi?' is grammatically awkward; in Italian, the subject 'i ceci' usually precedes the verb in a simple question.
+source: Wiktionary (via kaikki.org), s.v. "Sono i ceci costosi?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55080
+entryid: 68976
+permalink: 68976
+lesson: Phrases - Money, Part 12
+lang: it
+english: How much all together?
+current: Quanto tutti insieme?
+proposed: Quanto è il totale?
+kind: structural
+reason: The phrase 'Quanto tutti insieme?' is a literal translation that sounds unnatural; Italians typically ask for the total price using 'il totale'.
+source: Wiktionary (via kaikki.org), s.v. "Quanto tutti insieme?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55127
+entryid: 69034
+permalink: 69034
+lesson: Phrases - Money, Part 17
+lang: it
+english: Do you accept British pounds?
+current: Accetti i chili britannici?
+proposed: Accetti le sterline britanniche?
+kind: wrong-word
+reason: The translation uses 'chili' (chili peppers) instead of 'sterline' (pounds).
+source: Wiktionary (via kaikki.org), s.v. "Accetti i chili britannici?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55186
+entryid: 69107
+permalink: 69107
+lesson: Phrases - Communication, Part 2
+lang: it
+english: No.
+current: No.
+proposed: No
+kind: untranslated
+reason: The translation is identical to the English word because the system failed to provide the Italian equivalent.
+source: Wiktionary (via kaikki.org), s.v. "No.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55245
+entryid: 69181
+permalink: 69181
+lesson: Phrases - Communication, Part 9
+lang: it
+english: Sure.
+current: Sicuro.
+proposed: Certo
+kind: wrong-form
+reason: While 'sicuro' means 'sure' as an adjective, 'certo' is the standard Italian word used to express agreement or affirmation in response to a statement.
+source: Wiktionary (via kaikki.org), s.v. "Sicuro.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55301
+entryid: 69250
+permalink: 69250
+lesson: Phrases - Communication, Part 16
+lang: it
+english: Do you understand?
+current: Capisci?
+proposed: Capisci?
+kind: wrong-form
+reason: While 'Capisci?' is a common spoken form, the dictionary entry for the verb is 'capire', and the question is a conjugated form rather than the base dictionary word.
+source: Wiktionary (via kaikki.org), s.v. "Capisci?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55388
+entryid: 69360
+permalink: 69360
+lesson: Phrases - Translation, Part 5
+lang: it
+english: Forget it.
+current: Dimenticalo.
+proposed: Dimenticalo
+kind: wrong-form
+reason: The dictionary likely doesn't list 'Dimenticalo' because it is a conjugated verb with a pronoun attached; the base dictionary form is 'dimenticare'.
+source: Wiktionary (via kaikki.org), s.v. "Dimenticalo.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55389
+entryid: 69362
+permalink: 69362
+lesson: Phrases - Translation, Part 6
+lang: it
+english: How do you pronounce that?
+current: Come pronunci quello?
+proposed: Come si pronuncia quello?
+kind: structural
+reason: The phrase is missing the reflexive pronoun 'si', which is required to form the impersonal 'how is it pronounced' structure in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Come pronunci quello?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55405
+entryid: 69382
+permalink: 69382
+lesson: Phrases - Weather, Part 2
+lang: it
+english: Does it snow a lot in Patagonia?
+current: Domina molto in Patagonia?
+proposed: Nevica molto in Patagonia?
+kind: wrong-word
+reason: The word 'Domina' is not the Italian verb for 'to snow'; 'Nevica' is the correct form.
+source: Wiktionary (via kaikki.org), s.v. "Domina molto in Patagonia?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55435
+entryid: 69419
+permalink: 69419
+lesson: Phrases - Weather, Part 9
+lang: it
+english: It's going to storm.
+current: Sta andando a tempesta.
+proposed: Sta per arrivare un temporale
+kind: structural
+reason: The phrase 'Sta andando a tempesta' is a literal, incorrect translation of the English structure and is not used in Italian.
+source: Wiktionary (via kaikki.org), s.v. "Sta andando a tempesta.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55439
+entryid: 69424
+permalink: 69424
+lesson: Phrases - Weather, Part 10
+lang: it
+english: It is storming now.
+current: Ora sta entrando.
+proposed: Ora sta temporalesco / C'è un temporale ora
+kind: wrong-word
+reason: The Italian translation 'Ora sta entrando' means 'It is entering now' instead of describing a storm.
+source: Wiktionary (via kaikki.org), s.v. "Ora sta entrando.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55454
+entryid: 69443
+permalink: 69443
+lesson: Phrases - Weather, Part 14
+lang: it
+english: Is it freezing?
+current: È congelato?
+proposed: Fa freddo?
+kind: wrong-form
+reason: In Italian, 'È congelato?' refers to an object being frozen (like food), whereas 'Fa freddo?' is the standard way to ask if the weather is cold.
+source: Wiktionary (via kaikki.org), s.v. "È congelato?": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55468
+entryid: 69460
+permalink: 69460
+lesson: Phrases - Weather, Part 17
+lang: it
+english: A kite would fly in weather like this.
+current: Un aquilone volava in un tempo come questo.
+proposed: Un aquilone volerebbe con un tempo così.
+kind: structural
+reason: The translation uses the past tense (volava) instead of the conditional (volerebbe) and the phrasing is unnatural.
+source: Wiktionary (via kaikki.org), s.v. "Un aquilone volava in un tempo come questo.": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55470
+entryid: 69463
+permalink: 69463
+lesson: Adjectives - Colors, Part 1
+lang: it
+english: Orange
+current: arancia
+proposed: arancione
+kind: wrong-sense
+reason: The word 'arancia' refers to the fruit, while 'arancione' is the adjective used for the color.
+source: Wiktionary (via kaikki.org), s.v. "arancia": noun: orange (fruit)
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55486
+entryid: 69483
+permalink: 69483
+lesson: Culture - Currencies, Part 1
+lang: it
+english: Brazilian Real
+current: Real Brasiliano
+proposed: real brasiliano
+kind: wrong-word
+reason: The correct Italian term for the Brazilian currency is 'real brasiliano', but the translation provided is often treated as a proper noun or incorrectly formatted; however, in standard Italian, 'real' is the currency name and 'brasiliano' is the adjective.
+source: Wiktionary (via kaikki.org), s.v. "Real Brasiliano": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55492
+entryid: 69490
+permalink: 69490
+lesson: Culture - Currencies, Part 2
+lang: it
+english: Danish Krone
+current: Corona danese
+proposed: corona danese
+kind: wrong-word
+reason: While 'corona danese' is the correct term, it is likely missing from the dictionary because it is a specific currency name, but the translation itself is accurate.
+source: Wiktionary (via kaikki.org), s.v. "Corona danese": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55498
+entryid: 69498
+permalink: 69498
+lesson: Culture - Currencies, Part 4
+lang: it
+english: Israeli New Shekel
+current: Israeliano nuovo Shekel
+proposed: nuovo shekel israeliano
+kind: wrong-form
+reason: In Italian, the adjective 'israeliano' should follow the noun, and the currency name is typically structured as 'nuovo shekel israeliano'.
+source: Wiktionary (via kaikki.org), s.v. "Israeliano nuovo Shekel": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55499
+entryid: 69499
+permalink: 69499
+lesson: Culture - Currencies, Part 4
+lang: it
+english: Japanese Yen
+current: Yen Giapponese
+proposed: yen giapponese
+kind: wrong-word
+reason: In Italian, the currency is simply 'yen' or 'yen giapponese', but the word order is incorrect; the noun comes before the adjective.
+source: Wiktionary (via kaikki.org), s.v. "Yen Giapponese": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55500
+entryid: 69500
+permalink: 69500
+lesson: Culture - Currencies, Part 4
+lang: it
+english: Korean Won
+current: Vinto coreano
+proposed: won coreano
+kind: orthography
+reason: The word 'Vinto' is a misspelling of 'Won', likely caused by a phonetic error or a translation glitch.
+source: Wiktionary (via kaikki.org), s.v. "Vinto coreano": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect
+
+id: 55503
+entryid: 69504
+permalink: 69504
+lesson: Culture - Currencies, Part 5
+lang: it
+english: Zloty
+current: Zloty
+proposed: zloty
+kind: untranslated
+reason: While 'zloty' is the correct term, it is often not listed in standard Italian dictionaries as it is a foreign currency name, but it is the standard word used by Italian speakers.
+source: Wiktionary (via kaikki.org), s.v. "Zloty": not found
+checked by: mistral:7b > gemma4:12b, unconfirmed
+status: suspect

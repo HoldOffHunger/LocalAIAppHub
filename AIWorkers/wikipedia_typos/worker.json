@@ -1,0 +1,9 @@
+{
+  "title": "Wikipedia: known misspellings",
+  "description": "Searches English Wikipedia for GGCMS's known misspellings, ten articles per misspelling per visit, then moves to the next; when every one has had its visit it starts again a page deeper. Links, file names, addresses, references and templates are skipped by rule, and a local model judges the rest in their sentences. Each typo is dated by WikiWho, which knows the edit that brought every word into an article, so long-standing ones come first and minutes-old ones are held back. Typos go to a results file, and to the App Hub's Social page, for a person to confirm and fix by hand; it never edits Wikipedia. A doubled-<pair> target hunts the doubled-letter worker's new slips instead, as a test of them: its .pairs.txt says which turn up in real writing and which are real words.",
+  "targets": ["en.wikipedia", "doubled-ss", "doubled-ll", "doubled-tt", "doubled-ff", "doubled-pp", "doubled-rr", "doubled-nn", "doubled-mm", "doubled-cc", "doubled-dd", "doubled-gg", "doubled-bb", "doubled-zz", "doubled-ee", "doubled-oo"],
+  "command": ["{python}", "run_hunt.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

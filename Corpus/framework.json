@@ -1,0 +1,24 @@
+{
+  "about": "Ben's framework for his research, in his own words (2 Nov 2026), lightly arranged; the definitions are his and are what the model reasons from. Edit them here; the app and the model read this file fresh.",
+  "realms": [
+    {"id": "social", "name": "Social", "example": "sexism and racist acts (observed abuses)"},
+    {"id": "political", "name": "Political"},
+    {"id": "economic", "name": "Economic", "example": "worker exploitation (observation), and public prosperity is good (principle)"},
+    {"id": "religious", "name": "Religious"},
+    {"id": "educational", "name": "Educational"},
+    {"id": "ecological", "name": "Ecological", "example": "observed abuses like burning rainforests, and the idea that nature is beautiful (a principle)"}
+  ],
+  "phases": [
+    {"id": "principle", "number": 1, "name": "Principle and observation",
+     "words": "Principles/observations is phase 1. Those are just the ideas of revolution and the complaints. Super common."},
+    {"id": "revolt", "number": 2, "name": "Revolt",
+     "words": "Phase 2 is revolt: revolting against abuse and in favor of principle."},
+    {"id": "society", "number": 3, "name": "Society",
+     "words": "Phase 3 is society: that's when the revolt succeeds and the principle becomes part of society."},
+    {"id": "hijacked", "number": 4, "name": "Hijacked society",
+     "words": "Hijacked society is phase 4. Think USSR, where a workers' revolution is hijacked."},
+    {"id": "counter-revolt", "number": 5, "name": "Revolt against the hijacked society",
+     "words": "Phase 5 is the revolt against the hijacked society, i.e., a revolt to make the USSR more democratic and worker-oriented, like that naval revolt in the Baltic."}
+  ],
+  "systems": "The three- and five-phase systems. In theory it should be only phases 1 to 3, the Hegelian thing with dialectics; but in practice, we see the five-phase system."
+}

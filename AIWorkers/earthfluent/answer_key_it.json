@@ -1,0 +1,17 @@
+{
+  "about": "Hand-checked by Claude, 2026-10-13: the 116 Italian rows in the Animals and Countries lessons (Sept 2026 dump). 'wrong' = the word is wrong or untranslated for the lesson's sense. Capitalisation is left to a mechanical sweep and not scored. 'debatable' rows are left out of scoring.",
+  "wrong": {
+    "181": "Gerbil left untranslated (Italian: gerbillo)",
+    "187": "Chipmunk left untranslated (Italian: tamia)",
+    "210": "Manta Ray left untranslated (Italian: manta)",
+    "221": "Killer Whale -> Balena assassina is a word-for-word calque (Italian: orca)",
+    "236": "Stingray left untranslated (Italian: pastinaca, trigone)",
+    "41267": "Iran -> Ho corso means 'I ran'",
+    "41269": "Turkey (country) -> tacchino is the bird (Italian: Turchia)"
+  },
+  "debatable": {
+    "168": "Drago di Komodo is common; varano di Komodo is the zoological name",
+    "200": "Puzzola is the polecat, though widely used for skunk; moffetta is the skunk",
+    "41280": "Sud Africa is seen; Sudafrica is standard"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "about": "Hand-checked by Claude, 2026-10-13: 10 rows per language from sample_multilang.json (12 languages). 'wrong' = wrong for the lesson's sense, untranslated, corrupt, or the wrong part of speech. Leading articles and capitalisation are left to mechanical sweeps. European languages are judged confidently. Chinese, Japanese, Korean and Hindi judgements lean on dictionaries, so treat them as softer.",
+  "wrong": {
+    "1499": "es: date (verb) -> fecha is the calendar noun", "9979": "es: sound (adjective) left untranslated", "38690": "es: fly (verb) -> mosca is the insect",
+    "12317": "fr: sound (adjective) -> du son is the noun", "1602": "fr: break (verb) -> Pause is a noun", "12518": "fr: sketchy (shady) -> vague means vague; louche",
+    "41289": "de: Iran -> Ich rannte ('I ran')", "17020": "de: sound (adjective) -> klingen is a verb", "16632": "de: press (object) -> 'Drücken Sie' is an imperative; die Presse",
+    "54586": "de: corrupt, a browser error message stored as the translation",
+    "29305": "nl: grave (adjective) -> graf is the tomb; ernstig", "5573": "nl: fly (verb) -> vlieg is not the infinitive; vliegen",
+    "47547": "pl: orange (food) -> Pomarańczowy is the colour adjective; pomarańcza", "33689": "pl: lean (adjective) -> pochylać się is a verb",
+    "30918": "pl: regime left untranslated", "30780": "pl: republic left untranslated", "30921": "pl: approval left untranslated",
+    "45416": "pt: Iran -> México", "32441": "pt: press (object) -> pressione is not Portuguese; prensa", "33499": "pt: cheeky left untranslated", "45441": "pt: Ukraine -> México",
+    "37458": "ru: watch (object) -> смотреть is the verb 'to watch'", "38267": "ru: cross (adjective) -> пересекать is the verb", "7267": "ru: slide left untranslated",
+    "38489": "ru: slimey left untranslated", "7412": "ru: order left untranslated",
+    "18986": "ja: press (object) -> 押す is the verb", "3329": "ja: stop left untranslated", "18868": "ja: lane left untranslated", "3628": "ja: demand left untranslated",
+    "23256": "zh: sound (adjective) -> 声音 is the noun", "42280": "zh: Vesākha left untranslated; 卫塞节", "23860": "zh: slimey left untranslated",
+    "38303": "ko: grave (adjective) -> 묘 is the tomb", "39852": "ko: structural, the English source is Korean", "38554": "ko: structural, the English source is Korean",
+    "8056": "ko: gain (verb) -> 이득 is the noun",
+    "24066": "hi: sound (adjective) -> ध्वनि is the noun", "23524": "hi: cross (object) -> पार करना is the verb", "43222": "hi: unicycling left in English",
+    "24762": "hi: rosey left untranslated", "44051": "hi: structural, the English source is Hindi",
+    "28578": "id: grave (adjective) -> kuburan is the tomb", "43861": "id: duke left untranslated; adipati", "28699": "id: bubbly left untranslated"
+  },
+  "debatable": {
+    "11792": "fr: route is the road; itinéraire is a route", "31600": "pl: match in an Ideas lesson: mecz (game) or dopasowanie (correspondence)",
+    "900": "pt: Frango for the animal; galinha is the live bird", "17581": "ja: ブレーク is used; 休憩 is the usual break", "18734": "ja: 信頼 is trust; 自信 is self-confidence",
+    "34315": "ko: 피치 is a loanword", "43824": "hi: सैनिकवादी vs सैन्यवादी"
+  }
+}

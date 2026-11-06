@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minis</title>
+<style>
+  :root { --bg: #f6f3ee; --card: #fffdf9; --ink: #2d2a26; --soft: #77706a; --line: #e2dcd3; --accent: #a8673a; --urgent: #c4473a; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #23262f; --card: #2c303a; --ink: #ece8e1; --soft: #a39d95; --line: #3b404c; --accent: #d79a64; --urgent: #ef7a6c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 14px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--soft); margin: 26px 0 10px; }
+  .now { display: flex; gap: 20px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .now img { width: 99px; height: 117px; image-rendering: pixelated; }
+  .state { font-size: 22px; font-weight: 600; }
+  .state.urgent { color: var(--urgent); }
+  .why { color: var(--soft); font-size: 13px; word-break: break-all; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  td, th { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  th { color: var(--soft); font-weight: 500; }
+  .poses { display: flex; flex-wrap: wrap; gap: 6px; }
+  .poses img { width: 66px; height: 78px; image-rendering: pixelated; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+  .empty { color: var(--soft); font-size: 13px; }
+  .off { color: var(--soft); }
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+  .tabs button { font-size: 16px; padding: 8px 18px; }
+  .bit-face { width: 99px; height: 99px; display: grid; place-items: center; background: #11141b; border-radius: 10px; }
+  .bit-face svg { width: 72px; height: 72px; overflow: visible; }
+  .state.undecided { color: #5aa8d6; } .state.no { color: #e0483a; } .state.yes { color: #d9a514; }
+  table.legend td:first-child { font-weight: 600; white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Minis</h1>
+  <div class="tabs">
+    <button data-panel="claudia">🐾 Claudia</button>
+    <button data-panel="bit">🔷 Bit</button>
+  </div>
+
+  <section id="panel-bit" hidden>
+  <div class="now">
+    <div class="bit-face" id="bitFace"></div>
+    <div>
+      <div id="bitState" class="state">…</div>
+      <div id="bitWhy" class="why"></div>
+    </div>
+  </div>
+
+  <h2>Size</h2>
+  <div class="row" id="bitSizes"></div>
+  <div class="row" style="margin-top:8px">
+    <button id="bitShown">Show Bit</button>
+    <button onclick="open('http://127.0.0.1:8720/')">Open the Foreman</button>
+  </div>
+
+  <h2>Try a shape (10 seconds)</h2>
+  <div class="row" id="bitPreview"></div>
+
+  <h2>What he says</h2>
+  <table class="legend">
+    <tr><td class="state undecided" style="font-size:14px">Undecided</td><td>Nothing loaded on the card. His calm, many-faceted shape.</td></tr>
+    <tr><td class="state no" style="font-size:14px">No</td><td>A model sits loaded in Ollama, but no worker's turn is running. The red spiky star, shaking his head now and then.</td></tr>
+    <tr><td class="state yes" style="font-size:14px">Yes</td><td>An AI worker's turn holds the card at the hub's GPU desk. The yellow octahedron, bouncing.</td></tr>
+  </table>
+  <p class="empty">He looks every two seconds. Double-click him to open the App Hub on the AI Workers; right-click him for size and the rest.</p>
+  </section>
+
+  <section id="panel-claudia">
+  <div class="now">
+    <img id="nowImg" alt="">
+    <div>
+      <div id="state" class="state">…</div>
+      <div id="why" class="why"></div>
+    </div>
+  </div>
+
+  <h2>Size and manners</h2>
+  <div class="row" id="sizes"></div>
+  <div class="row" style="margin-top:8px">
+    <button id="sound">Chime when she needs you</button>
+    <button id="click">Let clicks pass through her</button>
+    <button id="restart">Restart her</button>
+  </div>
+
+  <h2>Sessions she's watching</h2>
+  <div id="sessions"></div>
+
+  <h2>Try a pose (10 seconds)</h2>
+  <div class="row" id="preview"></div>
+
+  <h2>Her poses</h2>
+  <div id="gallery"></div>
+  </section>
+</main>
+<script>
+const NAMES = { needsyou: "Needs you", stuck: "Stuck", outofmana: "Out of mana", oops: "Oops",
+                working: "Casting a spell", done: "Done", idle: "Idle", asleep: "Asleep" };
+const URGENT = ["needsyou", "stuck", "outofmana"];
+const $ = id => document.getElementById(id);
+let galleryFor = "";
+
+function command(c) { fetch("/api/command?" + c, { method: "POST" }).then(refresh); }
+$("restart").onclick = () => {
+  $("state").textContent = "Restarting…";
+  // The page goes quiet for a moment while the new her starts; refresh() picks her back up
+  fetch("/api/command?restart", { method: "POST" }).catch(() => {});
+  galleryFor = "";
+};
+
+for (const k of [2, 3, 4, 5]) {
+  const b = document.createElement("button");
+  b.textContent = k + "x"; b.dataset.scale = k;
+  b.onclick = () => command("scale=" + k);
+  $("sizes").appendChild(b);
+}
+for (const s of Object.keys(NAMES)) {
+  const b = document.createElement("button");
+  b.textContent = NAMES[s];
+  b.onclick = () => command("preview=" + s);
+  $("preview").appendChild(b);
+}
+
+// The two panels; the last one picked is remembered in this browser
+function showPanel(name) {
+  for (const b of document.querySelectorAll(".tabs button")) {
+    b.classList.toggle("on", b.dataset.panel === name);
+    $("panel-" + b.dataset.panel).hidden = b.dataset.panel !== name;
+  }
+  try { localStorage.setItem("minis.panel", name); } catch (e) {}
+}
+for (const b of document.querySelectorAll(".tabs button")) b.onclick = () => showPanel(b.dataset.panel);
+let firstPanel = "claudia";
+try { firstPanel = localStorage.getItem("minis.panel") || firstPanel; } catch (e) {}
+showPanel(firstPanel === "bit" ? "bit" : "claudia");
+
+const BIT_NAMES = { undecided: "Undecided", no: "No", yes: "Yes" };
+// Flat stand-ins for his three shapes; the real ones turn in 3D on the desktop
+const BIT_SVG = {
+  undecided: '<polygon points="36,4 64,20 64,52 36,68 8,52 8,20" fill="#3d7fae" stroke="#bfe6ff" stroke-width="2"/>' +
+    '<path d="M8,20 36,30 64,20 M36,30 36,68" fill="none" stroke="#bfe6ff" stroke-width="1.5"/>' +
+    '<path d="M8,52 36,30 64,52 M36,4 36,30" fill="none" stroke="#8cc8ee" stroke-width="1"/>',
+  no: '<polygon points="36,0 44,24 70,20 50,38 66,62 40,50 30,72 26,48 2,56 20,36 4,14 30,24" fill="#b3241b" stroke="#ffb3a8" stroke-width="2"/>',
+  yes: '<polygon points="36,2 68,36 36,70 4,36" fill="#c99512" stroke="#fff0b0" stroke-width="2"/>' +
+    '<path d="M4,36 30,42 68,36 M36,2 30,42 36,70" fill="none" stroke="#fff0b0" stroke-width="1.5"/>'
+};
+for (const [label, px] of [["Small", 64], ["Medium", 96], ["Large", 128], ["Huge", 176]]) {
+  const b = document.createElement("button");
+  b.textContent = label; b.dataset.size = px;
+  b.onclick = () => command("bit_size=" + px);
+  $("bitSizes").appendChild(b);
+}
+for (const s of Object.keys(BIT_NAMES)) {
+  const b = document.createElement("button");
+  b.textContent = BIT_NAMES[s];
+  b.onclick = () => command("bit_preview=" + s);
+  $("bitPreview").appendChild(b);
+}
+let bitDrawn = "";
+
+function showBit(bit) {
+  if (!bit) return;
+  $("bitState").textContent = BIT_NAMES[bit.state] || bit.state;
+  $("bitState").className = "state " + bit.state;
+  $("bitWhy").textContent = bit.why;
+  if (bit.state !== bitDrawn && BIT_SVG[bit.state]) {
+    $("bitFace").innerHTML = '<svg viewBox="0 0 72 72">' + BIT_SVG[bit.state] + "</svg>";
+    bitDrawn = bit.state;
+  }
+  for (const b of $("bitSizes").children) b.classList.toggle("on", +b.dataset.size === bit.size);
+  $("bitShown").classList.toggle("on", bit.shown);
+  $("bitShown").onclick = () => command("bit_shown=" + (bit.shown ? 0 : 1));
+}
+
+function ago(seconds) {
+  if (seconds < 90) return seconds + " s";
+  if (seconds < 5400) return Math.round(seconds / 60) + " min";
+  return (seconds / 3600).toFixed(1) + " h";
+}
+
+function refresh() {
+  fetch("/api/state").then(r => r.json()).then(s => {
+    showBit(s.bit);
+    $("state").textContent = NAMES[s.state] || s.state;
+    $("state").className = "state" + (URGENT.includes(s.state) ? " urgent" : "");
+    $("why").textContent = s.because === "preview" ? "Previewing" :
+      s.sessions.length ? (s.because ? "Because of session " + s.because : "") : "No Claude Code sessions open";
+    const art = s.art_counts[s.art] ? s.art : "idle";
+    $("nowImg").src = "/sprites/" + art + "/" + String(Math.min(s.pose, s.art_counts[art] || 1)).padStart(2, "0") + ".png";
+    for (const b of $("sizes").children) b.classList.toggle("on", +b.dataset.scale === s.scale);
+    $("sound").classList.toggle("on", s.sound);
+    $("click").classList.toggle("on", s.click_through);
+    $("sound").onclick = () => command("sound=" + (s.sound ? 0 : 1));
+    $("click").onclick = () => command("click_through=" + (s.click_through ? 0 : 1));
+
+    $("sessions").innerHTML = s.sessions.length ? "<table><tr><th>Session</th><th>State</th><th>For</th><th>Last heard</th></tr>" +
+      s.sessions.map(x => `<tr><td>${x.id}</td><td>${NAMES[x.state] || x.state}</td><td>${ago(x.seconds)}</td><td>${ago(x.silent)} ago</td></tr>`).join("") +
+      "</table>" : '<div class="empty">None right now. Sessions appear here as soon as they do anything.</div>';
+
+    const key = JSON.stringify(s.art_counts);
+    if (key !== galleryFor) {
+      galleryFor = key;
+      $("gallery").innerHTML = Object.entries(s.art_counts).map(([name, n]) =>
+        `<h2 style="margin-top:14px">${name}</h2><div class="poses">` +
+        Array.from({ length: n }, (_, i) => `<img src="/sprites/${name}/${String(i + 1).padStart(2, "0")}.png" alt="">`).join("") +
+        "</div>").join("") + (s.art_counts.asleep ? "" : '<p class="empty">No sleeping poses yet, so Asleep and Out of mana show her reading.</p>');
+    }
+  }).catch(() => {
+    for (const id of ["state", "bitState"]) { $(id).textContent = "Not running"; $(id).className = "state off"; }
+  });
+}
+refresh();
+setInterval(refresh, 1000);
+</script>
+</body>
+</html>

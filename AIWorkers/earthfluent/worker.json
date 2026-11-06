@@ -1,0 +1,9 @@
+{
+  "title": "EarthFluent: translation triage",
+  "description": "Rechecks EarthFluent's Google-translated vocabulary a row at a time, judged against its lesson. Suspects go to a triage file for a person to confirm; it never edits the site.",
+  "targets": ["it", "fr", "de", "pt", "nl", "pl", "ru", "ja", "zh", "ko", "hi", "id", "es"],
+  "command": ["{python}", "run_check.py", "--lang", "{target}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--lang", "{target}"],
+  "results": "triage/{target}.triage.txt"
+}

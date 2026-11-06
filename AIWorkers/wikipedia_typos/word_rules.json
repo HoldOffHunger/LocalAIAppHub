@@ -1,0 +1,85 @@
+{
+  "about": "Rules learnt from finds that were wrong, one entry per listed misspelling. fine_when: patterns (regular expressions, matched against the find's sentence, any case) where the word is right, so the find is dropped before the model sees it and never listed. note: what the model is told about this word when it judges. learnt: when, and from which find. Add an entry whenever a find turns out wrong for a reason a rule can catch.",
+  "words": {
+    "every one": {
+      "fine_when": ["\\bevery one\\s+(of|in|out of)\\b"],
+      "note": "\"Every one\" (two words) is correct when it means each single one: \"every one of them\", or a ratio such as \"every one in fifteen people\". Only \"everyone\" meaning all people, as in \"everyone came\", is the joined word.",
+      "learnt": "2 Nov 2026: \"Every one in fifteen people throughout the country work in the tourism industry\" was called a typo."
+    },
+    "culch": {
+      "fine_when": ["\\bculch\\b"],
+      "note": "\"Culch\" is a real word, never a slip for \"sculch\": the crushed shells laid down to make oyster beds, and dialect for rubbish.",
+      "learnt": "2 Nov 2026: Curley Byrd's article, \"fossil shell mining to produce culch, crushed shells used to form oyster beds\", was called a typo for \"sculch\"."
+    },
+    "thig": {
+      "fine_when": ["\\bthig[\\s-]+le\\b", "\\btib(etan)?\\.?\\s+thig\\b"],
+      "note": "\"Thig\" is right in Tibetan words: \"thig le\" is Tibetan for the Sanskrit bindu, the \"drops\" of Vajrayana Buddhism's subtle body. Only a slip in plain English prose is a typo for \"thing\".",
+      "learnt": "2 Nov 2026: a Vajrayana article's \"drops\" or charged particles (Skt. bindu, Tib. thig le) were called a typo for \"thing\"."
+    },
+    "strickly": {
+      "fine_when": ["\\bstrickly[\\s-]*fx\\b"],
+      "note": "\"Strickly FX\" is a record label (strictlyfx.com), spelt that way on purpose. Any \"Strickly\" naming a label, a release or a catalogue is the label's name, not a slip for \"strictly\"; only \"strickly\" as an adverb in plain prose is the typo.",
+      "learnt": "2 Nov 2026: Ben caught the record label Strickly FX listed as a typo for \"strictly\"."
+    },
+    "callop": {
+      "fine_when": ["\\b(fish|perch|yellowbelly|macquaria|murray)"],
+      "note": "\"Callop\" is a real fish: the golden perch (Macquaria ambigua) of Australia's Murray-Darling rivers, also called yellowbelly. Only a slip for the shellfish \"scallop\", in a sentence about shells or seafood, is the typo.",
+      "learnt": "2 Nov 2026: \"Golden perch, an Australian fish, also called callop\" was called a typo for \"scallop\"."
+    },
+    "claping": {
+      "fine_when": ["\\b(amish|clay-ping|buggy|buggies|mennonite)", "^[\\s=]*claping[\\s=]*$"],
+      "note": "\"Claping\" (pronounced \"clay-ping\") is a real word: harassment and hate crimes against the Amish, such as forcing their buggies off the road or stoning them. It is never a slip for \"clapping\" when the Amish, their buggies or the harassment are the subject, nor when it stands alone as a section heading.",
+      "learnt": "2 Nov 2026: Anti-Amish sentiment's ===Claping=== heading was called a typo for \"clapping\"."
+    },
+    "boheman": {
+      "fine_when": ["(?-i:\\bBoheman\\b)"],
+      "note": "\"Boheman\" is a Swedish surname: the mystic Karl Adolf Boheman of the 1803 Boheman affair, and the entomologist Carl Henrik Boheman. Capitalised, it is the name, never a slip for \"Bohemian\"; only a lower-case \"boheman\" in prose is the typo.",
+      "learnt": "2 Nov 2026: the mystic Karl Adolf Boheman, in an article on Duke Charles and the Boheman affair, was called a typo for \"Bohemian\"."
+    },
+    "varity": {
+      "fine_when": ["(?-i:\\bVarity\\b)(?!\\s+of\\b)", "\\b(massey|ferguson|kelsey|lucasvarity|tractor)"],
+      "note": "\"Varity\" is a company: Varity Corporation, as Massey Ferguson was renamed in the 1980s, later merged into LucasVarity. Capitalised as a name, or wherever Massey Ferguson and its tractors are the subject, it is never a slip for \"variety\"; \"a varity of\" in plain prose is the typo.",
+      "learnt": "2 Nov 2026: Massey Ferguson's article, \"Varity left Toronto and relocated its head office\", was called a typo for \"variety\"."
+    },
+    "pulover": {
+      "fine_when": ["\\bpulover\\w*\\s*\\(", "\\b(slovene|slovenian|croatian|serbian|bosnian|montenegrin|macedonian|bulgarian|romanian|serbo-croatian)\\b"],
+      "note": "\"Pulover\" is the right spelling of \"pullover\" (a jumper or sweater) in Slovene, Croatian, Serbian, Bosnian, Macedonian, Bulgarian and Romanian. In a quoted phrase from one of those languages, often followed by an English gloss in brackets, it is a foreign word, not a slip; only \"pulover\" in plain English prose is the typo.",
+      "learnt": "3 Nov 2026: Slovene punctuation's example \"zeleno-moder pulover (a green and blue jumper)\" was called a typo for \"pullover\"."
+    },
+    "kaber": {
+      "fine_when": ["\\b(brassica|sinapis|mustard|charlock|cruciferae|brassicaceae|weed|plant|seed)"],
+      "note": "\"Kaber\" is a real name for wild mustard (charlock), from its old botanical name Brassica kaber, now Sinapis arvensis. Wherever plants, mustard or Brassica are the subject it is the plant's name, never a slip for \"kabar\" (the Ka-Bar knife).",
+      "learnt": "3 Nov 2026: Brassica's \"kaber (wild mustard or charlock)\" was called a typo, and gemma even offered \"charlock\" as the fix."
+    },
+    "compeared": {
+      "fine_when": ["\\bcompeared\\s+(at|before|in|for|personally|judicially|and)\\b", "\\b(summon\\w*|court|sheriff|session|presbytery|kirk|bailie|baron|laird|earl|clan|lord|tolbooth|parliament|scots?|scotland|caithness|sutherland)\\b"],
+      "note": "\"Compear\" is old Scots law: to appear before a court or a lord when summoned (\"summoned to compear before them\", \"he compeared at the time and place appointed\"). \"Compeared\" means \"appeared\" there, and is right in Scottish history, legal records and older texts. It is only a slip for \"compared\" when something is being likened to something else (\"compeared to last year\").",
+      "learnt": "3 Nov 2026: Sir Robert Gordon's account of the Earl of Caithness, who \"compeared at the time and place appointed\", was called a typo for \"compared\"."
+    },
+    "nicotini": {
+      "fine_when": ["(?-i:\\bNicotini\\b)", "^[\\s=]*nicotini[\\s=]*$", "\\b(martini|cocktail|vodka|gin|smok\\w*|cravings?|lozenge|inhaler)"],
+      "note": "\"Nicotini\" is a name twice over: a nicotine product for smokers, and a martini made with tobacco-infused vodka. Capitalised, as a heading, or wherever cocktails or smoking are the subject, it is the name, never a slip for \"nicotine\".",
+      "learnt": "3 Nov 2026: the Martini (cocktail) article's ====Nicotini==== heading was called a typo for \"nicotine\", after the Nicotini article itself was."
+    },
+    "wereat": {
+      "fine_when": ["(?-i:\\bWereat\\b)"],
+      "note": "\"Wereat\" is a surname: John Wereat, president of Georgia's Supreme Executive Council in 1779, and his family. Capitalised, it is the name, never a slip for \"whereat\"; only a lower-case \"wereat\" in prose (\"wereat he laughed\") is the typo.",
+      "learnt": "3 Nov 2026: Georgia in the American Revolution's \"Wereat, a friend of the McIntoshes, had denounced Georgia's constitution\" was called a typo for \"whereat\"."
+    },
+    "kobs": {
+      "fine_when": ["(?-i:\\bKobs\\b)"],
+      "note": "\"Kobs\" is a surname: John Kobs, Michigan State's hockey and baseball coach, and others. Capitalised, and above all as a person in a sports or history article (\"Kobs' tenure\"), it is the name, never a slip for \"knobs\"; only a lower-case \"kobs\" about door or radio knobs is the typo.",
+      "learnt": "3 Nov 2026: Michigan State Spartans men's ice hockey's \"Kobs' tenure at Michigan State lasted six season\" was called a typo for \"knobs\"."
+    },
+    "cenery": {
+      "fine_when": ["(?-i:\\bCenery\\b)", "\\b(st|saint)\\.?[\\s-]+cenery\\b"],
+      "note": "\"Cenery\" is a place name: St. Cenery (Saint-Céneri-le-Gérei) on the river Sarthe in Normandy, the castle of the Giroie family, after the hermit Saint Cenerius. Capitalised, or after \"St.\" or \"Saint\", it is the place, never a slip for \"scenery\"; only a lower-case \"cenery\" about views or a stage is the typo.",
+      "learnt": "3 Nov 2026: \"Geoffrey de Mayenne built fitz Giroie a new castle at St. Cenery on the river Sarthe\" was called a typo for \"scenery\"."
+    },
+    "finelly": {
+      "fine_when": ["(?-i:\\bFinelly\\b)"],
+      "note": "\"Finelly\" is a place name: a townland in the civil parish of Clonfeacle, County Tyrone, Northern Ireland. Capitalised, and above all in a list of townlands or places, it is the name, never a slip for \"finely\"; only a lower-case \"finelly\" in prose (\"finelly chopped\") is the typo.",
+      "learnt": "3 Nov 2026: Clonfeacle's list of townlands, where \"Finelly\" stands alone under ==F==, was called a typo for \"finely\"."
+    }
+  }
+}

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social</title>
+<style>
+  :root { --bg: #f6f3ee; --card: #fffdf9; --ink: #2d2a26; --soft: #77706a; --line: #e2dcd3; --accent: #a8673a; --urgent: #c4473a; --good: #4f8a4b; --mark: #f3dcc4; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #23262f; --card: #2c303a; --ink: #ece8e1; --soft: #a39d95; --line: #3b404c; --accent: #d79a64; --urgent: #ef7a6c; --good: #8cc487; --mark: #5a4433; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--soft); margin: 22px 0 10px; }
+  .lead, .what { color: var(--soft); font-size: 13px; margin: 0 0 14px; }
+  .problem { color: var(--urgent); font-size: 13px; margin-bottom: 12px; }
+
+  /* The front: one card a job, like AI Workers */
+  .jobs { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .job { text-align: left; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+         cursor: pointer; display: flex; flex-direction: column; gap: 8px; font: inherit; }
+  .job:hover { border-color: var(--accent); }
+  .job .name { font-weight: 600; font-size: 16px; }
+  .job .counts { color: var(--soft); font-size: 13px; }
+  .job .waiting { color: var(--soft); font-size: 13px; font-style: italic; }
+  .back { background: transparent; color: var(--accent); border: none; padding: 0; margin-bottom: 12px; font-size: 14px; }
+
+  .today { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 13px; }
+  .bar { flex: 1 1 120px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: var(--good); border-radius: 4px; transition: width .6s ease; }
+  .enough { color: var(--good); font-size: 13px; margin-bottom: 10px; }
+  .tabs { display: flex; gap: 6px; margin: 4px 0 14px; flex-wrap: wrap; }
+  .tabs button { background: transparent; color: var(--ink); border-color: var(--line); }
+  .tabs button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .find { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .top { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: space-between; }
+  .title { font-weight: 600; color: var(--ink); }
+  .swap { color: var(--accent); font-weight: 600; }
+  .sentence { margin: 8px 0; }
+  .sentence mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
+  .reason { color: var(--soft); font-size: 13px; }
+  .age { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--soft); font-size: 13px; margin-top: 6px; }
+  .age a { color: var(--accent); }
+  .age.hold { color: var(--urgent); }
+  .meter { display: inline-flex; gap: 3px; }
+  .meter i { width: 14px; height: 6px; border-radius: 3px; background: var(--line); }
+  .meter i.on { background: var(--accent); }
+  .age.hold .meter i.on { background: var(--urgent); }
+  .chip { font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--soft); }
+  .chip.high { color: var(--good); border-color: var(--good); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; align-items: center; }
+  .piece { margin-top: 8px; }
+  .piece .label { font-size: 12px; color: var(--soft); }
+  button, a.button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; text-decoration: none; }
+  button.plain, a.button.plain { background: transparent; color: var(--accent); }
+  .reason a { color: var(--accent); }
+  .summary { font: 12px ui-monospace, monospace; color: var(--soft); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; overflow-wrap: anywhere; }
+  details { margin-top: 8px; }
+  summary { cursor: pointer; color: var(--soft); font-size: 13px; }
+  pre { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; font-size: 12px; white-space: pre-wrap; word-break: break-word; }
+  .empty { color: var(--soft); }
+  button.copy { background: transparent; border: none; padding: 2px 5px; font-size: 15px; line-height: 1; color: var(--soft); vertical-align: middle; }
+  button.copy:hover { background: var(--bg); border-radius: 6px; }
+  button.copy.done { color: var(--good); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Social</h1>
+  <p class="lead">Small, real contributions, a few at a time.</p>
+  <div id="view"></div>
+</main>
+<script>
+  const escape = text => String(text ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const MARK_NAMES = { "fixed": "Fixed", "not a typo": "Not typos", "updated": "Updated", "asked on talk page": "Asked on talk page", "not worth it": "Not worth it",
+                       "added to the list": "Added to the list", "not a misspelling": "Not misspellings" };
+  const BUTTONS = { "fixed": "Fixed it", "not a typo": "Not a typo", "updated": "Updated it", "asked on talk page": "Asked on talk page", "not worth it": "Not worth it",
+                    "added to the list": "Added it to the list", "not a misspelling": "Not a misspelling" };
+  const LINK_PARTS = [["link", "Dead links Wikipedia has marked", f => f.marked], ["link", "Dead links nobody has marked", f => !f.marked],
+                      ["work", "Our works' articles with no link to us"], ["author", "Our authors' articles with no link to us"]];
+  let state = { jobs: [] }, openRaw = new Set();
+  let open = "", tab = "";  // which job's panel is open ("" is the front), and its tab ("" is To do)
+  try { open = localStorage.getItem("social-open") || ""; tab = localStorage.getItem("social-tab") || ""; } catch {}
+
+  function remember() { try { localStorage.setItem("social-open", open); localStorage.setItem("social-tab", tab); } catch {} }
+  const wiki = title => "https://en.wikipedia.org/wiki/" + encodeURIComponent(title.replace(/ /g, "_")).replace(/%2F/g, "/");
+  const editUrl = title => "https://en.wikipedia.org/w/index.php?title=" + encodeURIComponent(title.replace(/ /g, "_")) + "&action=edit";
+
+  function copyButton(text, label) {
+    return `<button class="copy" data-copy="${escape(text)}" title="${label}" aria-label="${label}">📋</button>`;
+  }
+
+  async function copy(text) {
+    // The clipboard API needs the hub's frame to allow it; the old way still works where it doesn't
+    try { await navigator.clipboard.writeText(text); return true; } catch {}
+    const box = document.createElement("textarea");
+    box.value = text;
+    box.style.position = "fixed"; box.style.opacity = "0";
+    document.body.appendChild(box);
+    box.select();
+    const done = document.execCommand("copy");
+    box.remove();
+    return done;
+  }
+
+  function piece(label, text) {
+    return `<div class="piece"><div class="label">${label} ${copyButton(text, "Copy: " + label)}</div><div class="summary">${escape(text)}</div></div>`;
+  }
+
+  function markButtons(job, find) {
+    if (find.mark) return `<button class="plain" data-job="${job.id}" data-mark="" data-key="${escape(find.key)}">Undo</button>`;
+    return job.marks.map((m, i) => `<button class="${i ? "plain" : ""}" data-job="${job.id}" data-mark="${escape(m)}" data-key="${escape(find.key)}">${BUTTONS[m] || m}</button>`).join("");
+  }
+
+  // ---- the front
+
+  function front() {
+    return `<div class="jobs">${state.jobs.map(job => {
+      const todo = job.finds.filter(f => !f.mark).length, done = job.finds.filter(f => f.mark === job.done).length;
+      const counts = job.problem ? `<div class="waiting">Not set up yet</div>`
+        : `<div class="counts">${todo} to check · ${done} ${MARK_NAMES[job.done].toLowerCase()}</div>
+           <div class="today"><span>Today: ${job.done_today} of ${job.per_day}</span><div class="bar"><span style="width:${Math.min(100, 100 * job.done_today / job.per_day)}%"></span></div></div>`;
+      return `<button class="job" data-open="${job.id}"><span class="name">${job.icon} ${escape(job.title)}</span>${counts}</button>`;
+    }).join("")}</div>`;
+  }
+
+  // ---- a job's panel
+
+  function panel(job) {
+    const tabs = [""].concat(job.marks);
+    const done = job.done_today, aim = job.per_day;
+    let html = `<button class="back" data-open="">← All tasks</button>
+      <section><h2>${job.icon} ${escape(job.title)}</h2><p class="what">${escape(job.about)}</p>
+      <div class="problem">${escape(job.problem)}</div>`;
+    if (!job.problem) {
+      html += `<div class="today"><span>${MARK_NAMES[job.done]} today: ${done} of ${aim}</span><div class="bar"><span style="width:${Math.min(100, 100 * done / aim)}%"></span></div></div>
+        <div class="enough">${done >= aim ? "That's today's share. The rest will keep until tomorrow." : ""}</div>
+        <div class="tabs">${tabs.map(t => `<button data-tab="${escape(t)}" class="${t === tab ? "on" : ""}">${t ? MARK_NAMES[t] : "To check"} (${job.finds.filter(f => f.mark === t).length})</button>`).join("")}</div>`;
+      const shown = job.finds.filter(f => f.mark === tab);
+      if (tab) shown.sort((a, b) => b.marked_at.localeCompare(a.marked_at));
+      else if (job.id === "typos") shown.sort((a, b) => ageOrder(job, a) - ageOrder(job, b) || (a.typo_since || "").localeCompare(b.typo_since || ""));
+      html += job.id === "typos" ? shown.map(f => typoCard(job, f)).join("")
+        : job.id === "ocr" ? shown.map(f => ocrCard(job, f)).join("") : linkParts(job, shown);
+      if (!shown.length) html += `<p class="empty">${tab ? "Nothing here yet." : "Nothing waiting. The workers add more each night."}</p>`;
+    }
+    return html + "</section>";
+  }
+
+  function highlighted(find) {
+    // The word as it stands in the sentence, marked; escaped first so the article's text can't become markup
+    const sentence = escape(find.sentence), word = escape(find.word);
+    const at = sentence.toLowerCase().indexOf(word.toLowerCase());
+    return at < 0 ? sentence : sentence.slice(0, at) + "<mark>" + sentence.slice(at, at + word.length) + "</mark>" + sentence.slice(at + word.length);
+  }
+
+  // ---- a typo's age: the long-standing ones first, many readers have seen them; a fresh one is held back
+  const HOUR = 3600e3, DAY = 24 * HOUR;
+  const hoursOld = since => (Date.now() - Date.parse(since)) / HOUR;
+  const held = (job, f) => f.typo_since && !f.gone && hoursOld(f.typo_since) < (job.hold_hours ?? 24);
+  const ageOrder = (job, f) => f.gone ? 3 : held(job, f) ? 2 : f.typo_since ? 0 : 1;
+
+  function howLong(since) {
+    const ms = Date.now() - Date.parse(since);
+    const [n, unit] = ms < DAY ? [ms / HOUR, "hour"] : ms < 30 * DAY ? [ms / DAY, "day"] : ms < 365 * DAY ? [ms / (30.4 * DAY), "month"] : [ms / (365.25 * DAY), "year"];
+    const whole = Math.max(1, Math.floor(n));
+    return `${whole} ${unit}${whole === 1 ? "" : "s"}`;
+  }
+
+  function ageLine(job, find) {
+    if (find.gone) return `<div class="age">Already gone from the article: someone has fixed it, or reworded it.</div>`;
+    if (!find.typo_since) return `<div class="age">Age not known yet.</div>`;
+    const days = hoursOld(find.typo_since) / 24;
+    const filled = held(job, find) ? 1 : days < 7 ? 2 : days < 30 ? 3 : days < 365 ? 4 : 5;
+    const meter = `<span class="meter" title="How long it has stood">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= filled ? "on" : ""}"></i>`).join("")}</span>`;
+    const edit = find.since_rev ? `<a href="https://en.wikipedia.org/w/index.php?diff=${encodeURIComponent(find.since_rev)}" target="_blank" rel="noopener">the edit</a>` : "the edit";
+    const lead = held(job, find) ? `Hold off: added ${howLong(find.typo_since)} ago, so someone may still be working on it.`
+                                 : `In the article for ${howLong(find.typo_since)}, since ${find.typo_since.slice(0, 10)}`;
+    const busy = find.last_edit ? ` · page last edited ${howLong(find.last_edit)} ago` : "";
+    return `<div class="age ${held(job, find) ? "hold" : ""}">${meter}<span>${lead} (${edit})${busy}</span></div>`;
+  }
+
+  function typoCard(job, find) {
+    const fix = find.fix || find.correct;
+    const summary = `Typo fix: ${find.word} → ${fix}`;
+    return `<div class="find">
+      <div class="top"><span><a class="title" href="${escape(find.url)}" target="_blank" rel="noopener">${escape(find.title)}</a>
+        ${copyButton(find.url, "Copy the article's link")}</span>
+        <span class="swap">${escape(find.word)} → ${escape(fix)}</span></div>
+      ${ageLine(job, find)}
+      <div class="sentence">${highlighted(find)}</div>
+      <div class="reason">${escape(find.reason)} <span>· ${escape(find.checked_by)}</span>${find.also ? ` · ${find.also} more in this article` : ""}</div>
+      <div class="row">${find.mark ? "" : `<a class="button" href="${editUrl(find.title)}" target="_blank" rel="noopener">Open to edit</a>`}${markButtons(job, find)}</div>
+      ${find.mark ? "" : `<div class="row"><span class="summary">${escape(summary)}</span>${copyButton(summary, "Copy the edit summary")}</div>`}
+      <details data-key="${escape(find.key)}" ${openRaw.has(find.key) ? "open" : ""}><summary>Wikitext round it (to find it with Ctrl+F)</summary><pre>${escape(find.raw)}</pre></details>
+    </div>`;
+  }
+
+  function ocrCard(job, find) {
+    // A candidate for GGCMS's lists, not a Wikipedia edit: the line it came from, and the scan it came from
+    const pair = `${find.wrong} → ${find.correct}`;
+    return `<div class="find">
+      <div class="top"><span class="swap">${escape(pair)} ${copyButton(pair, "Copy the pair")}</span>
+        <span>${find.items} texts · ${find.count} times</span></div>
+      <div class="sentence">${highlighted({ sentence: find.example, word: find.wrong })}</div>
+      <div class="reason">${escape(find.shapes)} <span>· <a href="${escape(find.url)}" target="_blank" rel="noopener">${escape(find.example_item)}</a></span></div>
+      <div class="row">${markButtons(job, find)}</div>
+    </div>`;
+  }
+
+  function linkParts(job, shown) {
+    // The worker's own order, best first: dead links Wikipedia has marked, unmarked ones, then works' and authors' articles
+    return LINK_PARTS.map(([kind, heading, test]) => {
+      const finds = shown.filter(f => (kind === "link" ? (f.kind === "link" || f.kind === "near") : f.kind === kind) && (!test || test(f)));
+      return finds.length ? `<h3>${heading} (${finds.length})</h3>` + finds.map(f => linkCard(job, f)).join("") : "";
+    }).join("");
+  }
+
+  function linkCard(job, find) {
+    const article = find.article, dead = find.kind === "link" || find.kind === "near";
+    const pieces = dead
+      ? `<div class="reason">Dead: ${escape(find.dead_url)} (${escape(find.dead_why)})${find.archived ? " · already has an archive copy, so ours would be an extra" : ""}</div>
+         ${piece("As written", find.as_written)}${piece("Replace with", find.replacement)}${piece("Edit summary", find.summary)}`
+      : `${find.elsewhere && find.elsewhere.length ? `<div class="reason">Full text already linked at ${escape(find.elsewhere.join(", "))}</div>` : ""}
+         ${piece("External links line", find.external_line)}${piece("Edit summary", find.summary)}${piece("Or, on the talk page", find.talk)}`;
+    return `<div class="find">
+      <div class="top"><span><a class="title" href="${wiki(article)}" target="_blank" rel="noopener">${escape(article)}</a>
+        ${copyButton(wiki(article), "Copy the article's link")}</span>
+        <span class="chip ${escape(find.confidence)}">${escape(find.confidence)}</span></div>
+      <div class="reason" style="margin-top:6px">Ours: <a href="${escape(find.link)}" target="_blank" rel="noopener">${escape(find.title)}</a>${find.author ? " by " + escape(find.author) : ""}
+        ${copyButton(find.link, "Copy our link")} · ${escape(find.why)}</div>
+      ${find.mark ? "" : pieces}
+      <div class="row">${find.mark ? "" : `<a class="button" href="${editUrl(article)}" target="_blank" rel="noopener">Open to edit</a>
+        <a class="button plain" href="${editUrl("Talk:" + article)}" target="_blank" rel="noopener">Open the talk page</a>`}${markButtons(job, find)}</div>
+    </div>`;
+  }
+
+  function render() {
+    const job = state.jobs.find(j => j.id === open);
+    if (!job) open = "";
+    if (job && tab && !job.marks.includes(tab)) tab = "";
+    document.getElementById("view").innerHTML = job ? panel(job) : front();
+  }
+
+  async function refresh() {
+    document.querySelectorAll("details[open]").forEach(d => openRaw.add(d.dataset.key));
+    document.querySelectorAll("details:not([open])").forEach(d => openRaw.delete(d.dataset.key));
+    try { state = await (await fetch("/api/state")).json(); } catch { return; }
+    render();
+  }
+
+  document.addEventListener("click", async event => {
+    const target = event.target.closest("button");
+    if (!target) return;
+    if (target.dataset.open !== undefined) {
+      open = target.dataset.open; tab = ""; remember(); window.scrollTo(0, 0);
+      return render();
+    }
+    if (target.dataset.tab !== undefined) {
+      tab = target.dataset.tab; remember();
+      return render();
+    }
+    if (target.dataset.copy !== undefined) {
+      const done = await copy(target.dataset.copy);
+      target.textContent = done ? "✓" : "✗";
+      target.classList.toggle("done", done);
+      setTimeout(() => { target.textContent = "📋"; target.classList.remove("done"); }, 1500);
+      return;
+    }
+    if (target.dataset.mark !== undefined) {
+      await fetch("/api/mark", { method: "POST", headers: { "Content-Type": "application/json" },
+                                 body: JSON.stringify({ job: target.dataset.job, key: target.dataset.key, mark: target.dataset.mark }) });
+      refresh();
+    }
+  });
+
+  refresh();
+  setInterval(refresh, 30000);
+</script>
+</body>
+</html>

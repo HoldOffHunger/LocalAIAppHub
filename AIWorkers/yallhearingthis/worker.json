@@ -1,0 +1,9 @@
+{
+  "title": "YallHearingThis: fill shows and artists",
+  "description": "Makes a show on int for every video on youtube.com/@yallhearingthis (title, description, quote, thumbnail, tags, date, every YouTube fact and the transcript) and an artist for every act it reacts to (Wikipedia biography, picture, dates), linked by association. Writes to int (Fumiko's WSL copy) through modify_entry.php, never to production; a person looks it over before anything is pushed.",
+  "targets": ["yallhearingthis"],
+  "command": ["{python}", "run_yall.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

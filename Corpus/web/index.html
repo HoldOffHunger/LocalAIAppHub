@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corpus</title>
+<style>
+  :root { --bg: #f6f3ee; --card: #fffdf9; --ink: #2d2a26; --soft: #77706a; --line: #e2dcd3; --accent: #6b5aa8; --good: #4f8a4b; --warm: #b8862e; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #23262f; --card: #2c303a; --ink: #ece8e1; --soft: #a39d95; --line: #3b404c; --accent: #a594e0; --good: #8cc487; --warm: #e0b45c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 1000px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--soft); margin: 22px 0 10px; }
+  .lead { color: var(--soft); font-size: 13px; margin: 0 0 14px; }
+  button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  input, select, textarea { font: inherit; font-size: 14px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .tabs, .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .tabs { margin-bottom: 16px; }
+  .stats { color: var(--soft); font-size: 13px; margin: 8px 0 12px; }
+
+  .work { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; }
+  .work:hover { border-color: var(--accent); }
+  .work .title { font-weight: 600; }
+  .work .by { color: var(--soft); font-size: 13px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .chip { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--soft); }
+  .chip.read { color: var(--good); border-color: var(--good); }
+  .chip.reading { color: var(--warm); border-color: var(--warm); }
+  .chip.realm { color: var(--accent); border-color: var(--accent); }
+
+  .detail { background: var(--card); border: 1px solid var(--accent); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .detail h3 { margin: 0 0 4px; font-size: 18px; }
+  .detail .label { font-size: 12px; color: var(--soft); margin: 12px 0 4px; }
+  .detail textarea { width: 100%; min-height: 80px; }
+  .copy { font-size: 13px; color: var(--soft); margin: 2px 0; }
+
+  table.grid { border-collapse: collapse; width: 100%; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .grid th, .grid td { border-bottom: 1px solid var(--line); padding: 8px; text-align: center; font-size: 13px; }
+  .grid th { color: var(--soft); font-weight: 500; }
+  .grid th.realm { text-align: left; color: var(--ink); font-weight: 600; }
+  .grid td button { min-width: 44px; }
+  .grid td button.empty { color: var(--soft); opacity: .6; }
+  .phase-words { font-size: 13px; color: var(--soft); margin: 4px 0; }
+  .phase-words b { color: var(--ink); }
+  .empty { color: var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <h1>🦉 Corpus</h1>
+  <p class="lead">One master list of everything in your corpus, in every format you have it; what you've read; and where each work sits in your framework.</p>
+  <div class="tabs" id="tabs"></div>
+  <div id="view"></div>
+</main>
+<script>
+  const $ = id => document.getElementById(id);
+  const escape = text => String(text ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const FORMAT_ICON = { physical: "📕", digital: "💾", web: "🌐" };
+  let state = { works: [], framework: { realms: [], phases: [] } };
+  let tab = "library", open = 0, search = "", filters = { status: "", format: "", realm: "", phase: "" };
+  try { tab = localStorage.getItem("corpus.tab") || tab; } catch {}
+
+  const TABS = [["library", "📚 Library"], ["framework", "🧭 Framework"], ["add", "＋ Add"]];
+  function tabs() {
+    $("tabs").innerHTML = TABS.map(([id, name]) => `<button data-tab="${id}" class="${id === tab ? "on" : ""}">${name}</button>`).join("");
+  }
+
+  function realmName(id) { return (state.framework.realms.find(r => r.id === id) || {}).name || id; }
+  function phaseName(id) { return (state.framework.phases.find(p => p.id === id) || {}).name || id; }
+
+  function shown() {
+    const words = search.toLowerCase().split(/\s+/).filter(Boolean);
+    return state.works.filter(w =>
+      (!filters.status || w.status === filters.status) &&
+      (!filters.format || w.copies.some(c => c.format === filters.format)) &&
+      (!filters.realm || w.realms.includes(filters.realm)) &&
+      (!filters.phase || w.phases.includes(filters.phase)) &&
+      words.every(word => (w.title + " " + w.author + " " + w.evidence.join(" ")).toLowerCase().includes(word)));
+  }
+
+  function workRow(w) {
+    const formats = [...new Set(w.copies.map(c => c.format))].map(f => FORMAT_ICON[f]).join(" ");
+    return `<div class="work" data-work="${w.id}">
+      <div class="title">${escape(w.title)}</div>
+      <div class="by">${escape(w.author)}${w.year ? " · " + w.year : ""} · ${formats}</div>
+      <div class="chips"><span class="chip ${w.status}">${w.status}</span>${w.evidence.length ? `<span class="chip">${w.evidence.length} kinds of evidence</span>` : ""}
+        ${w.realms.map(r => `<span class="chip realm">${escape(realmName(r))}</span>`).join("")}
+        ${w.phases.map(p => `<span class="chip">${escape(phaseName(p))}</span>`).join("")}</div>
+    </div>`;
+  }
+
+  function detail(w) {
+    const fw = state.framework;
+    const copies = w.copies.map(c => `<div class="copy">${FORMAT_ICON[c.format]} ${c.format}: ${escape(c.place)}
+      ${c.detail.cover ? " · " + escape(c.detail.cover) : ""}${c.detail.condition ? " · " + escape(c.detail.condition) : ""}
+      ${c.detail.pages ? " · " + escape(c.detail.pages) + " pages" : ""}${c.detail.isbn ? " · ISBN " + escape(c.detail.isbn) : ""}</div>
+      ${c.detail.citation ? `<div class="copy"><i>${escape(c.detail.citation)}</i></div>` : ""}`).join("");
+    return `<div class="detail">
+      <div class="row" style="justify-content:space-between"><h3>${escape(w.title)}</h3><button data-close>Close</button></div>
+      <div class="by">${escape(w.author)}${w.year ? " · " + w.year : ""}</div>
+      <div class="label">Copies</div>${copies || '<div class="copy">None recorded</div>'}
+      <div class="label">Reading${w.read_on ? " · read " + w.read_on : ""}</div>
+      <div class="row">${["unread", "reading", "read"].map(s => `<button class="${w.status === s ? "on" : ""}" data-set="status" data-value="${s}">${s}</button>`).join("")}</div>
+      ${w.evidence.length ? `<div class="label">Evidence you found in it (Lists-Per-Title)</div>
+        <div class="chips">${w.evidence.map(e => `<span class="chip">${escape(e)}</span>`).join("")}</div>` : ""}
+      <div class="label">Realms</div>
+      <div class="row">${fw.realms.map(r => `<button class="${w.realms.includes(r.id) ? "on" : ""}" data-toggle="realms" data-value="${r.id}">${escape(r.name)}</button>`).join("")}</div>
+      <div class="label">Phases</div>
+      <div class="row">${fw.phases.map(p => `<button class="${w.phases.includes(p.id) ? "on" : ""}" data-toggle="phases" data-value="${p.id}" title="${escape(p.words)}">${p.number}. ${escape(p.name)}</button>`).join("")}</div>
+      <div class="label">Notes</div>
+      <textarea id="notes">${escape(w.notes)}</textarea>
+      <div class="row" style="margin-top:6px"><button data-save-notes>Save notes</button><span id="saved" class="copy"></span></div>
+    </div>`;
+  }
+
+  function library() {
+    const fw = state.framework, list = shown();
+    const counts = s => state.works.filter(w => w.status === s).length;
+    const selected = w => open === w.id;
+    const opened = state.works.find(w => w.id === open);
+    const select = (key, options) => `<select data-filter="${key}"><option value="">${key === "status" ? "Any status" : key === "format" ? "Any format" : key === "realm" ? "Any realm" : "Any phase"}</option>
+      ${options.map(([v, n]) => `<option value="${v}" ${filters[key] === v ? "selected" : ""}>${escape(n)}</option>`).join("")}</select>`;
+    return `<div class="row">
+        <input id="search" placeholder="Search titles, authors and evidence" value="${escape(search)}" style="flex:1;min-width:200px">
+        ${select("status", [["unread", "Unread"], ["reading", "Reading"], ["read", "Read"]])}
+        ${select("format", [["physical", "📕 Physical"], ["digital", "💾 Digital"], ["web", "🌐 Web"]])}
+        ${select("realm", fw.realms.map(r => [r.id, r.name]))}
+        ${select("phase", fw.phases.map(p => [p.id, p.number + ". " + p.name]))}
+      </div>
+      <div class="stats">${state.works.length} works · ${counts("read")} read · ${counts("reading")} reading · ${counts("unread")} unread · showing ${list.length}</div>
+      ${opened ? detail(opened) : ""}
+      ${list.map(workRow).join("") || '<p class="empty">Nothing matches.</p>'}`;
+  }
+
+  function framework() {
+    const fw = state.framework;
+    const cell = (realm, phase) => state.works.filter(w => w.realms.includes(realm) && w.phases.includes(phase));
+    return `<p class="lead">${escape(fw.systems)}</p>
+      ${fw.phases.map(p => `<div class="phase-words"><b>${p.number}. ${escape(p.name)}:</b> ${escape(p.words)}</div>`).join("")}
+      <h2>Your corpus across it</h2>
+      <table class="grid"><tr><th></th>${fw.phases.map(p => `<th title="${escape(p.words)}">${p.number}. ${escape(p.name)}</th>`).join("")}</tr>
+      ${fw.realms.map(r => `<tr><th class="realm" title="${escape(r.example || "")}">${escape(r.name)}</th>${fw.phases.map(p => {
+        const n = cell(r.id, p.id).length;
+        return `<td><button class="${n ? "" : "empty"}" data-cell="${r.id}|${p.id}">${n}</button></td>`;
+      }).join("")}</tr>`).join("")}</table>
+      <p class="lead" style="margin-top:10px">Click a square to see its works. Tag works in the Library: each can sit in several realms and phases.
+        ${state.works.filter(w => !w.realms.length).length} of ${state.works.length} works aren't tagged yet.</p>`;
+  }
+
+  function add() {
+    return `<p class="lead">A work you have in another format, or one you're reading online. If its title and author match a work
+      already here, it becomes another copy of that work.</p>
+      <div class="row" style="flex-direction:column;align-items:stretch;max-width:520px">
+        <input id="a-title" placeholder="Title"><input id="a-author" placeholder="Author">
+        <select id="a-format"><option value="web">🌐 Web</option><option value="digital">💾 Digital</option><option value="physical">📕 Physical</option></select>
+        <input id="a-place" placeholder="Where: the web address, or the file's path, or the shelf">
+        <div class="row"><button class="on" data-add>Add</button><span id="a-said" class="copy"></span></div>
+      </div>
+      <h2>Your catalogues</h2>
+      <p class="lead">${state.lists.map(escape).join("<br>")}</p>
+      <button data-import>Read them again for new books</button> <span id="i-said" class="copy"></span>`;
+  }
+
+  function render() {
+    tabs();
+    $("view").innerHTML = tab === "framework" ? framework() : tab === "add" ? add() : library();
+  }
+
+  async function refresh() {
+    try { state = await (await fetch("/api/state")).json(); } catch { return; }
+    render();
+  }
+
+  async function post(path, body) {
+    const reply = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+    return reply.json();
+  }
+
+  document.addEventListener("click", async event => {
+    const t = event.target.closest("button, .work");
+    if (!t) return;
+    if (t.dataset.tab) { tab = t.dataset.tab; try { localStorage.setItem("corpus.tab", tab); } catch {} return render(); }
+    if (t.dataset.work) { open = +t.dataset.work; render(); return window.scrollTo(0, 0); }
+    if (t.dataset.close !== undefined) { open = 0; return render(); }
+    if (t.dataset.cell) {
+      const [realm, phase] = t.dataset.cell.split("|");
+      filters = { status: "", format: "", realm, phase }; tab = "library"; open = 0;
+      return render();
+    }
+    const w = state.works.find(x => x.id === open);
+    if (t.dataset.set && w) { await post("/api/works/" + w.id, { [t.dataset.set]: t.dataset.value }); return refresh(); }
+    if (t.dataset.toggle && w) {
+      const list = w[t.dataset.toggle], v = t.dataset.value;
+      await post("/api/works/" + w.id, { [t.dataset.toggle]: list.includes(v) ? list.filter(x => x !== v) : list.concat(v) });
+      return refresh();
+    }
+    if (t.dataset.saveNotes !== undefined && w) {
+      await post("/api/works/" + w.id, { notes: $("notes").value });
+      $("saved").textContent = "Saved";
+      w.notes = $("notes").value;
+      return;
+    }
+    if (t.dataset.add !== undefined) {
+      const reply = await post("/api/copies", { title: $("a-title").value, author: $("a-author").value, format: $("a-format").value, place: $("a-place").value });
+      $("a-said").textContent = reply.problem || "Added.";
+      if (!reply.problem) { $("a-title").value = $("a-place").value = ""; refresh(); }
+      return;
+    }
+    if (t.dataset.import !== undefined) {
+      const reply = await post("/api/import");
+      $("i-said").textContent = `${reply.added} new.`;
+      return refresh();
+    }
+  });
+
+  document.addEventListener("input", event => {
+    if (event.target.id === "search") {
+      search = event.target.value;
+      const at = event.target.selectionStart;
+      render();
+      $("search").focus(); $("search").setSelectionRange(at, at);
+    }
+  });
+  document.addEventListener("change", event => {
+    if (event.target.dataset.filter) { filters[event.target.dataset.filter] = event.target.value; render(); }
+  });
+
+  refresh();
+</script>
+</body>
+</html>

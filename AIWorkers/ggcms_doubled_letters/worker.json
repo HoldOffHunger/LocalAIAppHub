@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: doubled-letter misspellings",
+  "description": "For every common English word with a doubled letter, makes the slip with one letter dropped (wordles) and one added (wordlesss). Real words are thrown out against pyspellchecker, Webster's 1913 and GGCMS's own lists, and gemma4 rules out names and the real words the dictionaries missed. The pairs are candidates for GGCMS's misspelling lists, for Claude to confirm.",
+  "targets": ["ss", "ll", "tt", "ff", "pp", "rr", "nn", "mm", "cc", "dd", "gg", "bb", "zz", "ee", "oo"],
+  "command": ["{python}", "run_doubled.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

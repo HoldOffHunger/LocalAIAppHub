@@ -1,0 +1,18 @@
+[
+  {
+    "id": "memory-backup",
+    "title": "Back up Claude's memories",
+    "description": "A dated snapshot of every project's memory folder, the global CLAUDE.md and settings.json, into E:\\!!!BACKUPs\\Claude Memories.",
+    "at": "03:00",
+    "command": ["{python}", "jobs\\backup_memories.py"],
+    "minutes": 30
+  },
+  {
+    "id": "paint-scene",
+    "title": "Paint Talasia's races",
+    "description": "One race with one subject a night from data\\race_scenes.json (an Orcish army, Wood Elf mages, a Dwarven fort), painted five times in different art styles, into the Images gallery. Every race gets every subject in time.",
+    "at": "03:05",
+    "command": ["{python}", "jobs\\paint_scene.py"],
+    "minutes": 75
+  }
+]

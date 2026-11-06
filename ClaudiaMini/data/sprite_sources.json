@@ -1,0 +1,14 @@
+{
+  "source_root": "C:\\Users\\<you>\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\output\\claudia\\grok",
+  "states": {
+    "idle": "Idle",
+    "working": "Spellcasting",
+    "needsyou": "Needs-You",
+    "done": "Done",
+    "oops": "Oops",
+    "asleep": "C:\\Users\\<you>\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\output\\claudia\\asleep"
+  },
+  "skip": [],
+  "picture_width_in_pixels": 117,
+  "colours": 48
+}

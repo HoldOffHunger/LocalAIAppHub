@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: topic tags for quotes",
+  "description": "For every short text with no tags (a quote), a local model reads it with its category and author and picks 3 to 5 topics. Only tags already used on RevoltLib are kept, so the spellings match and nothing is invented. Results are for a person to confirm; it never edits the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_topics.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

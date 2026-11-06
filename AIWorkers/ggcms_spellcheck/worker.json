@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: spellcheck text body",
+  "description": "Reads a site's newest dump, finds words the dictionary and GGCMS's misspelling lists don't like, and has local models judge each one in its sentence. Typos go to a results file for a person to confirm; it never edits the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_spellcheck.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

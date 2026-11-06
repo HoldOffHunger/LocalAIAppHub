@@ -1,0 +1,9 @@
+{
+  "title": "Wikipedia: links to Marxists.org",
+  "description": "One Marxists Internet Archive author per task. Reads the author's works from the local mirror fetch_mia.py made, borrows every Wikipedia link into marxists.org from the RevoltLib links task's index, and reads Wikipedia's titles for the works. It finds links into the author's folder that are dead (checked live, since MIA redirects most moved pages) and articles about the author or a work with no link there; a local model only judges same-titled articles. Works RevoltLib holds are left to the RevoltLib task. Results are ready-to-paste edits for a person, disclosing that he volunteers for MIA; it never edits Wikipedia.",
+  "targets": ["marxists.org/archive/bukharin", "marxists.org/archive/connolly","marxists.org/archive/kautsky","marxists.org/archive/luxemburg"],
+  "command": ["{python}", "run_mia_links.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

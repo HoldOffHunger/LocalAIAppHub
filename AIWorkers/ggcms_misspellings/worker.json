@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: harvest misspellings",
+  "description": "Gathers every unknown word across a site's texts, rules out real words in thirteen Wiktionaries, and has gemma4 judge each in two of its sentences. The typos are candidates for GGCMS's misspelling lists, for Claude to confirm; it never edits the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_harvest.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

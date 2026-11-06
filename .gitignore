@@ -1,0 +1,35 @@
+# --- Privacy: chats never go in the repo ---
+# Chat keeps conversations, personalities and training material under data/.
+# Ignored by name everywhere, so a moved or copied app can't leak them.
+**/conversations/
+**/materials/
+**/personas.json
+local-chat/data/
+*.jsonl
+*.chatlog
+
+# Login links (each holds a live session token)
+*_login.txt
+
+# Runtime state and logs
+Social/data/
+Corpus/data/
+ChronJobs/data/logs/
+ChronJobs/data/state.json
+*.log
+
+# The list of personal file paths left blank by the 1 Nov restore
+backup/blank-files-*.txt
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
+
+# ClaudiaMini build output (build.bat rebuilds it; the plugin's own
+# claudia-signal.exe under marketplace/ stays tracked so installs work)
+ClaudiaMini/build/
+ClaudiaMini/ClaudiaMini.exe
+*.obj

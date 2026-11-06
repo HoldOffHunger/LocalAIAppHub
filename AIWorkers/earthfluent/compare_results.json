@@ -1,0 +1,621 @@
+{
+ "testimony": {
+  "Sheep|Nouns - Animals, Part 1": {
+   "back": "Sheep",
+   "across": "Ovini",
+   "hint": "animal"
+  },
+  "Cow|Nouns - Animals, Part 1": {
+   "back": "Cow",
+   "across": "Mucca",
+   "hint": "animal"
+  },
+  "Porcupine|Nouns - Animals, Part 1": {
+   "back": "Porcupine",
+   "across": "Porcospino",
+   "hint": "animal"
+  },
+  "Caterpillar|Nouns - Animals, Part 2": {
+   "back": "Caterpillar",
+   "across": "Bruco",
+   "hint": "animal"
+  },
+  "Otter|Nouns - Animals, Part 2": {
+   "back": "Otter",
+   "across": "Lontra",
+   "hint": "animal"
+  },
+  "Pig|Nouns - Animals, Part 2": {
+   "back": "Pig",
+   "across": "Maiale",
+   "hint": "animal"
+  },
+  "Moose|Nouns - Animals, Part 2": {
+   "back": "American moose",
+   "across": "Alce",
+   "hint": "animal"
+  },
+  "Rhinoceros|Nouns - Animals, Part 3": {
+   "back": "Rhinoceros",
+   "across": "Rinoceronte",
+   "hint": "animal"
+  },
+  "Crab|Nouns - Animals, Part 3": {
+   "back": "Crab",
+   "across": "Granchio",
+   "hint": "animal"
+  },
+  "Ant|Nouns - Animals, Part 3": {
+   "back": "Formica",
+   "across": "Formica",
+   "hint": "animal"
+  },
+  "Monkey|Nouns - Animals, Part 3": {
+   "back": "Monkey",
+   "across": "Scimmia",
+   "hint": "animal"
+  },
+  "Vulture|Nouns - Animals, Part 4": {
+   "back": "Vulture",
+   "across": "Avvoltoio",
+   "hint": "animal"
+  },
+  "Deer|Nouns - Animals, Part 4": {
+   "back": "Deer",
+   "across": "Cervo",
+   "hint": "animal"
+  },
+  "Lion|Nouns - Animals, Part 4": {
+   "back": "Lion",
+   "across": "Leone",
+   "hint": "animal"
+  },
+  "Gerbil|Nouns - Animals, Part 4": {
+   "back": "Gerbil",
+   "across": "Gerbil",
+   "hint": "animal"
+  },
+  "Fish|Nouns - Animals, Part 5": {
+   "back": "Fish",
+   "across": "Pesci",
+   "hint": "animal"
+  },
+  "Shark|Nouns - Animals, Part 5": {
+   "back": "Shark",
+   "across": "Squalo",
+   "hint": "animal"
+  },
+  "Owl|Nouns - Animals, Part 5": {
+   "back": "Owl",
+   "across": "Gufo",
+   "hint": "animal"
+  },
+  "Rabbit|Nouns - Animals, Part 5": {
+   "back": "Rabbit",
+   "across": "Coniglio",
+   "hint": "animal"
+  },
+  "Lizard|Nouns - Animals, Part 6": {
+   "back": "Lizard",
+   "across": "Lucertola",
+   "hint": "animal"
+  },
+  "Chipmunk|Nouns - Animals, Part 6": {
+   "back": "Chipmunk",
+   "across": "Chipmunk",
+   "hint": "animal"
+  },
+  "Woodpecker|Nouns - Animals, Part 6": {
+   "back": "Beam",
+   "across": "Picchio",
+   "hint": "animal"
+  },
+  "Donkey|Nouns - Animals, Part 6": {
+   "back": "Ass",
+   "across": "Asino",
+   "hint": "animal"
+  },
+  "Insect|Nouns - Animals, Part 7": {
+   "back": "Insect",
+   "across": "Insetto",
+   "hint": "animal"
+  },
+  "Whale|Nouns - Animals, Part 7": {
+   "back": "Whale",
+   "across": "Balena",
+   "hint": "animal"
+  },
+  "Walrus|Nouns - Animals, Part 7": {
+   "back": "Tricheco",
+   "across": "trichechi",
+   "hint": "animal"
+  },
+  "Mantis|Nouns - Animals, Part 7": {
+   "back": "Mantis",
+   "across": "Mantide",
+   "hint": "animal"
+  },
+  "Snake|Nouns - Animals, Part 8": {
+   "back": "Snake",
+   "across": "Serpente",
+   "hint": "animal"
+  },
+  "Horse|Nouns - Animals, Part 8": {
+   "back": "Horse",
+   "across": "Cavallo",
+   "hint": "animal"
+  },
+  "Alligator|Nouns - Animals, Part 8": {
+   "back": "Alligator",
+   "across": "Alligatore",
+   "hint": "animal"
+  },
+  "Bat|Nouns - Animals, Part 8": {
+   "back": "Bat",
+   "across": "Pipistrello",
+   "hint": "animal"
+  },
+  "Squirrel|Nouns - Animals, Part 9": {
+   "back": "Squirrel",
+   "across": "Scoiattolo",
+   "hint": "animal"
+  },
+  "Camel|Nouns - Animals, Part 9": {
+   "back": "Camel",
+   "across": "Cammello",
+   "hint": "animal"
+  },
+  "Goat|Nouns - Animals, Part 9": {
+   "back": "Goat",
+   "across": "Caprini",
+   "hint": "animal"
+  },
+  "Hummingbird|Nouns - Animals, Part 10": {
+   "back": "Colibrì",
+   "across": "Colibri'",
+   "hint": "animal"
+  },
+  "Coyote|Nouns - Animals, Part 10": {
+   "back": "Coyote",
+   "across": "Coyote",
+   "hint": "animal"
+  },
+  "Firefly|Nouns - Animals, Part 10": {
+   "back": "Firefly",
+   "across": "Firefly",
+   "hint": "animal"
+  },
+  "Duck|Nouns - Animals, Part 10": {
+   "back": "Duck",
+   "across": "Anatre",
+   "hint": "animal"
+  },
+  "Pigeon|Nouns - Animals, Part 11": {
+   "back": "Pigeon",
+   "across": "Piccione",
+   "hint": "animal"
+  },
+  "Zebra|Nouns - Animals, Part 11": {
+   "back": "Zebra",
+   "across": "Zebra",
+   "hint": "animal"
+  },
+  "Snail|Nouns - Animals, Part 11": {
+   "back": "Snail",
+   "across": "Lumaca",
+   "hint": "animal"
+  },
+  "Turkey|Nouns - Animals, Part 11": {
+   "back": "Turkey",
+   "across": "Turchia",
+   "hint": "animal"
+  },
+  "Manta Ray|Nouns - Animals, Part 12": {
+   "back": "Manta Ray",
+   "across": "Manta Ray",
+   "hint": "animal"
+  },
+  "Ostrich|Nouns - Animals, Part 12": {
+   "back": "Ostrich",
+   "across": "Struzzo",
+   "hint": "animal"
+  },
+  "Lobster|Nouns - Animals, Part 12": {
+   "back": "Lobster",
+   "across": "Aragosta",
+   "hint": "animal"
+  },
+  "Ladybug|Nouns - Animals, Part 12": {
+   "back": "Ladybird",
+   "across": "Coccinella",
+   "hint": "animal"
+  },
+  "Dolphin|Nouns - Animals, Part 13": {
+   "back": "Dolphin",
+   "across": "Delfini",
+   "hint": "animal"
+  },
+  "Wolf|Nouns - Animals, Part 13": {
+   "back": "Wolf",
+   "across": "Lupo",
+   "hint": "animal"
+  },
+  "Panda Bear|Nouns - Animals, Part 13": {
+   "back": "Panda",
+   "across": "Orso panda",
+   "hint": "animal"
+  },
+  "Pelican|Nouns - Animals, Part 13": {
+   "back": "Pelican",
+   "across": "Pelicano",
+   "hint": "animal"
+  },
+  "Cat|Nouns - Animals, Part 14": {
+   "back": "Cat",
+   "across": "Gatto",
+   "hint": "animal"
+  },
+  "Eagle|Nouns - Animals, Part 14": {
+   "back": "Eagle",
+   "across": "Aquila",
+   "hint": "animal"
+  },
+  "Bird|Nouns - Animals, Part 14": {
+   "back": "Bird",
+   "across": "Uccelli",
+   "hint": "animal"
+  },
+  "Killer Whale|Nouns - Animals, Part 14": {
+   "back": "Murdering whale",
+   "across": "Balene assassine",
+   "hint": "animal"
+  },
+  "Worm|Nouns - Animals, Part 15": {
+   "back": "Worm",
+   "across": "Verme",
+   "hint": "animal"
+  },
+  "Giraffe|Nouns - Animals, Part 15": {
+   "back": "Giraffe",
+   "across": "Giraffa",
+   "hint": "animal"
+  },
+  "Spider|Nouns - Animals, Part 15": {
+   "back": "Spider",
+   "across": "Ragno",
+   "hint": "animal"
+  },
+  "Fox|Nouns - Animals, Part 15": {
+   "back": "Fox",
+   "across": "Fox",
+   "hint": "animal"
+  },
+  "Dog|Nouns - Animals, Part 16": {
+   "back": "Dog",
+   "across": "Cane",
+   "hint": "animal"
+  },
+  "Cheetah|Nouns - Animals, Part 16": {
+   "back": "Cheetah",
+   "across": "Cheetah",
+   "hint": "animal"
+  },
+  "Grasshopper|Nouns - Animals, Part 16": {
+   "back": "Cavallette",
+   "across": "Cavatappi",
+   "hint": "animal"
+  },
+  "Elephant|Nouns - Animals, Part 16": {
+   "back": "Elephant",
+   "across": "Elefante",
+   "hint": "animal"
+  },
+  "Octopus|Nouns - Animals, Part 17": {
+   "back": "Octopus",
+   "across": "Polpo",
+   "hint": "animal"
+  },
+  "Koala Bear|Nouns - Animals, Part 17": {
+   "back": "Koala",
+   "across": "Orso di Koala",
+   "hint": "animal"
+  },
+  "Penguin|Nouns - Animals, Part 17": {
+   "back": "Penguin",
+   "across": "Pinguino",
+   "hint": "animal"
+  },
+  "Scorpion|Nouns - Animals, Part 17": {
+   "back": "Scorpio",
+   "across": "Scorpione",
+   "hint": "animal"
+  },
+  "Honey Bee|Nouns - Animals, Part 18": {
+   "back": "Bees",
+   "across": "Ape di miele",
+   "hint": "animal"
+  },
+  "Polar Bear|Nouns - Animals, Part 18": {
+   "back": "Polar bear",
+   "across": "Orso polare",
+   "hint": "animal"
+  },
+  "Stingray|Nouns - Animals, Part 18": {
+   "back": "Stingray",
+   "across": "Stingray",
+   "hint": "animal"
+  },
+  "Bear|Nouns - Animals, Part 18": {
+   "back": "Bear",
+   "across": "Orso",
+   "hint": "animal"
+  },
+  "Turtle|Nouns - Animals, Part 19": {
+   "back": "Turtle",
+   "across": "Tartaruga",
+   "hint": "animal"
+  },
+  "Chicken|Nouns - Animals, Part 19": {
+   "back": "Chicken",
+   "across": "Pollo",
+   "hint": "animal"
+  },
+  "Squid|Nouns - Animals, Part 19": {
+   "back": "Calamari",
+   "across": "Calamaro",
+   "hint": "animal"
+  },
+  "Frog|Nouns - Animals, Part 19": {
+   "back": "Frog",
+   "across": "Rane",
+   "hint": "animal"
+  },
+  "Tiger|Nouns - Animals, Part 20": {
+   "back": "Tiger",
+   "across": "Tigre",
+   "hint": "animal"
+  },
+  "Seal|Nouns - Animals, Part 20": {
+   "back": "Foca",
+   "across": "Sigillo",
+   "hint": "animal"
+  },
+  "Seahorse|Nouns - Animals, Part 20": {
+   "back": "Seahorse",
+   "across": "Cavallo marino",
+   "hint": "animal"
+  },
+  "Mouse|Nouns - Animals, Part 20": {
+   "back": "Mouse",
+   "across": "Mouse",
+   "hint": "animal"
+  },
+  "china|Culture - Countries, Part 1": {
+   "back": "China",
+   "across": "Cina",
+   "hint": "country"
+  },
+  "india|Culture - Countries, Part 1": {
+   "back": "India",
+   "across": "india",
+   "hint": "country"
+  },
+  "united states|Culture - Countries, Part 1": {
+   "back": "United States",
+   "across": "Stati Uniti",
+   "hint": "country"
+  },
+  "indonesia|Culture - Countries, Part 1": {
+   "back": "Indonesia",
+   "across": "indonesia",
+   "hint": "country"
+  },
+  "brazil|Culture - Countries, Part 2": {
+   "back": "brazil",
+   "across": "brasiliano",
+   "hint": "country"
+  },
+  "pakistan|Culture - Countries, Part 2": {
+   "back": "Pakistan",
+   "across": "pakistan",
+   "hint": "country"
+  },
+  "nigeria|Culture - Countries, Part 2": {
+   "back": "Nigeria",
+   "across": "Nigeria",
+   "hint": "country"
+  },
+  "bangladesh|Culture - Countries, Part 2": {
+   "back": "bangladesh",
+   "across": "bangladesh",
+   "hint": "country"
+  },
+  "russia|Culture - Countries, Part 3": {
+   "back": "Russia",
+   "across": "Russia",
+   "hint": "country"
+  },
+  "mexico|Culture - Countries, Part 3": {
+   "back": "Mexico",
+   "across": "Messico",
+   "hint": "country"
+  },
+  "japan|Culture - Countries, Part 3": {
+   "back": "Japan",
+   "across": "Giappone",
+   "hint": "country"
+  },
+  "ethiopia|Culture - Countries, Part 3": {
+   "back": "Ethiopia",
+   "across": "etiopia",
+   "hint": "country"
+  },
+  "Philippines|Culture - Countries, Part 4": {
+   "back": "Philippines",
+   "across": "Filippine",
+   "hint": "country"
+  },
+  "Egypt|Culture - Countries, Part 4": {
+   "back": "Egypt",
+   "across": "Egitto",
+   "hint": "country"
+  },
+  "Vietnam|Culture - Countries, Part 4": {
+   "back": "Vietnam",
+   "across": "Vietnam",
+   "hint": "country"
+  },
+  "Germany|Culture - Countries, Part 4": {
+   "back": "Germany",
+   "across": "Germania",
+   "hint": "country"
+  },
+  "Iran|Culture - Countries, Part 5": {
+   "back": "I ran.",
+   "across": "Iran",
+   "hint": "country"
+  },
+  "Turkey|Culture - Countries, Part 5": {
+   "back": "turkey",
+   "across": "Turchia",
+   "hint": "country"
+  },
+  "Thailand|Culture - Countries, Part 5": {
+   "back": "Thailand",
+   "across": "Thailandia",
+   "hint": "country"
+  },
+  "Congo|Culture - Countries, Part 5": {
+   "back": "Congo",
+   "across": "Congo",
+   "hint": "country"
+  },
+  "United Kingdom|Culture - Countries, Part 6": {
+   "back": "United Kingdom",
+   "across": "Regno Unito",
+   "hint": "country"
+  },
+  "France|Culture - Countries, Part 6": {
+   "back": "France",
+   "across": "Francia",
+   "hint": "country"
+  },
+  "Italy|Culture - Countries, Part 6": {
+   "back": "Italy",
+   "across": "Italia",
+   "hint": "country"
+  },
+  "South Korea|Culture - Countries, Part 7": {
+   "back": "South Korea",
+   "across": "Corea del Sud",
+   "hint": "country"
+  },
+  "North Korea|Culture - Countries, Part 7": {
+   "back": "North Korea",
+   "across": "Corea del Nord",
+   "hint": "country"
+  },
+  "Colombia|Culture - Countries, Part 7": {
+   "back": "Colombia",
+   "across": "Colombia",
+   "hint": "country"
+  },
+  "Spain|Culture - Countries, Part 7": {
+   "back": "Spain",
+   "across": "Spagna",
+   "hint": "country"
+  },
+  "Argentina|Culture - Countries, Part 8": {
+   "back": "Argentina",
+   "across": "Argentina",
+   "hint": "country"
+  },
+  "Ukraine|Culture - Countries, Part 8": {
+   "back": "Ukraine",
+   "across": "Ucraina",
+   "hint": "country"
+  },
+  "Algeria|Culture - Countries, Part 8": {
+   "back": "algeria",
+   "across": "Algeria",
+   "hint": "country"
+  },
+  "Iraq|Culture - Countries, Part 8": {
+   "back": "Iraq",
+   "across": "Iraq",
+   "hint": "country"
+  },
+  "Poland|Culture - Countries, Part 9": {
+   "back": "Poland",
+   "across": "Polonia",
+   "hint": "country"
+  },
+  "Canada|Culture - Countries, Part 9": {
+   "back": "Canada",
+   "across": "Canada",
+   "hint": "country"
+  },
+  "Morocco|Culture - Countries, Part 9": {
+   "back": "Morocco",
+   "across": "Marocco",
+   "hint": "country"
+  },
+  "Peru|Culture - Countries, Part 9": {
+   "back": "Peru",
+   "across": "Perù",
+   "hint": "country"
+  }
+ },
+ "experts decide": {
+  "caught": [
+   "Iran",
+   "Killer Whale"
+  ],
+  "missed": [
+   "Chipmunk",
+   "Gerbil",
+   "Manta Ray",
+   "Stingray",
+   "Turkey"
+  ],
+  "false_alarms": [
+   "Grasshopper->Cavalletta",
+   "Honey Bee->Ape",
+   "Hummingbird->Colibrì",
+   "Koala Bear->Koala",
+   "Panda Bear->Panda",
+   "Seal->Foca",
+   "Walrus->Tricheco"
+  ]
+ },
+ "jury with experts": {
+  "caught": [
+   "Chipmunk",
+   "Gerbil",
+   "Iran",
+   "Killer Whale",
+   "Turkey"
+  ],
+  "missed": [
+   "Manta Ray",
+   "Stingray"
+  ],
+  "false_alarms": []
+ },
+ "jury alone": {
+  "caught": [
+   "Chipmunk",
+   "Gerbil",
+   "Iran",
+   "Killer Whale",
+   "Manta Ray",
+   "Stingray",
+   "Turkey"
+  ],
+  "missed": [],
+  "false_alarms": [
+   "Camel->Cammello",
+   "Moose->Alce americano"
+  ]
+ }
+}

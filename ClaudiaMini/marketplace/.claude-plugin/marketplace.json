@@ -1,0 +1,14 @@
+{
+  "name": "claudia-local",
+  "description": "Ben's own plugins, from E:\\AppHub\\ClaudiaMini",
+  "owner": {
+    "name": "Ben"
+  },
+  "plugins": [
+    {
+      "name": "claudia-mini",
+      "source": "./plugins/claudia-mini",
+      "description": "Tells Claudia Mini, the desktop sprite, what each Claude Code session is doing"
+    }
+  ]
+}

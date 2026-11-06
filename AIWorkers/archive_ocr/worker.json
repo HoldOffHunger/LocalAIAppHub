@@ -1,0 +1,9 @@
+{
+  "title": "Internet Archive: OCR misreadings",
+  "description": "Takes the Wikipedia typo hunter's misspellings that a scanner made rather than a typist (rn for m, cl for d, li for h, the long s read as f, dropped ligatures), searches the Internet Archive's full text for them, and reads the OCR of the worst-scanned texts, a few MB at most each, for non-words that look-alike letters turn into real words. Those that recur across texts go to a results file and the App Hub's Social page as candidates for GGCMS's misspelling lists, for a person to confirm; nothing is added to any list automatically.",
+  "targets": ["archive.org"],
+  "command": ["{python}", "run_mine.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

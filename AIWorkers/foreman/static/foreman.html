@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foreman</title>
+  <link rel="stylesheet" href="/static/foreman.css?v=7">
+</head>
+<body>
+  <header>
+    <h1>Foreman <span class="dim">· night workers</span></h1>
+    <div class="row">
+      <button id="rest" class="quiet" title="The breather between one job's turn and the next">Rest</button>
+      <span id="status-chip" class="chip">Idle</span>
+      <button id="stop" class="quiet" hidden>Stop</button>
+      <span id="free-box" class="row">
+        <button id="free" class="quiet">Give the workers</button>
+        <select id="free-minutes"><option value="30">30 min</option><option value="60" selected>an hour</option><option value="120">2 hours</option><option value="240">4 hours</option><option value="480">8 hours</option></select>
+      </span>
+      <button id="show-shift" class="quiet">Night shift</button>
+      <button id="show-add">Add task</button>
+    </div>
+  </header>
+  <main>
+    <nav class="board-tabs">
+      <button id="show-ongoing" class="tab" aria-pressed="true">Ongoing Jobs</button>
+      <button id="show-completed" class="tab" aria-pressed="false">Completed Jobs</button>
+    </nav>
+    <div id="tasks" class="tasks"></div>
+    <section class="work">
+      <h2 id="log-title">Log</h2>
+      <pre id="log" class="log">Nothing has run yet.</pre>
+    </section>
+  </main>
+
+  <dialog id="add">
+    <form method="dialog" id="add-form">
+      <h2>Add task</h2>
+      <label>Kind of work <select id="add-kind"></select></label>
+      <p id="add-about" class="small dim"></p>
+      <label>Target <select id="add-target"></select></label>
+      <label>Name <input id="add-name" placeholder="optional: it's named for its kind and target otherwise"></label>
+      <div class="row end"><button value="cancel" class="quiet" formnovalidate>Cancel</button><button id="add-save" value="save">Add</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="shift">
+    <form method="dialog">
+      <h2>Night shift</h2>
+      <p class="small dim">While the window is open, the Foreman works the active tasks top to bottom, each once per night. If Autonoma's model is on the GPU, it waits until the card is free.</p>
+      <label class="inline"><input type="checkbox" id="enabled"> Run on a schedule</label>
+      <div class="row"><label>From <input type="time" id="start"></label><label>Until <input type="time" id="end"></label></div>
+      <label class="inline"><input type="radio" name="mode" value="window" id="mode-window"> Stop at that time</label>
+      <label class="inline"><input type="radio" name="mode" value="until_awake" id="mode-awake"> Keep going until I'm back at the PC</label>
+      <p class="small dim">Until you're back: it starts once nobody has touched the keyboard or mouse for 15 minutes, and the first touch after that ends the night.</p>
+      <div id="days" class="days"></div>
+      <div class="row end"><button value="cancel" class="quiet">Close</button><button id="save-schedule" value="save">Save</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="rest-box">
+    <form method="dialog">
+      <h2>Rest between jobs</h2>
+      <p class="small dim">After a task's turn, the night shift and free time wait this long before starting the next. A turn that came straight back (nothing it could do) doesn't rest, and giving the workers time by hand starts at once.</p>
+      <label>Minutes <input type="number" id="rest-minutes" min="0" max="240" step="1"></label>
+      <div class="row end"><button value="cancel" class="quiet" formnovalidate>Cancel</button><button id="rest-save" value="save">Save</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="stretch">
+    <form method="dialog">
+      <h2>Stop time</h2>
+      <p class="stretch-time"><span id="stretch-old"></span><strong id="stretch-new"></strong> <span id="stretch-change" class="dim small"></span></p>
+      <p id="stretch-left" class="small dim"></p>
+      <div id="stretch-more" class="row"></div>
+      <div id="stretch-less" class="row"></div>
+      <h2 class="queue-title">In the rotation</h2>
+      <ul id="stretch-queue" class="queue small"></ul>
+      <p class="small dim">Saving moves the free time and the working task's stop time together. The worker restarts on the new stop time so it can plan its turn across the whole stretch, and it picks up where it left off.</p>
+      <div class="row end"><button value="cancel" class="quiet">Cancel</button><button id="stretch-save" value="save">Save</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="detail" class="wide">
+    <form method="dialog" id="detail-form">
+      <div class="row between"><h2 id="detail-kind"></h2><button value="close" class="quiet">Close</button></div>
+      <label>Name <input id="detail-name"></label>
+      <label>Notes <textarea id="detail-notes" rows="2"></textarea></label>
+      <label class="inline"><input type="checkbox" id="detail-active"> In the night shift</label>
+      <div id="detail-progress" class="small"></div>
+      <div class="row">
+        <button id="detail-save" type="button" class="quiet">Save changes</button>
+        <span class="grow"></span>
+        <button id="detail-hour" type="button">Give it an hour</button>
+        <label class="inline small">or <input type="number" id="detail-minutes" min="5" step="5" value="30"> min</label>
+        <button id="detail-run" type="button" class="quiet">Run</button>
+        <button id="detail-finish" type="button" class="quiet">Run to the end</button>
+      </div>
+      <h2>Results</h2>
+      <pre id="detail-results" class="log results"></pre>
+      <div class="row end"><button id="detail-deploy" type="button" class="quiet">Mark deployed</button><button id="detail-delete" type="button" class="danger">Delete task</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/foreman.js?v=7"></script>
+</body>
+</html>

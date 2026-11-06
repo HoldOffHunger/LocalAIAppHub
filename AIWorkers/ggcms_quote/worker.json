@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: fill quote (inspiring)",
+  "description": "For every text with no quote, the code lifts up to 20 whole sentences that could stand alone; a local model shortlists the three most inspiring and a second picks one. Every quote is word for word from the text. Results are for a person to confirm; it never edits the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_quotes.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

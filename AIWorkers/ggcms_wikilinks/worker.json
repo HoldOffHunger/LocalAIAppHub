@@ -1,0 +1,9 @@
+{
+  "title": "GGCMS: Wikipedia dead and missing links",
+  "description": "Reads English Wikipedia's link and title tables (kept under a 0.5 TB cap) and finds articles citing a dead copy of a text we host, marked dead or not, plus articles about our works and authors with no link to us. Matches are by TextBody.Source, or by comparing an archived copy word for word; a local model only judges same-titled articles. Every proposal uses the permalink (?id= of the oldest Assignment). Results are ready-to-paste edits for a person; it never edits Wikipedia or the site.",
+  "targets": "sites",
+  "command": ["{python}", "run_wikilinks.py", "--target", "{target}", "--queue", "{queue}", "--results", "{results}", "--limit", "100000"],
+  "until_flag": "--until",
+  "stats": ["{python}", "stats.py", "--queue", "{queue}"],
+  "results": "{results}"
+}

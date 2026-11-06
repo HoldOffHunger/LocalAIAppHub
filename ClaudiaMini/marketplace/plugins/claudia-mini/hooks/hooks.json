@@ -1,0 +1,186 @@
+{
+  "description": "Reports each session's state to Claudia Mini over localhost. SessionStart runs in the foreground because its output tells Claude she exists; everything else runs in the background so Claude never waits.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "sessionstart"
+            ]
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "prompt"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "pretool"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "posttool"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "toolfail"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "denied"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "permission"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "needsyou"
+            ],
+            "async": true
+          }
+        ],
+        "matcher": "permission_prompt|elicitation_dialog|elicitation_url_dialog|agent_needs_input"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "idle"
+            ],
+            "async": true
+          }
+        ],
+        "matcher": "idle_prompt"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "stop"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "outofmana"
+            ],
+            "async": true
+          }
+        ],
+        "matcher": "rate_limit|billing_error|account_on_hold"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "stuck"
+            ],
+            "async": true
+          }
+        ],
+        "matcher": "overloaded|authentication_failed|oauth_org_not_allowed|invalid_request|model_not_found|server_error|max_output_tokens|cloud_credential_error|unknown"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/claudia-signal.exe",
+            "args": [
+              "sessionend"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

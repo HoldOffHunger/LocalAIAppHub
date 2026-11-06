@@ -1,0 +1,27 @@
+{
+  "about": "EXTRAPOLATED: Claudia's rough first guess (2 Nov 2026) at how Ben's Lists-Per-Title evidence falls into his realms and phases, by words in each kind of evidence. Not applied to any work. Every rule is for Ben to keep, change or strike; once he has, the confirmed rules can tag works.",
+  "phases": [
+    {"phase": "hijacked", "words": ["^hijacked"], "why": "his own word for phase 4"},
+    {"phase": "society", "words": [" society$"], "why": "\"Socialist Society\", \"Anarchist Society\": the principle become part of society"},
+    {"phase": "revolt", "words": ["revolt", "guerrilla", "^rev man", "right to revolt", "union activity", "free militia", "class war"],
+     "why": "acts of revolting against abuse"},
+    {"phase": "principle", "words": ["abuse", "racism", "sexism", "homophobia", "torture", "slavery", "poverty", "death penalty",
+                                     "illiteracy", "^war$", "public prosperity", "beauty of nature", "natural beauty", "^labor->",
+                                     "tech is good", "limit authority", "democracy", "objective morality", "voting sucks",
+                                     "positive immigration", "society is civ", "affluence prevents crime", "poverty->crime"],
+     "why": "observed abuses and the principles against them, his phase 1"}
+  ],
+  "realms": [
+    {"realm": "economic", "words": ["worker", "labor", "class war", "poverty", "^cap ", "consumer", "luxury", "union", "prosperity",
+                                    "compradore", "wealth", "affluence", "socialist", "prop man", "smuggling"]},
+    {"realm": "political", "words": ["^gov", "voting", "democracy", "death penalty", "^war$", "anti-war", "torture", "limit authority",
+                                     "anarch", "militia", "guerrilla", "right to revolt", "criminal society", "rev man"]},
+    {"realm": "religious", "words": ["relig", "atheis", "bible"]},
+    {"realm": "educational", "words": ["school", "literate", "illitera", "autodidact", "educat"]},
+    {"realm": "ecological", "words": ["eco", "animal", "nature", "natural beauty", "environment"]},
+    {"realm": "social", "words": ["racis", "racist", "sexis", "feminis", "homophob", "sex", "drug", "prostitution", "immigration",
+                                  "child abuse", "slavery"]}
+  ],
+  "left_alone": ["quote", "to read", "draft"],
+  "left_alone_why": "bookkeeping marks of Ben's, not evidence"
+}

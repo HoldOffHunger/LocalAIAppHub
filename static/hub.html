@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Hub</title>
+<link rel="stylesheet" href="/static/hub.css">
+</head>
+<body>
+<nav id="rail" aria-label="Apps">
+  <div id="rail-title">App Hub</div>
+  <div id="app-list"></div>
+  <div id="gpu" title="Who has the graphics card"><span class="chip">GPU</span> <span id="gpu-text">free</span></div>
+  <button id="kick-chat" hidden title="Drops Chat's model from the card and lets the AI Workers back on now">Kick Chat off GPU</button>
+</nav>
+<main id="stage">
+  <div id="offline" hidden>
+    <p id="offline-text"></p>
+    <button id="offline-start" class="primary" hidden>Start it</button>
+  </div>
+</main>
+<script src="/static/hub.js"></script>
+</body>
+</html>

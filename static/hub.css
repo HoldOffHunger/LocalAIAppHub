@@ -1,0 +1,37 @@
+:root {
+  --bg: #16161a; --panel: #1e1e24; --panel-2: #26262e; --text: #e8e6e3; --muted: #9a98a0;
+  --accent: #c58b5c; --accent-text: #1a1209; --border: #33333c; --up: #6fbf73;
+  --ui-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { display: flex; background: var(--bg); color: var(--text); font-family: var(--ui-font); }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--border); padding: 7px 12px; color: var(--text); background: var(--panel-2); }
+button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+button:hover { filter: brightness(1.12); }
+
+#rail { width: 196px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 12px 8px; gap: 4px; }
+#gpu { margin-top: auto; padding: 8px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+#gpu .chip { font-size: 10px; letter-spacing: .06em; border: 1px solid var(--border); border-radius: 4px; padding: 0 4px; }
+#gpu.held #gpu-text { color: var(--text); }
+#kick-chat { margin: 0 8px 8px; padding: 6px 8px; font-weight: 600; color: #1a1400; background: #f5c518; border: 1px solid #c99a00; border-radius: 6px; cursor: pointer; }
+#kick-chat:hover { background: #ffd43b; }
+#kick-chat:disabled { opacity: .6; cursor: wait; }
+#rail-title { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; padding: 4px 8px 8px; }
+#app-list { display: flex; flex-direction: column; gap: 2px; }
+.app { display: flex; align-items: center; border-radius: 8px; }
+.app:hover, .app.active { background: var(--panel-2); }
+.app.active { box-shadow: inset 3px 0 0 var(--accent); }
+.app .pick { flex: 1; display: flex; align-items: center; gap: 8px; border: none; background: transparent; text-align: left; padding: 8px; min-width: 0; }
+.app .icon { width: 20px; text-align: center; }
+.app .name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+.app .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+.app.up .dot { background: var(--up); }
+.app .extra { border: none; background: transparent; color: var(--muted); padding: 4px 5px; visibility: hidden; font-size: 13px; text-decoration: none; }
+.app:hover .extra { visibility: visible; }
+
+#stage { flex: 1; position: relative; min-width: 0; }
+#stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; background: var(--bg); }
+#stage iframe[hidden] { display: none; }
+#offline { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--muted); }
+#offline[hidden] { display: none; }

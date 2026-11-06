@@ -1,0 +1,8 @@
+{
+  "name": "claudia-mini",
+  "version": "0.1.0",
+  "description": "Tells Claudia Mini, the desktop sprite, what each Claude Code session is doing",
+  "author": {
+    "name": "Ben"
+  }
+}
