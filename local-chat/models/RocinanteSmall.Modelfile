@@ -1,0 +1,15 @@
+# Rocinante 12B at Q3_K_M (~6 GB): a slimmer copy meant to fit fully on an 8 GB card like the GTX 1070 Ti.
+# Pull it first:  ollama pull hf.co/TheDrummer/Rocinante-12B-v1.1-GGUF:Q3_K_M
+# Then build:     ollama create rocinante-small -f models/RocinanteSmall.Modelfile
+FROM hf.co/TheDrummer/Rocinante-12B-v1.1-GGUF:Q3_K_M
+
+TEMPLATE """{{- range $index, $_ := .Messages }}
+{{- if eq .Role "system" }}[INST]{{ .Content }}[/INST]Understood.</s>
+{{- else if eq .Role "user" }}[INST]{{ .Content }}[/INST]
+{{- else if eq .Role "assistant" }}{{ .Content }}</s>
+{{- end }}
+{{- end }}"""
+
+PARAMETER stop "</s>"
+PARAMETER stop "[INST]"
+PARAMETER stop "[/INST]"

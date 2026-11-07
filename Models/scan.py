@@ -13,7 +13,8 @@ from pathlib import Path
 import file_meta
 import known
 
-MODELS_ROOT = Path(os.environ.get("AI_MODELS", r"E:\AIModels"))
+# The hub's models folder (a junction to the real one, if it lives elsewhere), resolved so the sweep knows it
+MODELS_ROOT = Path(os.environ.get("AI_MODELS") or Path(__file__).resolve().parent.parent / "ModelFiles").resolve()
 # Where Ben builds his own models (the Autonoma fine-tunes): a home too, so nothing in it counts as a straggler
 WORKSHOP = Path(os.environ.get("MODEL_WORKSHOP", r"E:\ModelWorkshop"))
 HOMES = [MODELS_ROOT, WORKSHOP]

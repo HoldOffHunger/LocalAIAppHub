@@ -1,0 +1,14 @@
+# Wraps the Cydonia GGUF in Mistral's V7-Tekken chat format so Ollama formats turns correctly.
+# Build it with:  ollama create cydonia -f models/Cydonia.Modelfile
+FROM hf.co/TheDrummer/Cydonia-24B-v2-GGUF:Q4_K_M
+
+TEMPLATE """{{- range $index, $_ := .Messages }}
+{{- if eq .Role "system" }}[SYSTEM_PROMPT]{{ .Content }}[/SYSTEM_PROMPT]
+{{- else if eq .Role "user" }}[INST]{{ .Content }}[/INST]
+{{- else if eq .Role "assistant" }}{{ .Content }}</s>
+{{- end }}
+{{- end }}"""
+
+PARAMETER stop "</s>"
+PARAMETER stop "[INST]"
+PARAMETER stop "[/INST]"

@@ -2,6 +2,8 @@
 
 One page with a side panel for every app we built: Chat, Voice (Chat, spoken: talk aloud with a character and hear her answer), Images, Autonoma, AI Workers, Site Stats, Movies, JellyShim (our folder-first Jellyfin), Models (every AI model on the machine, by kind, with its maker, size and folder), Minis (two desktop companions: Claudia, showing what Claude Code is doing, and Bit, showing what the AI Workers are doing) and Chron Jobs (the jobs that run on their own each night, starting with the 3 AM memory backup; the AI Workers wait for them).
 
+**On a new PC**, see [SETUP.md](SETUP.md): `setup\setup.ps1` picks and downloads models to fit the machine's graphics card and disk.
+
 ## Starting it
 
 Run `E:\AppHub\start.bat`. It:
@@ -54,4 +56,4 @@ When the card changes hands the desk makes room: Ollama drops the models the new
 
 The API, for any app that wants to join in: `POST /api/gpu/claim` `{"app": "chat", "minutes": 5, "keep_models": ["qwen3:14b"]}` (add `"background": true` to ask politely), `POST /api/gpu/renew` `{"app": ..., "minutes": 2}` to keep a lease without taking the card back, `POST /api/gpu/release` `{"app": ...}`, `POST /api/gpu/kick` `{"app": ...}` (the yellow button), and `GET /api/gpu`. Every app falls back to its old ways if the hub isn't running.
 
-How long the workers wait after your last chat message is `pause_workers_minutes` in `E:\local-chat\data\settings.json` (5; 0 turns Chat's asking off), and after your last picture the same setting in `E:\ImageGen\data\settings.json`. A worker stepped aside starts again with its original stop time, unless that time has already passed.
+How long the workers wait after your last chat message is `pause_workers_minutes` in `local-chat\data\settings.json` (5; 0 turns Chat's asking off), and after your last picture the same setting in `ImageGen\data\settings.json`. A worker stepped aside starts again with its original stop time, unless that time has already passed.

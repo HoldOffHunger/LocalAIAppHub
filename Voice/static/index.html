@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<aside id="sidebar">
+  <button id="new-thread" class="primary">New voice chat</button>
+  <div id="thread-list"></div>
+</aside>
+<main>
+  <header>
+    <label>Character <select id="character"></select></label>
+    <label>Writer <select id="model"></select></label>
+    <label>Voice <select id="voice"></select></label>
+    <label class="speed">Speed <input type="range" id="speed" min="0.7" max="1.4" step="0.05"> <span id="speed-value"></span></label>
+    <label class="speed">Volume <input type="range" id="volume" min="0" max="1" step="0.05"> <span id="volume-value"></span></label>
+    <button id="preview" class="ghost" title="Hear this voice say a line">▶ Hear it</button>
+    <label>Mic <select id="mic"><option value="">Default microphone</option></select></label>
+    <span id="level" title="How loud the microphone is"><span></span></span>
+  </header>
+  <div id="problem" hidden></div>
+  <section id="messages"></section>
+  <footer>
+    <div id="status">Hold the button, or hold Space, and talk.</div>
+    <div class="controls">
+      <select id="talk-mode" title="How the talk button works">
+        <option value="hold">Hold to talk</option>
+        <option value="toggle">Click on, click off</option>
+        <option value="auto">Hands-free</option>
+      </select>
+      <button id="talk" title="Hold to talk">🎙️</button>
+      <button id="stop" class="ghost" disabled>Stop</button>
+    </div>
+  </footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "_about": "What setup.ps1 downloads. Chat models are picked by the graphics card's memory (GB of VRAM; 0 means no NVIDIA card), then fitted to the disk budget in the order listed. Sizes are download sizes in GB, checked against the Ollama registry and Hugging Face in November 2026. Edit freely.",
+  "chat_tiers": [
+    { "min_vram": 0,  "models": [ { "name": "qwen3.5:4b",  "gb": 3.3,  "why": "small, quick all-rounder; runs on the processor if it must" },
+                                  { "name": "gemma4:e2b",  "gb": 4.6,  "why": "Google's small model; sees images too" } ] },
+    { "min_vram": 6,  "models": [ { "name": "qwen3.5:9b",  "gb": 6.6,  "why": "the everyday chat model at this size" },
+                                  { "name": "gemma4:e4b",  "gb": 6.6,  "why": "a second voice, sees images" },
+                                  { "name": "qwen3.5:4b",  "gb": 3.3,  "why": "the quick one" } ] },
+    { "min_vram": 10, "models": [ { "name": "gemma4:12b",  "gb": 8.0,  "why": "strong writer, sees images" },
+                                  { "name": "qwen3.5:9b",  "gb": 6.6,  "why": "the everyday chat model" },
+                                  { "name": "qwen3.5:4b",  "gb": 3.3,  "why": "the quick one" } ] },
+    { "min_vram": 20, "models": [ { "name": "qwen3.8:27b", "gb": 17.7, "why": "the big thinker" },
+                                  { "name": "gemma4:26b",  "gb": 18.7, "why": "strong writer, sees images" },
+                                  { "name": "qwen3.5:9b",  "gb": 6.6,  "why": "the quick one" } ] }
+  ],
+  "voice": [
+    { "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx", "to": "kokoro\\kokoro-v1.0.onnx", "gb": 0.33 },
+    { "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin", "to": "kokoro\\voices-v1.0.bin", "gb": 0.03 }
+  ],
+  "whisper": { "name": "small.en", "to": "whisper\\small.en", "gb": 0.49 },
+  "images": {
+    "min_vram": 6,
+    "files": [
+      { "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4b-fp8/resolve/main/flux-2-klein-4b-fp8.safetensors", "to": "comfyui\\diffusion_models\\flux-2-klein-4b-fp8.safetensors", "gb": 4.07 },
+      { "url": "https://huggingface.co/Comfy-Org/Flux-2-Klein-4B/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors", "to": "comfyui\\text_encoders\\qwen_3_4b.safetensors", "gb": 8.04 },
+      { "url": "https://huggingface.co/Comfy-Org/Flux-2-Klein-4B/resolve/main/split_files/vae/flux2-vae.safetensors", "to": "comfyui\\vae\\flux2-vae.safetensors", "gb": 0.34 }
+    ]
+  },
+  "reserve_gb": 30,
+  "largest_share_of_free_space": 0.6
+}

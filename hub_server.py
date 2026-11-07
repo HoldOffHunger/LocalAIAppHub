@@ -33,6 +33,11 @@ def load_apps():
             apps = json.load(handle)
         if not isinstance(apps, list):
             raise ValueError("it should be a list, [ ... ]")
+        for app in apps:  # a relative folder is relative to the hub, so the hub can live anywhere
+            if isinstance(app, dict) and app.get("folder") and not os.path.isabs(app["folder"]):
+                app["folder"] = os.path.normpath(os.path.join(APP_DIR, app["folder"]))
+        # An app whose folder isn't on this PC isn't shown or started: the same list works on every machine
+        apps = [app for app in apps if not isinstance(app, dict) or not app.get("folder") or os.path.isdir(app["folder"])]
         last_good_apps, apps_problem = apps, ""
     except (OSError, ValueError) as error:
         problem = "Can't read %s (%s); showing the last good list." % (APPS_PATH, error)

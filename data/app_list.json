@@ -4,7 +4,7 @@
     "title": "Chat",
     "icon": "💬",
     "port": 8790,
-    "folder": "E:\\local-chat",
+    "folder": "local-chat",
     "start": "start.bat"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Voice",
     "icon": "🎙️",
     "port": 8795,
-    "folder": "E:\\Voice",
+    "folder": "Voice",
     "start": "start.bat",
     "allow": "microphone; autoplay"
   },
@@ -21,7 +21,7 @@
     "title": "Images",
     "icon": "🎨",
     "port": 8730,
-    "folder": "E:\\ImageGen",
+    "folder": "ImageGen",
     "start": "start.bat"
   },
   {
@@ -71,7 +71,7 @@
     "title": "Models",
     "icon": "🧠",
     "port": 8800,
-    "folder": "E:\\AppHub\\Models",
+    "folder": "Models",
     "start": "start.bat"
   },
   {
@@ -79,7 +79,7 @@
     "title": "Minis",
     "icon": "🐾",
     "port": 8780,
-    "folder": "E:\\AppHub\\ClaudiaMini",
+    "folder": "ClaudiaMini",
     "start": "start.bat"
   },
   {
@@ -87,7 +87,7 @@
     "title": "Social",
     "icon": "🤝",
     "port": 8750,
-    "folder": "E:\\AppHub\\Social",
+    "folder": "Social",
     "start": "start.bat",
     "allow": "clipboard-write"
   },
@@ -96,7 +96,7 @@
     "title": "Corpus",
     "icon": "🦉",
     "port": 8760,
-    "folder": "E:\\AppHub\\Corpus",
+    "folder": "Corpus",
     "start": "start.bat"
   },
   {
@@ -104,7 +104,7 @@
     "title": "Chron Jobs",
     "icon": "⏰",
     "port": 8740,
-    "folder": "E:\\AppHub\\ChronJobs",
+    "folder": "ChronJobs",
     "start": "start.bat"
   }
 ]

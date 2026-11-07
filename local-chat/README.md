@@ -1,6 +1,6 @@
 # Local Chat
 
-A small, private, ChatGPT-style chat site that runs entirely on your machine and talks to a local model through [Ollama](https://ollama.com). No accounts, no telemetry, and nothing leaves your PC.
+A small, private, ChatGPT-style chat site that runs entirely on your machine and talks to a local model through [Ollama](https://ollama.com). No accounts, no telemetry, and **no content filtering in the app**: whatever the model writes is shown as-is.
 
 ## What's in this folder (`local-chat/`)
 
@@ -13,12 +13,10 @@ A small, private, ChatGPT-style chat site that runs entirely on your machine and
 | `data/settings.json` | Your defaults (model, system prompt, sampling). Created on first run. |
 | `data/conversations/*.json` | One file per saved chat. Back these up, delete them, grep them; they're yours. |
 
-`data/` is not actually in this folder: it's `E:\local-chat\data`, outside the AppHub repo, so chats never end up in git. Set `LOCAL_CHAT_DATA` to use a different folder.
-
 ## Setup
 
 1. Install Ollama: https://ollama.com/download
-2. Pull a model (see below), e.g. `ollama pull qwen3:14b`
+2. Pull a model (see below), e.g. `ollama pull huihui_ai/qwen3-abliterated:14b`
 3. Run `python server.py` (or double-click `start.bat` on Windows).
 4. Open http://127.0.0.1:8790
 
@@ -42,18 +40,18 @@ Optional environment variables: `OLLAMA_URL` (default `http://127.0.0.1:11434`),
 
 ## Models
 
-Output quality depends far more on the model than on this UI. Rough sizing at Q4 quantization:
+Output quality depends far more on the model than on this UI. "Abliterated" models have had the refusal behaviour surgically removed; "uncensored" finetunes were retrained without refusals. Rough sizing at Q4 quantization:
 
 | GPU VRAM | Suggested starting point |
 |---|---|
-| 8 GB | `llama3.1:8b` or `mistral:7b` |
-| 12–16 GB | `qwen3:14b`, `gemma3:12b`, or `mistral-nemo:12b` |
-| 24 GB | `qwen3:32b` or `mistral-small:24b` |
-| 48 GB+ | `llama3.3:70b` |
+| 8 GB | `dolphin3` (Llama 3.1 8B uncensored finetune) |
+| 12–16 GB | `huihui_ai/qwen3-abliterated:14b`, `huihui_ai/gemma3-abliterated:12b`, or a Mistral Nemo 12B creative finetune |
+| 24 GB | `huihui_ai/qwen3-abliterated:32b`, or a Mistral Small 24B creative finetune (e.g. TheDrummer's Cydonia) |
+| 48 GB+ | `huihui_ai/llama3.3-abliterated:70b` |
 
 Any GGUF on Hugging Face can be pulled directly: `ollama pull hf.co/<user>/<repo>:Q4_K_M`.
 
-These names come from memory of the Ollama library and Hugging Face, not a live check. Tags move around, so check https://ollama.com/search before pulling.
+These names come from memory of the Ollama library and Hugging Face, not a live check. Tags move around, so search https://ollama.com/search?q=abliterated before pulling.
 
 ## Personalities and the chat character trainer
 
@@ -67,14 +65,14 @@ Open **Personalities** in the top bar.
 
 Material lives in `data/materials/<personality id>/`, next to everything else in this folder.
 
-## The hub (all our apps in one page)
+## Getting the graphics card while you chat
 
-Open http://127.0.0.1:8790/hub (start.bat opens it). The side panel switches between Chat, Autonoma, AI Workers, Site Stats, Movies and Jellyfin; each app stays loaded in its own frame. A green dot means the app is running. If it isn't, its pane has a **Start it** button that runs that app's own start script with `--no-browser` (Jellyfin is a Windows service, so it has no button). Hover an app for ↻ (reload with a fresh login) and ↗ (open in its own tab). `/hub#movies` opens straight to an app.
+Before each reply, Local Chat asks the App Hub's GPU desk for the card (`worker_pause.py`). The desk:
 
-- The app list lives in `data/hub_apps.json`, written with defaults the first time. Apps are picked by `id`.
-- Autonoma and the Foreman sign in through their own login files (`data\warden_login.txt`, `data\foreman_login.txt`).
-- Open the hub as `127.0.0.1`, not `localhost`, so the apps' sign-in cookies match.
+- holds the AI Workers: a running worker stops, and starts again five minutes after your last message;
+- unloads every other Ollama model, so this reply's model has the card to itself;
+- tells ImageGen's ComfyUI to let go. If a picture or clip is drawing, it finishes first, and the chat runs slower beside it until then.
 
-**Movies** (`/movies/`) is served from `E:\MovieTheaterWithClaudia\site\`. It reads the recommender's export in `E:\MovieTheaterWithClaudia\data\movies.json` (tiers, Claudia's script reads, her picks); without it, it falls back to `start.txt`. Click a movie with a "script n/10" badge to see the read.
+Set `pause_workers_minutes` in `data/settings.json` to change the wait; 0 turns all of this off. If the hub isn't running, Chat asks the Foreman to hold directly, as it used to; if neither is running, nothing happens.
 
-**Chat pauses the AI Workers.** Before each chat reply, Local Chat asks the Foreman to hold: a running task stops and the night shift waits. Five minutes after the last chat message, the stopped task restarts with its original stop time (unless that time has passed). Change the wait with `pause_workers_minutes` in `data/settings.json`; 0 turns it off.
+Local Chat is usually started by `E:\AppHub\start.bat` now, with the other apps. `start.bat --no-browser` starts it without opening a tab.

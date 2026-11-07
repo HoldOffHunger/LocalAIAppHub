@@ -1,0 +1,15 @@
+# Rocinante 12B (TheDrummer, Mistral Nemo base): a smaller creative model that fits mostly or fully on an 8 GB card.
+# Pull it first:  ollama pull hf.co/TheDrummer/Rocinante-12B-v1.1-GGUF:Q4_K_M
+# Then build:     ollama create rocinante -f models/Rocinante.Modelfile
+FROM hf.co/TheDrummer/Rocinante-12B-v1.1-GGUF:Q4_K_M
+
+TEMPLATE """{{- range $index, $_ := .Messages }}
+{{- if eq .Role "system" }}[INST]{{ .Content }}[/INST]Understood.</s>
+{{- else if eq .Role "user" }}[INST]{{ .Content }}[/INST]
+{{- else if eq .Role "assistant" }}{{ .Content }}</s>
+{{- end }}
+{{- end }}"""
+
+PARAMETER stop "</s>"
+PARAMETER stop "[INST]"
+PARAMETER stop "[/INST]"

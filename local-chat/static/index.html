@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Chat</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<aside id="sidebar">
+  <button id="new-chat" class="primary">+ New chat</button>
+  <nav id="conversation-list"></nav>
+  <button id="open-settings" class="ghost">Settings</button>
+</aside>
+<main>
+  <header>
+    <button id="toggle-sidebar" class="ghost" title="Conversations">&#9776;</button>
+    <select id="model-select" title="Model"></select>
+    <select id="persona-select" title="Who you're talking to in this chat"></select>
+    <button id="open-personas" class="ghost" title="Create and edit personalities">Personalities</button>
+    <button id="edit-system" class="ghost" title="System prompt for this chat">System prompt</button>
+    <button id="toggle-roleplay" class="ghost" title="Off, Roleplay (turn-by-turn scenes; say &quot;final scene&quot; for a long ending), Philosopher (mostly conversation, some action), or Chat (text messages only)">Mode: off</button>
+    <span id="status"></span>
+  </header>
+  <section id="messages"></section>
+  <footer>
+    <div id="composer">
+      <textarea id="input" rows="1" placeholder="Write something... (Enter to send, Shift+Enter for newline)"></textarea>
+      <div id="composer-actions">
+        <button id="continue" class="ghost" title="Ask the model to keep going">Continue</button>
+        <button id="regenerate" class="ghost" title="Redo the last reply">Regenerate</button>
+        <button id="send" class="primary">Send</button>
+        <button id="stop" class="danger" hidden>Stop</button>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<dialog id="settings-dialog">
+  <form method="dialog">
+    <h2>Settings</h2>
+    <label>Default system prompt<textarea id="set-system" rows="6"></textarea></label>
+    <div class="grid">
+      <label>Temperature<input id="set-temperature" type="number" step="0.05" min="0" max="2"></label>
+      <label>Top P<input id="set-top_p" type="number" step="0.01" min="0" max="1"></label>
+      <label>Repeat penalty<input id="set-repeat_penalty" type="number" step="0.01" min="0.5" max="2"></label>
+      <label>Context length (tokens)<input id="set-num_ctx" type="number" step="1024" min="2048"></label>
+      <label>Max reply tokens (-1 = no limit)<input id="set-num_predict" type="number" step="256" min="-1"></label>
+    </div>
+    <menu><button value="cancel" class="ghost">Cancel</button><button id="save-settings" value="save" class="primary">Save</button></menu>
+  </form>
+</dialog>
+
+<dialog id="system-dialog">
+  <form method="dialog">
+    <h2>System prompt for this chat</h2>
+    <p class="hint">Persona, scenario, rules. Applies only to this conversation.</p>
+    <textarea id="chat-system" rows="12"></textarea>
+    <menu><button value="cancel" class="ghost">Cancel</button><button id="save-system" value="save" class="primary">Save</button></menu>
+  </form>
+</dialog>
+
+<dialog id="personas-dialog">
+  <form method="dialog">
+    <h2>Personalities</h2>
+    <p class="hint">Pick one per chat from the top bar. Its profile is sent ahead of the chat's own system prompt.</p>
+    <div class="persona-row"><select id="persona-edit-select"></select><button id="persona-new" type="button" class="ghost">+ New</button><button id="persona-delete" type="button" class="ghost">Delete</button></div>
+    <label>Name<input id="persona-name" maxlength="80"></label>
+    <label>Mode when picked<select id="persona-mode"><option value="roleplay">Roleplay (scenes, actions, a page per turn)</option><option value="philosopher">Philosopher (two-thirds conversation, one-third action)</option><option value="chat">Chat (text messages only, like a chat log)</option></select></label>
+    <label>Profile (who they are, how they talk; optional if you train on material)<textarea id="persona-prompt" rows="8"></textarea></label>
+    <fieldset id="training">
+      <legend>Character material</legend>
+      <div id="material-list"></div>
+      <div class="persona-row">
+        <button id="material-add-files" type="button" class="ghost">Add files (.txt, .log)</button>
+        <button id="material-toggle-paste" type="button" class="ghost">Paste text</button>
+        <input id="material-files" type="file" multiple accept=".txt,.log,.md,.csv,text/plain" hidden>
+      </div>
+      <div id="material-paste-box" hidden>
+        <textarea id="material-paste" rows="6" placeholder="Paste a chat log here. Lines like  [12:34] &lt;nick&gt; hello  or  Name: hello"></textarea>
+        <div class="persona-row"><input id="material-paste-name" placeholder="Name for this material" maxlength="120"><button id="material-paste-add" type="button" class="ghost">Preview pasted text</button></div>
+      </div>
+      <div id="material-preview" hidden>
+        <div><strong id="preview-name"></strong> <span id="preview-meta" class="hint"></span></div>
+        <div id="preview-speakers" class="hint"></div>
+        <div id="preview-summary"></div>
+        <div class="persona-row"><button id="preview-summarize" type="button" class="ghost">Summarize this conversation</button><button id="preview-add" type="button" class="primary">Add</button><button id="preview-skip" type="button" class="ghost">Skip</button></div>
+      </div>
+      <div class="field">Whose voice? Click the person in the logs this character should sound like (or type names, comma separated)
+        <div id="speaker-chips"></div>
+        <input id="persona-speakers" placeholder="e.g. alice, alice_away">
+      </div>
+      <div class="persona-row"><button id="persona-train" type="button" class="primary" title="Pick example lines from the material for the model to imitate">Prepare</button><span id="train-status" class="hint"></span></div>
+      <div id="training-meter"></div>
+      <details id="training-examples"><summary>Examples in use</summary><pre id="training-examples-list"></pre></details>
+    </fieldset>
+    <menu><button value="cancel" class="ghost">Close</button><button id="persona-save" type="button" class="primary">Save</button></menu>
+  </form>
+</dialog>
+
+<script src="/static/markdown.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

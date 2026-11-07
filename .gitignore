@@ -8,6 +8,16 @@ local-chat/data/
 *.jsonl
 *.chatlog
 
+# Voice's threads and recordings, and Images' pictures and settings, live in their data folders
+Voice/data/
+ImageGen/data/
+# Written from ImageGen's models_folder setting each time it starts ComfyUI
+ImageGen/comfy_models.yaml
+
+# The model files: a junction to the real models folder, or the folder setup.ps1 fills on a new PC
+ModelFiles/
+ComfyUI/
+
 # Login links (each holds a live session token)
 *_login.txt
 

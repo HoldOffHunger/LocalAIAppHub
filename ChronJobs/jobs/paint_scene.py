@@ -24,7 +24,7 @@ HERE = Path(__file__).resolve().parent.parent
 BOOK_PATH = HERE / "data" / "race_scenes.json"
 DONE_PATH = HERE / "data" / "race_scenes_done.json"
 IMAGEGEN = os.environ.get("IMAGEGEN_URL", "http://127.0.0.1:8730")
-IMAGEGEN_FOLDER = Path(r"E:\ImageGen")
+IMAGEGEN_FOLDER = HERE.parent / "ImageGen"  # beside Chron Jobs in the hub
 SOURCE = "chron:race_scenes"
 
 

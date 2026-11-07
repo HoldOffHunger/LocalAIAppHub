@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ImageGen</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<aside id="composer">
+  <div id="kind" class="switch" role="radiogroup" aria-label="What to make">
+    <button class="on" data-kind="image" role="radio" aria-checked="true">Image</button>
+    <button data-kind="video" role="radio" aria-checked="false">Video</button>
+  </div>
+  <div id="model-row">
+    <label for="model">Model</label>
+    <select id="model"></select>
+  </div>
+  <div id="model-note"></div>
+
+  <label for="prompt">What would you like?</label>
+  <textarea id="prompt" rows="5" placeholder="A fox reading by lantern-light in an old library&#10;&#10;…or add a picture and say what to change: &quot;make it winter&quot;"></textarea>
+
+  <div id="drop" tabindex="0">
+    <div id="refs"></div>
+    <div id="drop-hint">Drop, paste or <u>pick</u> pictures to work from (up to 4)</div>
+    <input id="file" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+  </div>
+
+  <div id="size-row">
+    <label for="size">Shape</label>
+    <select id="size">
+      <option value="1024x1024">Square · 1024×1024</option>
+      <option value="832x1216">Portrait · 832×1216</option>
+      <option value="1216x832">Landscape · 1216×832</option>
+      <option value="768x1344">Tall · 768×1344</option>
+      <option value="1344x768">Wide · 1344×768</option>
+    </select>
+  </div>
+  <div id="size-note" hidden>Edits come out the shape of the first picture.</div>
+  <div id="video-row" hidden>
+    <label for="clip-length">Length</label>
+    <select id="clip-length">
+      <option value="1">1 second</option>
+      <option value="2" selected>2 seconds</option>
+      <option value="3">3 seconds</option>
+      <option value="5">5 seconds</option>
+    </select>
+    <select id="clip-size">
+      <option value="small" selected>Small · 832×480</option>
+      <option value="full">Full · 1280×704</option>
+    </select>
+  </div>
+  <div id="video-note" hidden>On this card, about 10 minutes per second of clip at Small; Full is far slower.
+    Starting from a picture gives the best clips.</div>
+
+  <div id="seed-row">
+    <label for="seed">Seed</label>
+    <input id="seed" inputmode="numeric" placeholder="random">
+    <button id="seed-clear" title="Back to random">✕</button>
+  </div>
+
+  <button id="make" class="primary">Make it <span class="key">Ctrl+Enter</span></button>
+  <div id="status" aria-live="polite"></div>
+</aside>
+
+<main id="gallery-pane">
+  <div id="setup" hidden></div>
+  <div id="shelves" class="switch" role="tablist" aria-label="What the gallery shows">
+    <button data-shelf="image" class="on" role="tab">Images</button>
+    <button data-shelf="video" role="tab">Videos</button>
+    <button data-shelf="defects" role="tab">Defects <span id="defect-count" class="count"></span></button>
+  </div>
+  <div id="gallery"></div>
+  <div id="empty" hidden>Nothing yet. Your pictures will gather here.</div>
+</main>
+
+<div id="viewer" hidden>
+  <div id="viewer-body">
+    <img id="viewer-img" alt="">
+    <video id="viewer-video" controls loop playsinline hidden></video>
+    <div id="viewer-side">
+      <p id="viewer-prompt"></p>
+      <div id="viewer-refs"></div>
+      <p id="viewer-meta"></p>
+      <button id="v-use" class="primary">Work from this</button>
+      <button id="v-again">Same prompt again</button>
+      <button id="v-seed">Reuse seed</button>
+      <button id="v-defect">Mark as defect</button>
+      <div id="v-defect-form" hidden>
+        <p class="small">What's wrong with it?</p>
+        <div id="v-defect-tags" class="chips"></div>
+        <input id="v-defect-note" maxlength="300" placeholder="Anything else? (optional)">
+        <button id="v-defect-save" class="primary" disabled>Move to Defects</button>
+      </div>
+      <p id="v-defect-said" class="small" hidden></p>
+      <button id="v-fix" class="primary" hidden>Fix this</button>
+      <button id="v-undefect" hidden>Not a defect</button>
+      <a id="v-save" class="button" download>Save a copy</a>
+      <button id="v-delete" class="danger">Delete</button>
+      <button id="v-close">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
